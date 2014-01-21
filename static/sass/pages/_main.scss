@@ -1,0 +1,26 @@
+/**
+ * Pages - Main page
+ */
+.main {
+    padding-left: $sidebar-w;
+    height: 100%;
+
+    @include vendor(transition, all 0.2s ease-out);
+}
+
+.main__sidebar {
+    width: $sidebar-w;
+    height: 100%;
+    background-color: $sidebar-bg;
+    position: fixed;
+    top: 0;
+    left: -$sidebar-w;
+}
+
+.main__container {
+    width: 100%;
+    min-height: 100%;
+    padding-left: $sidebar-w;
+    background-color: #ccc;
+    display: inline-block;
+}

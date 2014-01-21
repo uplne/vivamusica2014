@@ -1,7 +1,7 @@
 /**
  * OVOCSS - ovocss.com
  *
- * ovo.css should be a ligthwieght module library using modern CSS principles 
+ * ovo.css should be a ligthwieght module library using modern CSS principles
  * from SMACSS, BEM etc.
  *
  * LICENSE
@@ -26,11 +26,22 @@
 /**
  * Generic styles
  */
-@import "partials/mixins";
-@import "partials/reset";
-@import "partials/base";
+@import "partials/_brand";
+@import "partials/_dimensions";
+@import "partials/_mixins";
+@import "partials/_reset";
+@import "partials/_base";
 
 /**
  * Objects
  */
 @import "objects/_buttons";
+
+/**
+ * Components
+ */
+
+/**
+ * Pages
+ */
+@import "pages/_main";
