@@ -1,0 +1,67 @@
+/**
+ * Mixins
+ */
+
+/**
+ * Vendor prefixes
+ */
+@mixin vendor($style, $value...) {
+    -webkit-#{$style}: $value;
+       -moz-#{$style}: $value;
+        -ms-#{$style}: $value;
+         -o-#{$style}: $value;
+            #{$style}: $value;
+}
+
+/**
+ * Font size with vertical rhytm.
+ * Thanks to Harry Roberts (inuit.css).
+ */
+@mixin font-size($font-size, $line-height:true){
+    font-size: $font-size;
+    font-size: ($font-size / $base-font-size) * 1rem;
+
+    @if $line-height == true{
+        line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+}
+
+/**
+ * Arrows.
+ *
+ * Mixin generates styles for CSS arrows using border.
+ * Position of arrow should be set outside of this mixin.
+ */
+@mixin arrow(
+    $arrow-width,
+    $arrow-height,
+    $arrow-color,
+    $arrow-position
+) {
+    position: absolute;
+    content : '';
+
+    @if $arrow-position == right {
+        border-top    : $arrow-height inset transparent;
+        border-bottom : $arrow-height inset transparent;
+        border-left   : $arrow-width solid $arrow-color;
+    }
+
+    @if $arrow-position == down {
+        border-left  : $arrow-height inset transparent;
+        border-right : $arrow-height inset transparent;
+        border-top   : $arrow-width solid $arrow-color;
+    }
+
+    @if $arrow-position == left {
+        border-top    : $arrow-height inset transparent;
+        border-bottom : $arrow-height inset transparent;
+        border-right  : $arrow-width solid $arrow-color;
+    }
+
+    @if $arrow-position == top {
+        border-right  : $arrow-height inset transparent;
+        border-left   : $arrow-height inset transparent;
+        border-bottom : $arrow-width solid $arrow-color;
+    }
+}

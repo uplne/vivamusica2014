@@ -1,0 +1,72 @@
+/**
+ * LISTS
+ *
+ * BLOCK LISTS
+ */
+
+/**
+ * BLOCK LISTS
+ */
+
+.notlist,
+%notlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navlist--h {
+    @extend %notlist;
+
+    > li {
+        float: left;
+    }
+}
+
+// Equidistant navlist
+.navlist--spread {
+    @extend .navlist;
+
+    font-size: 0.1px;
+    line-height: 0;
+    text-align: justify;
+
+    &:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+    }
+
+    > li {
+        display: inline;
+        text-align: center;
+        margin: 0;
+
+        //This is here just to override global style for li in _base.scss (needs refactoring)
+        line-height: normal;
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}
+
+// Centered list
+.list--centered {
+    @extend %clearfix;
+
+    position: relative;
+    float: left;
+    left: 50%;
+
+    > li {
+        @extend .list--centered__item;
+    }
+}
+
+.list--centered__item {
+    position: relative;
+    float: left;
+    right: 50%;
+}
