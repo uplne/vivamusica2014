@@ -15,6 +15,10 @@
     position: fixed;
     top: 0;
     left: -$sidebar-w;
+
+    &.is-active {
+        left: 0;
+    }
 }
 
 .main__container {

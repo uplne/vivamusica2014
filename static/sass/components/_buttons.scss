@@ -1,0 +1,23 @@
+/**
+ * BUTTON COMPONENTS
+ */
+
+/**
+ * Mobile nav button
+ */
+.btn--nav {
+    @extend %btn;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 4em;
+    height: 4em;
+    line-height: 4em;
+    background-color: $sidebar-bg;
+
+    // When mobile menu is active move
+    &.is-active {
+        left: $sidebar-w;
+    }
+}

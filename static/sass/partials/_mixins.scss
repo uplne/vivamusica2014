@@ -83,7 +83,7 @@
     }
 
     // No max-width
-    @else $max-w == false {
+    @else if $max-w == false {
         @media only screen and (min-width: $min-w - 1) {
              @content;
         }
