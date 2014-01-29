@@ -1,0 +1,41 @@
+/**
+ * ICONS
+ */
+
+/**
+ * Icon navigation (mobile)
+ */
+$icon-nav-line-h: .2em;
+
+/**
+ * Hidden class for navigation icon lines.
+ */
+%icon--nav__line {
+    width: 100%;
+    height: $icon-nav-line-h;
+    background-color: $icon-nav;
+}
+
+.icon--nav {
+    @extend %icon--nav__line;
+
+    display: block;
+    margin-top: .3em;
+    position: relative;
+
+    &:before {
+        @extend %icon--nav__line;
+
+        content:" ";
+        position: absolute;
+        top: .6em;
+    }
+
+    &:after {
+        @extend %icon--nav__line;
+
+        content:" ";
+        position: absolute;
+        top: 1.21em;
+    }
+}

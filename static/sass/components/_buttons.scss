@@ -7,13 +7,14 @@
  */
 .btn--nav {
     @extend %btn;
+    @include font-size(11px);
 
     position: fixed;
     left: 0;
     top: 0;
     width: 4em;
     height: 4em;
-    line-height: 4em;
+    padding: 1em;
     background-color: $sidebar-bg;
 
     // When mobile menu is active move

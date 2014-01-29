@@ -1,14 +1,25 @@
 /**
- * Dimensions
+ * DIMENSIONS
+ *
+ * ADAPTIVE DESIGN
+ * FONTS
  */
 
 /**
+ * ADAPTIVE DESIGN
+ * 
  * Dimensions for adaptive design.
  */
 $base-w: 1000px;
 $tablet-w: 768px;
 $mobile-portrait-w: 320px;
 $mobile-landscape-w: 480px;
+
+/**
+ * FONTS
+ */
+$base-font-size: 11px;
+$base-line-height: 16px;
 
 // Main page
 $sidebar-w: 150px;

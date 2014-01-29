@@ -2,10 +2,13 @@
  * Pages - Main page
  */
 .main {
-    padding-left: $sidebar-w;
     height: 100%;
 
     @include vendor(transition, all 0.2s ease-out);
+
+    &.is-active {
+        padding-left: $sidebar-w;
+    }
 }
 
 .main__sidebar {
@@ -24,7 +27,6 @@
 .main__container {
     width: 100%;
     min-height: 100%;
-    padding-left: $sidebar-w;
     background-color: #ccc;
     display: inline-block;
 }
