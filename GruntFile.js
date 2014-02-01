@@ -19,13 +19,13 @@ module.exports = function(grunt) {
         },
 
         // Define Karma test runner configuration
-        /*karma: {
+        karma: {
             // Run unit test automation
             unit: {
                 configFile: 'karma.conf.js',
                 autoRun: true
             }
-        },*/
+        },
 
         /**
          * The SASS command contains two configuration sets - one for the themes subfolder, and one for the main
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
                 options: {
                     logConcurrentOutput: true
                 },
-                tasks: ['watch']
+                tasks: ['watch', 'karma:unit']
             }
         }
     });
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
     /**
      * Load all NPM tasks
      */
-    //grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -83,12 +83,7 @@ module.exports = function(grunt) {
      * @description usage: grunt test-browser
      * @see karma.conf.js - browsers
      */
-    /**
-     * Run watcher
-     *
-     * @description usage: grunt watch
-     */
-    grunt.registerTask('watchit', ['watch:sass']);
+    grunt.registerTask("test-browser", ["karma:unit"]);
 
     /**
      * Compile main site SCSS & Themes
