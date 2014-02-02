@@ -20,7 +20,7 @@ $icon-nav-line-h: .2em;
     @extend %icon--nav__line;
 
     display: block;
-    margin-top: .3em;
+    margin-top: .29em;
     position: relative;
 
     &:before {
@@ -36,6 +36,6 @@ $icon-nav-line-h: .2em;
 
         content:" ";
         position: absolute;
-        top: 1.21em;
+        top: 1.22em;
     }
 }
