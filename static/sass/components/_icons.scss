@@ -16,26 +16,32 @@ $icon-nav-line-h: .2em;
     background-color: $icon-nav;
 }
 
+/**
+ * Mobile nav icon
+ */
 .icon--nav {
     @extend %icon--nav__line;
+    @extend %main-nav;
 
     display: block;
     margin-top: .29em;
     position: relative;
 
+    &:before,
+    &:after {
+        content:" ";
+        position: absolute;
+    }
+
     &:before {
         @extend %icon--nav__line;
 
-        content:" ";
-        position: absolute;
         top: .6em;
     }
 
     &:after {
         @extend %icon--nav__line;
 
-        content:" ";
-        position: absolute;
         top: 1.22em;
     }
 }

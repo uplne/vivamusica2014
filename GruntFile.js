@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             //Automatic compilation of SASS changes
             sass: {
                 files: ['static/sass/**/*.scss'],
-                tasks: ['sass:main']
+                tasks: ['sass:main','notify']
             }
         },
 
@@ -64,6 +64,14 @@ module.exports = function(grunt) {
                     logConcurrentOutput: true
                 },
                 tasks: ['watch', 'karma:unit']
+            }
+        },
+
+        notify: {
+            watch: {
+                options: {
+                    message: "SASS finished."
+                }
             }
         }
     });

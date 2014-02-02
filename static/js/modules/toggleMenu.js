@@ -14,8 +14,8 @@ define([
             // DOM elements
             el: {
                 $mainHolder: $('.main'),
-                $navlink: $('[data-module="tooglemenu"]'),
-                $sidebar: $('.main__container')
+                $navlink:    $('[data-module="tooglemenu"]'),
+                $sidebar:    $('.main__sidebar')
             },
 
             init: function() {

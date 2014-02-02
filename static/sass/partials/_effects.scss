@@ -1,0 +1,12 @@
+/**
+ * EFFECTS
+ *
+ * TRANSITIONS
+ */
+
+/**
+ * TRANSITIONS
+ */
+%main-nav {
+    @include vendor(transition, all 0.2s ease-out);
+}
