@@ -3,6 +3,7 @@
  *
  * ADAPTIVE DESIGN
  * FONTS
+ * PADDINGS/MARGINS
  */
 
 /**
@@ -21,5 +22,12 @@ $mobile-landscape-w: 480px;
 $base-font-size: 11px;
 $base-line-height: 16px;
 
+/**
+ * PADDINGS/MARGINS
+ */
+$base-padding: 1rem;
+$base-mb: 1rem;
+
 // Main page
 $sidebar-w: 150px;
+$sidebar-logo-hp-fix: 4px;

@@ -3,6 +3,7 @@
  */
 .main {
     @extend %main-nav;
+    @extend %effect-nav;
 
     height: 100%;
 
@@ -12,7 +13,9 @@
 }
 
 .main__sidebar {
+    @extend .box;
     @extend %main-nav;
+    @extend %effect-nav;
 
     width: $sidebar-w;
     height: 100%;
@@ -30,5 +33,4 @@
     width: 100%;
     min-height: 100%;
     background-color: #ccc;
-    display: inline-block;
 }

@@ -1,0 +1,12 @@
+/**
+ * BOX OBJECTS
+ */
+
+.box,
+%box {
+    display: block;
+}
+
+.box {
+    padding: $base-padding;
+}

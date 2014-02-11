@@ -7,6 +7,6 @@
 /**
  * TRANSITIONS
  */
-%main-nav {
+%effect-nav {
     @include vendor(transition, all 0.2s ease-out);
 }

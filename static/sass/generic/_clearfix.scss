@@ -1,0 +1,10 @@
+/**
+ * CLEARFIX micro format
+ */
+.cf{
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+}

@@ -8,6 +8,7 @@
 .btn--nav {
     @extend %btn;
     @extend %main-nav;
+    @extend %effect-nav;
     @include font-size(11px);
 
     position: fixed;
@@ -35,4 +36,14 @@
             }
         }
     }
+}
+
+/**
+ * MAIN LOGO
+ */
+.btn--brand {
+    @extend %btn;
+
+    float: right;
+    margin-bottom: $base-mb;
 }

@@ -21,7 +21,7 @@ $icon-nav-line-h: .2em;
  */
 .icon--nav {
     @extend %icon--nav__line;
-    @extend %main-nav;
+    @extend %effect-nav;
 
     display: block;
     margin-top: .29em;

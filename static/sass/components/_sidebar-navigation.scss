@@ -1,0 +1,22 @@
+/**
+ * SIDEBAR NAVIGATION
+ */
+.sbnav {
+    @extend %notlist;
+
+    float: right;
+}
+
+/**
+ * Menu link in left sidebar
+ *
+ * 1. We need to compensate for logo 4px gap on the right side.
+ */
+.sbnav__link {
+    @extend %btn;
+    @include font-size(15px);
+
+    padding-right: $sidebar-logo-hp-fix; /* [1] */
+    text-align: right;
+    color: $sidebar-links;
+}
