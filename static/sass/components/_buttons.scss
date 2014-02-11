@@ -14,14 +14,14 @@
     position: fixed;
     left: 0;
     top: 0;
-    width: 4em;
-    height: 4em;
+    width: $navlink-size;
+    height: $navlink-size;
     padding: 1em;
     background-color: $sidebar-bg;
 
     // When mobile menu is active move
     &.is-active {
-        left: $sidebar-w;
+        left: $sidebar-w + $navlink-size;
         
         // When mobile menu is active we need to transform icon into X shape
         .icon--nav {

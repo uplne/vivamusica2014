@@ -6,9 +6,7 @@
     @include vendor(box-sizing, border-box);
 }
 
-html,
-body {
+html {
     height: 100%;
-    font-family: "myriad pro";
-    font-size: 11px;
+    font: #{($base-font-size / 16px) * 1em}/#{$base-line-height / $base-font-size} "myriad pro";
 }

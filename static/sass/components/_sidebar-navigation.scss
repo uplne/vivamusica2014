@@ -14,9 +14,11 @@
  */
 .sbnav__link {
     @extend %btn;
-    @include font-size(15px);
+    @include font-size(16px);
 
-    padding-right: $sidebar-logo-hp-fix; /* [1] */
+    display: block;
+    padding: .5em $sidebar-logo-hp-fix 0 .5em; /* [1] */
     text-align: right;
+    font-style: italic;
     color: $sidebar-links;
 }
