@@ -8,15 +8,15 @@
  * BLOCK LISTS
  */
 
-.notlist,
-%notlist {
+.uilist,
+%uilist {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .navlist--h {
-    @extend %notlist;
+    @extend %uilist;
 
     > li {
         float: left;
@@ -25,7 +25,7 @@
 
 // Equidistant navlist
 .navlist--spread {
-    @extend .navlist;
+    @extend %uilist;
 
     font-size: 0.1px;
     line-height: 0;
@@ -54,7 +54,7 @@
 
 // Centered list
 .list--centered {
-    @extend %clearfix;
+    @extend %cf;
 
     position: relative;
     float: left;

@@ -36,6 +36,11 @@
             }
         }
     }
+
+    // When on larger screen disable this button
+    @include adaptive($tablet-w, false) {
+        display: none;
+    }
 }
 
 /**

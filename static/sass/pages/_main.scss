@@ -2,7 +2,6 @@
  * Pages - Main page
  */
 .main {
-    @extend %main-nav;
     @extend %effect-nav;
 
     height: 100%;
@@ -10,11 +9,15 @@
     &.is-active {
         padding-left: $sidebar-w;
     }
+
+    // When on larger screen
+    @include adaptive($tablet-w, false) {
+        padding-left: $sidebar-w;
+    }
 }
 
 .main__sidebar {
     @extend .box;
-    @extend %main-nav;
     @extend %effect-nav;
 
     width: $sidebar-w;
@@ -25,6 +28,11 @@
     left: -$sidebar-w;
 
     &.is-active {
+        left: 0;
+    }
+
+    // When on larger screen
+    @include adaptive($tablet-w, false) {
         left: 0;
     }
 }

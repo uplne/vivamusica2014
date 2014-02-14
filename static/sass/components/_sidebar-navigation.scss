@@ -2,7 +2,7 @@
  * SIDEBAR NAVIGATION
  */
 .sbnav {
-    @extend %notlist;
+    @extend %uilist;
 
     float: right;
 }
