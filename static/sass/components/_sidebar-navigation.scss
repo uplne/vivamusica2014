@@ -5,6 +5,7 @@
     @extend %uilist;
 
     float: right;
+    width: 70%;
 }
 
 /**
@@ -14,11 +15,23 @@
  */
 .sbnav__link {
     @extend %btn;
-    @include font-size(16px);
+    @extend %effect-nav;
+    @include font-size(16px, false);
 
     display: block;
-    padding: .5em $sidebar-logo-hp-fix 0 .5em; /* [1] */
+    padding-right: $sidebar-logo-hp-fix; /* [1] */
     text-align: right;
+    line-height: 2em;
     font-style: italic;
     color: $sidebar-links;
+
+    &:hover,
+    &.is-active {
+
+        // To create the effect that hover state is starting from the edge.
+        margin-right: -$base-padding;
+        padding-right: $base-padding;
+        background-color: $sidebar-menu-hover-bg;
+        color: $sidebar-menu-hover-color;
+    }
 }
