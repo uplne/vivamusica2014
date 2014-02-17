@@ -34,6 +34,7 @@ app.listen(port, function() {
     console.log('Express server listening on port %d in %s mode', port, app.settings.env);
 });
 
+// Home route
 app.get("/", function(req, res) {
     res.render('landing', {
         title: 'Vivamusica! festival 2014'

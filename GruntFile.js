@@ -53,7 +53,11 @@ module.exports = function(grunt) {
             //Automatic compilation of SASS changes
             sass: {
                 files: ['static/sass/**/*.scss'],
-                tasks: ['sass:main','notify']
+                tasks: ['sass:main','notify'],
+                options: {
+                    // TODO - automatically disable on production
+                    livereload: true
+                }
             }
         },
 

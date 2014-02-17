@@ -7,7 +7,6 @@
  */
 .btn--nav {
     @extend %btn;
-    @extend %main-nav;
     @extend %effect-nav;
     @include font-size(11px);
 
