@@ -1,8 +1,8 @@
 var app_root = __dirname,
     express  = require('express'),
+    exphbs   = require('express-hbs'),
     path     = require('path'),
     mongoose = require('mongoose'),
-    exphbs   = require('express3-handlebars'),
 
     app      = null,
     port     = 4711;
@@ -24,9 +24,12 @@ app.configure(function() {
         showStack: true
     }));
 
-    app.set('views', path.join(__dirname, 'static/views'));
-    app.engine('hbs', exphbs());
+    app.engine('hbs', exphbs.express3({
+        partialsDir: __dirname + '/static/views/partials',
+        defaultLayout: __dirname + '/static/views/layouts/default.hbs'
+    }));
     app.set('view engine', 'hbs');
+    app.set('views', __dirname + '/static/views');
 });
 
 // Start server
@@ -36,7 +39,7 @@ app.listen(port, function() {
 
 // Home route
 app.get("/", function(req, res) {
-    res.render('landing', {
+    res.render('content/landing', {
         title: 'Vivamusica! festival 2014'
     });
 });
