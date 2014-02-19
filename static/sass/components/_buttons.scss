@@ -43,6 +43,64 @@
 }
 
 /**
+ * Popup close button
+ */
+.btn--nav {
+    @extend %btn;
+    @extend %effect-nav;
+    @include font-size(11px);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $navlink-size;
+    height: $navlink-size;
+    padding: 1em;
+    background-color: $sidebar-bg;
+
+    // When mobile menu is active move
+    &.is-active {
+        left: $sidebar-w + $navlink-size;
+        
+        // When mobile menu is active we need to transform icon into X shape
+        .icon--nav {
+            background-color: transparent;
+
+            &:before {
+                @include vendor(transform, rotate(45deg));
+            }
+
+            &:after {
+                @include vendor(transform, rotate(-45deg) translate(.45em, -.45em));
+            }
+        }
+    }
+
+    // When on larger screen disable this button
+    @include adaptive($tablet-w, false) {
+        display: none;
+    }
+}
+
+.btn--close {
+    @extend %btn;
+    @extend %effect-nav;
+    @include font-size(11px);
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $navlink-size;
+    height: $navlink-size;
+    padding: 1em;
+    background-color: $sidebar-bg;
+
+    &:hover {
+        background-color: #1a1a1a;
+    }
+}
+
+/**
  * MAIN LOGO
  */
 .btn--brand {
