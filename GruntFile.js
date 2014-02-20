@@ -58,6 +58,15 @@ module.exports = function(grunt) {
                     // TODO - automatically disable on production
                     livereload: true
                 }
+            },
+            livereload: {
+                files: [
+                    //'static/{,*/}*.{css,js,png,jpg,gif,svg}'
+                    'static/js/**/*.js'
+                ],
+                options: {
+                    livereload: true
+                }
             }
         },
 
