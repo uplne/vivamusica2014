@@ -31,15 +31,32 @@
     @extend .pop;
     @include vendor(box-shadow, 3px 0 22px 0 rgba(0,0,0,.75));
 
+    width: 60%;
+    height: 55%;
     position: absolute;
     top: 20%;
     left: 20%;
+    background-color: #000;
 
     img {
         display: block;
     }
 }
 
+.lcontainer__text {
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+    padding-top: $base-padding;
+    color: #fff;
+}
+
 .lcontainer__holder {
+    height: 100%;
     position: relative;
+}
+
+.lcontainer__content {
+    height: inherit;
+    overflow-x: hidden;
 }

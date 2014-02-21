@@ -18,6 +18,7 @@ app.configure(function() {
     app.use('/static/images', express.static(path.join(__dirname, 'static/images')));
     app.use('/static/js', express.static(path.join(__dirname, 'static/js')));
     app.use('/static/css', express.static(path.join(__dirname, 'static/css')));
+    app.use('/static/pdf', express.static(path.join(__dirname, 'static/pdf')));
     app.use(app.router);
     app.use(express.errorHandler({
         dumpExceptions: true,
