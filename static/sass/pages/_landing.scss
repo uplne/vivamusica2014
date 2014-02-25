@@ -10,7 +10,7 @@
 }
 
 .lcontainer__link {
-    @extend %cd;
+    @extend %cf;
 
     margin: 0 auto;
 
@@ -31,12 +31,10 @@
     @extend .pop;
     @include vendor(box-shadow, 3px 0 22px 0 rgba(0,0,0,.75));
 
-    width: 60%;
-    height: 55%;
+    width: 50%;
+    height: 70%;
     position: absolute;
-    top: 20%;
-    left: 20%;
-    background-color: #000;
+    background-color: #fff;
 
     img {
         display: block;
@@ -48,7 +46,7 @@
     text-align: left;
     margin: 0 auto;
     padding-top: $base-padding;
-    color: #fff;
+    color: #000;
 }
 
 .lcontainer__holder {
