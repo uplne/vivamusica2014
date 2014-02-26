@@ -17,6 +17,7 @@ function setupServer() {
         app.use(express.bodyParser());
         app.use(express.methodOverride());
         app.use(express.static(path.join(appRoot, 'static')));
+        app.use(express.favicon(config.paths.images + '/favicon.ico'));
         app.use('/static/images', express.static(config.paths.images));
         app.use('/static/js', express.static(config.paths.js));
         app.use('/static/css', express.static(config.paths.css));
@@ -45,8 +46,22 @@ function setupServer() {
     // Home route
     app.get("/", function(req, res) {
         res.render('content/landing', {
-            title: 'Vivamusica! festival 2014'
+            title: 'Vivamusica! festival 2014',
+            imageAssets: config.paths.images,
+            cssAssets: config.paths.css
         });
+    });
+
+    exphbs.registerHelper('imageAssets', function (context, options) {
+        var output = 'static/images' + context;
+
+        return new exphbs.SafeString(output);
+    });
+
+    exphbs.registerHelper('cssAssets', function (context, options) {
+        var output = 'static/css' + context;
+
+        return new exphbs.SafeString(output);
     });
 }
 
