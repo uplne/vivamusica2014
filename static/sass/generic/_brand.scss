@@ -3,7 +3,8 @@
  */
 
 // Main
-$brand-link: #ff0091;
+$brand: #ff0091;
+$brand-link: $brand;
 
 // Sidebar
 $sidebar-bg: #000;

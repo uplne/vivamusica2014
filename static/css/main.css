@@ -535,12 +535,30 @@ a:hover {
  * TRANSITIONS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000310}}
-.btn--nav, .btn--close, .icon--nav, .icon--close, .sbnav__link, .main, .main__sidebar {
+.btn--nav, .btn--close, .icon--nav, .icon--close, .sbnav__link, .top__nav {
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+}
+
+/**
+ * Helpers
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\000035}}
+.is-hidden {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\000039}}
+.visuallyhidden {
+  visibility: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000313}}
+.pull--left {
+  margin-left: -1em;
 }
 
 /**
@@ -613,12 +631,12 @@ a:hover {
  * BOX OBJECTS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\000036}}
-.box, .main__sidebar {
+.box, .top__nav {
   display: block;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\0000310}}
-.box, .main__sidebar {
+.box, .top__nav {
   padding: 1em;
 }
 
@@ -683,6 +701,45 @@ a:hover {
   position: relative;
   float: left;
   right: 50%;
+}
+
+/**
+ * Grid system
+ *
+ * On Vivamusica website we have five block grid.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\000037}}
+.g {
+  display: inline-block;
+  margin-left: -1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000312}}
+.g__item {
+  display: inline-block;
+  width: 100%;
+  padding-left: 1em;
+  vertical-align: top;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000319}}
+.g-fifth {
+  width: 20%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000320}}
+.g-twofifths {
+  width: 40%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000321}}
+.g-threefifts {
+  width: 60%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000322}}
+.g-fourfifths {
+  width: 80%;
 }
 
 /**
@@ -949,42 +1006,36 @@ a:hover {
 /**
  * Pages - Main page
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000034}}
-.main {
-  height: 100%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000039}}
-.main.is-active {
-  padding-left: 15em;
-}
-@media only screen and (min-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000034}}
-  .main {
-    padding-left: 15em;
-  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000035}}
+.top {
+  width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000319}}
-.main__sidebar {
-  width: 15em;
-  height: 100%;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000039}}
+.top__nav {
   background-color: black;
   position: fixed;
   top: 0;
-  left: -15em;
+  left: -20%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000330}}
-.main__sidebar.is-active {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000318}}
+.top__nav.is-active {
   left: 0;
 }
 @media only screen and (min-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000319}}
-  .main__sidebar {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000039}}
+  .top__nav {
     left: 0;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000328}}
+.top__news {
+  margin-left: 20%;
+  background-color: #ff0091;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000333}}
 .main__container {
   width: 100%;
   min-height: 100%;
