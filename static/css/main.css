@@ -1,1 +1,992 @@
-/* normalize.css v2.1.0 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:0.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}html{height:100%;font:0.875em/1.71429 "myriad pro"}body{width:100%;height:100%}a{text-decoration:none;color:#ff0091}a:hover{text-decoration:underline}.cf:after,.list--centered:after{content:"";display:table;clear:both}.btn--nav,.btn--close,.icon--nav,.icon--close,.sbnav__link,.main,.main__sidebar{-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out}.btn,.btn,.btn--nav,.btn--close,.btn--brand,.sbnav__link{display:inline-block;vertical-align:middle;white-space:nowrap;font-family:inherit;font-size:100%;text-decoration:none;cursor:pointer;border:none;padding:0}.btn:hover,.btn:hover,.btn--nav:hover,.btn--close:hover,.btn--brand:hover,.sbnav__link:hover{text-decoration:none}.btn{padding:0 1em;line-height:3;background-color:#ccc;color:#000;border-radius:4px}.box,.main__sidebar{display:block}.box,.main__sidebar{padding:1em}.uilist,.uilist--h,.uilist--spread,.socialnav,.sbnav{list-style:none;padding:0;margin:0}.uilist--h>li{float:left}.uilist--spread,.socialnav{font-size:0.1px;line-height:0;text-align:justify}.uilist--spread:after,.socialnav:after{content:'';width:100%;display:inline-block}.uilist--spread>li,.socialnav>li{display:inline;text-align:center;margin:0;line-height:normal}.uilist--spread>li a,.socialnav>li a{display:inline-block;vertical-align:top}.list--centered{position:relative;float:left;left:50%}.list--centered__item,.list--centered>li{position:relative;float:left;right:50%}.btn--nav{font-size:11px;font-size:0.78571rem;line-height:2.18182;position:fixed;left:0;top:0;width:4em;height:4em;padding:1em;background-color:#000}.btn--nav.is-active{left:19em}.btn--nav.is-active .icon--nav{background-color:transparent}.btn--nav.is-active .icon--nav:before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.btn--nav.is-active .icon--nav:after{-webkit-transform:rotate(-45deg) translate(0.45em, -0.45em);-moz-transform:rotate(-45deg) translate(0.45em, -0.45em);-ms-transform:rotate(-45deg) translate(0.45em, -0.45em);-o-transform:rotate(-45deg) translate(0.45em, -0.45em);transform:rotate(-45deg) translate(0.45em, -0.45em)}@media only screen and (min-width: 767px){.btn--nav{display:none}}.btn--nav{font-size:11px;font-size:0.78571rem;line-height:2.18182;position:fixed;left:0;top:0;width:4em;height:4em;padding:1em;background-color:#000}.btn--nav.is-active{left:19em}.btn--nav.is-active .icon--nav{background-color:transparent}.btn--nav.is-active .icon--nav:before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.btn--nav.is-active .icon--nav:after{-webkit-transform:rotate(-45deg) translate(0.45em, -0.45em);-moz-transform:rotate(-45deg) translate(0.45em, -0.45em);-ms-transform:rotate(-45deg) translate(0.45em, -0.45em);-o-transform:rotate(-45deg) translate(0.45em, -0.45em);transform:rotate(-45deg) translate(0.45em, -0.45em)}@media only screen and (min-width: 767px){.btn--nav{display:none}}.btn--close{font-size:11px;font-size:0.78571rem;line-height:2.18182;position:absolute;right:0;top:0;width:4em;height:4em;padding:1em;background-color:#000}.btn--close:hover{background-color:#1a1a1a}.btn--brand{float:right;margin-bottom:1em}.icon--nav,.icon--nav:before,.icon--nav:after{width:100%;height:0.2em;background-color:#666}.icon--close:before,.icon--close:after{width:100%;height:0.6em;background-color:#666}.icon--nav{display:block;margin-top:.29em;position:relative}.icon--nav:before,.icon--nav:after{content:" ";position:absolute}.icon--nav:before{top:.6em}.icon--nav:after{top:1.22em}.icon--close{display:block;margin-top:.29em;position:relative}.icon--close:before,.icon--close:after{content:" ";position:absolute;left:0}.icon--close:before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);top:.4em}.icon--close:after{-webkit-transform:rotate(-45deg) translate(0.44em, -0.44em);-moz-transform:rotate(-45deg) translate(0.44em, -0.44em);-ms-transform:rotate(-45deg) translate(0.44em, -0.44em);-o-transform:rotate(-45deg) translate(0.44em, -0.44em);transform:rotate(-45deg) translate(0.44em, -0.44em);top:1.05em}.sbnav{float:right;width:70%}.sbnav__link{font-size:16px;font-size:1.14286rem;display:block;padding-right:4px;text-align:right;line-height:2em;font-style:italic;color:#fff}.sbnav__link:hover,.sbnav__link.is-active{margin-right:-1em;padding-right:1em;background-color:#fff;color:#000}.socialnav{position:absolute;left:0;bottom:4em;height:4em;border-top:1px solid #fff}.main{height:100%}.main.is-active{padding-left:15em}@media only screen and (min-width: 767px){.main{padding-left:15em}}.main__sidebar{width:15em;height:100%;background-color:#000;position:fixed;top:0;left:-15em}.main__sidebar.is-active{left:0}@media only screen and (min-width: 767px){.main__sidebar{left:0}}.main__container{width:100%;min-height:100%;background-color:#ccc}
+/**
+ * OVOCSS - ovocss.com
+ *
+ * ovo.css should be a ligthwieght module library using modern CSS principles
+ * from SMACSS, BEM etc.
+ *
+ * LICENSE
+ *
+ * Copyright 2014 Steve Vadocz
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Thank you for choosing ovo.css.
+ */
+/**
+ * Generic styles
+ */
+/**
+ * Color pallete
+ */
+/**
+ * DIMENSIONS
+ *
+ * ADAPTIVE DESIGN
+ * FONTS
+ * PADDINGS/MARGINS
+ */
+/**
+ * ADAPTIVE DESIGN
+ * 
+ * Dimensions for adaptive design.
+ */
+/**
+ * FONTS
+ */
+/**
+ * PADDINGS/MARGINS
+ */
+/**
+ * SIDEBAR
+ */
+/**
+ * POP
+ */
+/**
+ * Mixins
+ */
+/**
+ * Vendor prefixes
+ */
+/**
+ * Font size with vertical rhytm.
+ * Thanks to Harry Roberts (inuit.css).
+ */
+/**
+ * Arrows.
+ *
+ * Mixin generates styles for CSS arrows using border.
+ * Position of arrow should be set outside of this mixin.
+ */
+/**
+ * Adaptive design
+ *
+ * Mixin generate code for adaptive media queries.
+ *
+ * Dimensions for adaptive design in _dimensions.scss
+ */
+/* normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Correct `block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000322}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000332}}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/*
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000341}}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000350}}
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000364}}
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+ * Remove default margin.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000374}}
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000386}}
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\0000395}}
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003108}}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/*
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003117}}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003126}}
+b,
+strong {
+  font-weight: bold;
+}
+
+/*
+ * Address styling not present in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003134}}
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Address differences between Firefox and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003142}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003152}}
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003164}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/*
+ * Improve readability of pre-formatted text in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003173}}
+pre {
+  white-space: pre-wrap;
+}
+
+/*
+ * Set consistent quote types.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003181}}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/*
+ * Address inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003189}}
+small {
+  font-size: 80%;
+}
+
+/*
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003198}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003205}}
+sup {
+  top: -0.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003209}}
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Remove border when inside `a` element in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003221}}
+img {
+  border: 0;
+}
+
+/*
+ * Correct overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003229}}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003241}}
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003253}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003264}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003278}}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/*
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003290}}
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003302}}
+button,
+select {
+  text-transform: none;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003317}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003327}}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003337}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003348}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003361}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Remove inner padding and border in Firefox 4+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003370}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003380}}
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003393}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Base styles
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\000035}}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\000039}}
+html {
+  height: 100%;
+  font: 0.875em/1.71429 "myriad pro";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000314}}
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000319}}
+a {
+  text-decoration: none;
+  color: #ff0091;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000323}}
+a:hover {
+  text-decoration: underline;
+}
+
+/**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_clearfix\.scss}line{font-family:\000036}}
+.cf:after,
+.list--centered:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * EFFECTS
+ *
+ * TRANSITIONS
+ */
+/**
+ * TRANSITIONS
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000310}}
+.btn--nav, .btn--close, .icon--nav, .icon--close, .sbnav__link, .main, .main__sidebar {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/**
+ * Objects
+ */
+/**
+ * BUTTONS
+ *
+ * PALLETE
+ * DIMENSIONS
+ * DEFAULT ATOM
+ * LIBRARY ATOMS
+ */
+/**
+ * PALLETE
+ */
+/**
+ * DIMENSIONS
+ */
+/**
+ * DEFAULT ATOMS
+ */
+/**
+ * Default ovo.css button style. If you want to create your own
+ * buttons copy this atom styles and make your own changes.
+ *
+ * Extending %btn abstraction.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_buttons\.scss}line{font-family:\0000333}}
+.btn,
+.btn,
+.btn--nav,
+.btn--close,
+.btn--brand,
+.sbnav__link {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_buttons\.scss}line{font-family:\0000344}}
+.btn:hover,
+.btn:hover,
+.btn--nav:hover,
+.btn--close:hover,
+.btn--brand:hover,
+.sbnav__link:hover {
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_buttons\.scss}line{font-family:\0000349}}
+.btn {
+  padding: 0 1em;
+  line-height: 3;
+  /**
+   * Default settings. Specific to default button.
+   * If we want to keep .btn as abstraction stuff below should be deleted.
+   */
+  background-color: #cccccc;
+  color: black;
+  border-radius: 4px;
+}
+
+/**
+ * BOX OBJECTS
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\000036}}
+.box, .main__sidebar {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\0000310}}
+.box, .main__sidebar {
+  padding: 1em;
+}
+
+/**
+ * LISTS
+ *
+ * BLOCK LISTS
+ */
+/**
+ * BLOCK LISTS
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000312}}
+.uilist,
+.uilist--h,
+.uilist--spread,
+.socialnav,
+.sbnav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000321}}
+.uilist--h > li {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000327}}
+.uilist--spread, .socialnav {
+  font-size: 0.1px;
+  line-height: 0;
+  text-align: justify;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000334}}
+.uilist--spread:after, .socialnav:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000340}}
+.uilist--spread > li, .socialnav > li {
+  display: inline;
+  text-align: center;
+  margin: 0;
+  line-height: normal;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000348}}
+.uilist--spread > li a, .socialnav > li a {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000356}}
+.list--centered {
+  position: relative;
+  float: left;
+  left: 50%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000368}}
+.list--centered__item, .list--centered > li {
+  position: relative;
+  float: left;
+  right: 50%;
+}
+
+/**
+ * Components
+ */
+/**
+ * BUTTON COMPONENTS
+ */
+/**
+ * Mobile nav button
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\000038}}
+.btn--nav {
+  font-size: 11px;
+  font-size: 0.78571rem;
+  line-height: 2.18182;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4em;
+  height: 4em;
+  padding: 1em;
+  background-color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000322}}
+.btn--nav.is-active {
+  left: 19em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000326}}
+.btn--nav.is-active .icon--nav {
+  background-color: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000329}}
+.btn--nav.is-active .icon--nav:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000333}}
+.btn--nav.is-active .icon--nav:after {
+  -webkit-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -moz-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -ms-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -o-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  transform: rotate(-45deg) translate(0.45em, -0.45em);
+}
+@media only screen and (min-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\000038}}
+  .btn--nav {
+    display: none;
+  }
+}
+
+/**
+ * Popup close button
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000348}}
+.btn--nav {
+  font-size: 11px;
+  font-size: 0.78571rem;
+  line-height: 2.18182;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4em;
+  height: 4em;
+  padding: 1em;
+  background-color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000362}}
+.btn--nav.is-active {
+  left: 19em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000366}}
+.btn--nav.is-active .icon--nav {
+  background-color: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000369}}
+.btn--nav.is-active .icon--nav:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000373}}
+.btn--nav.is-active .icon--nav:after {
+  -webkit-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -moz-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -ms-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -o-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  transform: rotate(-45deg) translate(0.45em, -0.45em);
+}
+@media only screen and (min-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000348}}
+  .btn--nav {
+    display: none;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000385}}
+.btn--close {
+  font-size: 11px;
+  font-size: 0.78571rem;
+  line-height: 2.18182;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4em;
+  height: 4em;
+  padding: 1em;
+  background-color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000398}}
+.btn--close:hover {
+  background-color: #1a1a1a;
+}
+
+/**
+ * MAIN LOGO
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\00003106}}
+.btn--brand {
+  float: right;
+  margin-bottom: 1em;
+}
+
+/**
+ * ICONS
+ */
+/**
+ * Icon navigation (mobile)
+ */
+/**
+ * Hidden class for navigation icon lines.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000313}}
+.icon--nav, .icon--nav:before, .icon--nav:after {
+  width: 100%;
+  height: 0.2em;
+  background-color: #666666;
+}
+
+/**
+ * Icon close
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000324}}
+.icon--close:before, .icon--close:after {
+  width: 100%;
+  height: 0.6em;
+  background-color: #666666;
+}
+
+/**
+ * Mobile nav icon
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000333}}
+.icon--nav {
+  display: block;
+  margin-top: .29em;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000342}}
+.icon--nav:before, .icon--nav:after {
+  content: " ";
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000347}}
+.icon--nav:before {
+  top: .6em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000353}}
+.icon--nav:after {
+  top: 1.22em;
+}
+
+/**
+ * Close icon
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000363}}
+.icon--close {
+  display: block;
+  margin-top: .29em;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000371}}
+.icon--close:before, .icon--close:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000377}}
+.icon--close:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: .4em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000384}}
+.icon--close:after {
+  -webkit-transform: rotate(-45deg) translate(0.44em, -0.44em);
+  -moz-transform: rotate(-45deg) translate(0.44em, -0.44em);
+  -ms-transform: rotate(-45deg) translate(0.44em, -0.44em);
+  -o-transform: rotate(-45deg) translate(0.44em, -0.44em);
+  transform: rotate(-45deg) translate(0.44em, -0.44em);
+  top: 1.05em;
+}
+
+/**
+ * SIDEBAR NAVIGATION
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_sidebar-navigation\.scss}line{font-family:\000034}}
+.sbnav {
+  float: right;
+  width: 70%;
+}
+
+/**
+ * Menu link in left sidebar
+ *
+ * 1. We need to compensate for logo 4px gap on the right side.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_sidebar-navigation\.scss}line{font-family:\0000316}}
+.sbnav__link {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  display: block;
+  padding-right: 4px;
+  /* [1] */
+  text-align: right;
+  line-height: 2em;
+  font-style: italic;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_sidebar-navigation\.scss}line{font-family:\0000329}}
+.sbnav__link:hover, .sbnav__link.is-active {
+  margin-right: -1em;
+  padding-right: 1em;
+  background-color: white;
+  color: black;
+}
+
+/**
+ * SOCIAL NAVIGATION
+ *
+ * Based in sidebar.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_social-navigation\.scss}line{font-family:\000036}}
+.socialnav {
+  position: absolute;
+  left: 0;
+  bottom: 4em;
+  height: 4em;
+  border-top: 1px solid #fff;
+}
+
+/**
+ * Pages
+ */
+/**
+ * Pages - Main page
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000034}}
+.main {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000039}}
+.main.is-active {
+  padding-left: 15em;
+}
+@media only screen and (min-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000034}}
+  .main {
+    padding-left: 15em;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000319}}
+.main__sidebar {
+  width: 15em;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: -15em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000330}}
+.main__sidebar.is-active {
+  left: 0;
+}
+@media only screen and (min-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000319}}
+  .main__sidebar {
+    left: 0;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000340}}
+.main__container {
+  width: 100%;
+  min-height: 100%;
+  background-color: #ccc;
+}

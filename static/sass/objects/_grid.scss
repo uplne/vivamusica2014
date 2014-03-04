@@ -1,0 +1,20 @@
+/**
+ * Grid system
+ *
+ * On Vivamusica website we have five block grid.
+ */
+
+.g {
+    display: inline-block;
+    margin-left: -$base-padding;
+}
+
+.g__item {
+    display: inline-block;
+    width: 100%;
+    padding-left: $base-padding;
+    vertical-align: top;
+}
+
+.g-fifth { width: 20%; }
+.g-twofifths { width: 40%; }
