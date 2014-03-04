@@ -8,4 +8,4 @@ function StartViva() {
     viva();
 }
 
-module.export = StartViva();
+module.exports = StartViva();

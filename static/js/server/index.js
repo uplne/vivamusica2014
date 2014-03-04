@@ -45,7 +45,7 @@ function setupServer() {
 
     // Home route
     app.get("/", function(req, res) {
-        res.render('content/landing', {
+        res.render('content/index', {
             title: 'Vivamusica! festival 2014',
             imageAssets: config.paths.images,
             cssAssets: config.paths.css

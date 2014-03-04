@@ -1,12 +1,13 @@
 {
-  "name": "Vivamusica",
+  "name": "vivamusica",
   "version": "0.0.1",
   "description": "Vivamusica! festival website",
+  "homepage": "http://www.vivamusica.sk",
   "main": "GruntFile.js",
-  "directories": {
-    "test": "tests/"
+  "author": {
+    "name": "Steve Vadocz",
+    "url": "http://blog.steveis.guru"
   },
-  "author": "Steve Vadocz",
   "private": true,
   "scripts": {
     "start": "node index"
@@ -26,8 +27,13 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-handlebars": "~0.6.0",
     "grunt-concurrent": "~0.4.x",
-    "uglifyjs": "~2.3.6",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-concat": "~0.3.0",
     "grunt-notify": "~0.2.1",
-    "grunt-contrib-requirejs": "~0.4.1"
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-imagemin": "~0.1.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-nodemon": "~0.2.0",
+    "grunt-open": "~0.2.3"
   }
 }

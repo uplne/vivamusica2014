@@ -2,20 +2,77 @@
  * Vivamusica GruntFile
  * @version 0.0.1
  */
-
-var javascriptModules = 'static/js/*.js';
-
 module.exports = function(grunt) {
     grunt.initConfig({
 
-        // Lint Javascript files to check for style guide violations
-        jshint: {
-            config: {
-                'jshintrc': true
+        /**
+        * Read package.json
+        */
+        pkg: grunt.file.readJSON('package.json'),
+
+        /**
+        * Set banner
+        */
+        banner: '/**\n' +
+        '<%= pkg.title %> - <%= pkg.version %>\n' +
+        '<%= pkg.homepage %>\n' +
+        'Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+        'License: Enjoy. Live long and prosper.\n' +
+        '*/\n',
+
+        dir: {
+            js: 'static/js',
+            css: 'static/css',
+            sass: 'static/sass',
+            img: 'static/images',
+            views: 'static/views'
+        },
+
+        /**
+        * Compress .jpg/.png
+        * @github.com/gruntjs/grunt-contrib-imagemin
+        */
+        imagemin: {
+          dist: {
+            options: {
+                optimizationLevel: 3,
+                progressive: true
             },
-            modules: [
-                javascriptModules
-            ]
+            files: [{
+              expand: true, // Enable dynamic expansion.
+              cwd: '<%= dir.img %>/', // Src matches are relative to this path.
+              src: '{,*/}*.{png,jpg,jpeg}', // Actual pattern(s) to match.
+              dest: '<%= dir.img %>/' // Destination path prefix.
+            }]
+          }
+        },
+
+        /**
+        * JSHint
+        * @github.com/gruntjs/grunt-contrib-jshint
+        */
+        jshint: {
+          gruntfile: 'Gruntfile.js',
+          files: ['<%= dir.js %>/**/*.js'],
+          options: {
+            jshintrc: '.jshintrc'
+          }
+        },
+
+        /**
+        * Concatenate
+        * @github.com/gruntjs/grunt-contrib-concat
+        */
+        concat: {
+          options: {
+            stripBanners: true,
+            banner: '<%= banner %>'
+          },
+
+          js: {
+            src: '<%= jshint.files %>',
+            dest: '<%= dir.js %>/<%= pkg.name %>.js'
+          },
         },
 
         // Define Karma test runner configuration
@@ -28,17 +85,25 @@ module.exports = function(grunt) {
         },
 
         /**
-         * The SASS command contains two configuration sets - one for the themes subfolder, and one for the main
-         * stylesheets.
-         *
-         * noCache is set to true for both due to a bug: https://github.com/gruntjs/grunt-contrib-sass/issues/63
-         * When this bug is fixed, we should remove this option
+         * Compile SASS
          */
         sass: {
-            main:{
-                options:{
+            dev: {
+                options: {
+                    style: 'expanded',
+                    trace: true,
+                    debugInfo: true
+                },
+                expand: true,
+                cwd: 'static/sass/',
+                src: ['*.scss', '!_*.scss'],
+                dest: 'static/css',
+                ext: '.css'
+            },
+            build: {
+                options: {
                     style: 'compressed',
-                    noCache: true                 // Currently required due to Github issue 63
+                    noCache: true
                 },
                 expand: true,
                 cwd: 'static/sass/',
@@ -48,22 +113,58 @@ module.exports = function(grunt) {
             }
         },
 
+        /**
+        * Minify
+        * @github.com/gruntjs/grunt-contrib-uglify
+        */
+        uglify: {
+
+          // Uglify options
+          options: {
+            banner: '<%= banner %>'
+          },
+
+          // Minify js files in static/js/
+          dist: {
+            src: ['<%= concat.js.dest %>'],
+            dest: '<%= dir.js %>/<%= pkg.name %>.min.js'
+          },
+        },
+
         // The watch command watches a given set of files and runs a task when one of them changes.
         watch: {
+
+            // JShint Gruntfile
+            gruntfile: {
+                files: 'Gruntfile.js',
+                tasks: ['jshint:gruntfile'],
+            },
+
             //Automatic compilation of SASS changes
             sass: {
                 files: ['static/sass/**/*.scss'],
-                tasks: ['sass:main','notify'],
+                tasks: ['sass:dev', 'notify:sass'],
                 options: {
-                    // TODO - automatically disable on production
                     livereload: true
                 }
             },
+
+            server: {
+                files: ['.rebooted'],
+                options: {
+                    livereload: true
+                }
+            },
+
+            /**
+             * If any system files changes reload browser.
+             * Requires webkit browser extension.
+             */
             livereload: {
                 files: [
-                    //'static/{,*/}*.{css,js,png,jpg,gif,svg}'
-                    'static/js/**/*.js',
-                    'static/views/**/*.hbs'
+                    '<%= dir.img %>/*.{png,jpg,gif,svg}',
+                    '<%= dir.js %>/**/*.js',
+                    '<%= dir.views %>/**/*.hbs'
                 ],
                 options: {
                     livereload: true
@@ -71,20 +172,74 @@ module.exports = function(grunt) {
             }
         },
 
+        /**
+        * Nodemon
+        * @github.com/ChrisWren/grunt-nodemon
+        */
+        nodemon: {
+          dev: {
+            script: 'index.js',
+            options: {
+              nodeArgs: ['--debug'],
+              env: {
+                PORT: '1955'
+              },
+              // omit this property if you aren't serving HTML files and 
+              // don't want to open a browser tab on start
+              callback: function (nodemon) {
+                nodemon.on('log', function (event) {
+                  console.log(event.colour);
+                });
+
+                // refreshes browser when server reboots
+                nodemon.on('restart', function () {
+                  // Delay before server listens on port
+                  setTimeout(function() {
+                    require('fs').writeFileSync('.rebooted', 'rebooted');
+                  }, 1000);
+                });
+
+                /*setTimeout(function() {
+                    require('grunt-open')('http://localhost:1955');
+                }, 1000);*/
+              }
+            }
+          }
+        },
+
+        open: {
+            dev: {
+              path: 'http://localhost:1955',
+              app: 'Google Chrome'
+            }
+        },
+
         // In order to run the Karma watcher and the SASS watchers concurrently, we need to run this task
         concurrent: {
             dev: {
+                tasks: ['watch', 'karma:unit', 'nodemon'],
                 options: {
                     logConcurrentOutput: true
-                },
-                tasks: ['watch', 'karma:unit']
+                }
             }
         },
 
         notify: {
-            watch: {
+            dev: {
                 options: {
-                    message: "SASS finished."
+                    message: "Dev changes complete."
+                }
+            },
+
+            build: {
+                options: {
+                    message: "Build complete."
+                }
+            },
+
+            sass: {
+                options: {
+                    message: "SASS compiled."
                 }
             }
         }
@@ -94,37 +249,28 @@ module.exports = function(grunt) {
      * Load all NPM tasks
      */
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-notify');
+    grunt.loadNpmTasks('grunt-nodemon');
+    grunt.loadNpmTasks('grunt-open');
 
-    /**
-     * Run full suite of unit tests via browserset
-     * @description usage: grunt test-browser
-     * @see karma.conf.js - browsers
-     */
-    grunt.registerTask("test-browser", ["karma:unit"]);
+    grunt.registerTask('dev', [
+        'concurrent:dev',
+        'notify:dev'
+    ]);
 
-    /**
-     * Compile main site SCSS & Themes
-     *
-     * @description usage: grunt compile-sass
-     */
-    grunt.registerTask('compile-sass', ['sass:main']);
-
-    /**
-     * Run the Karma continuous browser test & sass watcher
-     *
-     * @description usage: grunt watcher
-     */
-    grunt.registerTask('watcher', ['concurrent:dev']);
-
-    /**
-     * Lint recently changed files. This is not yet included in the main 'watcher' command.
-     *
-     * @description usage: grunt lint
-     */
-    grunt.registerTask('lint', ['newer:jshint:modules']);
+    grunt.registerTask('build', [
+        'jshint',
+        'concat:js',
+        'uglify',
+        'sass:build',
+        'imagemin',
+        'notify:build'
+    ]);
 };

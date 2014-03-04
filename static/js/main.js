@@ -10,9 +10,9 @@ require.config({
 
 require([
     'jquery',
-    'modules/popup'
-], function ($, Popup) {
+    'modules/toggleMenu'
+], function ($, ToggleMenu) {
     
-    var popup = new Popup();
-        popup.init();
+    var toggleMenu = new ToggleMenu();
+        toggleMenu.init();
 });
