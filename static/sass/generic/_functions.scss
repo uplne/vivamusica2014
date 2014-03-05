@@ -1,0 +1,17 @@
+/**
+ * Functions
+ */
+
+/**
+ * Strip units
+ */
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+/**
+ * Calculate and return ems
+ */
+@function toEM($number) {
+    @return strip-units($number) * 1em;
+}

@@ -29,7 +29,7 @@
     &.is-active {
 
         // To create the effect that hover state is starting from the edge.
-        margin-right: -$base-padding;
+        margin-right: toEM((1 / 16) * -$base-font-size);
         padding-right: $base-padding;
         background-color: $sidebar-menu-hover-bg;
         color: $sidebar-menu-hover-color;

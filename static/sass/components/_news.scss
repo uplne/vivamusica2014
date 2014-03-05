@@ -1,0 +1,12 @@
+/**
+ * News
+ */
+.news {
+    @extend %cf;
+
+    background-color: $brand-beta;
+}
+
+.news__item {
+    float: left;
+}

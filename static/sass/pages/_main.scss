@@ -2,18 +2,31 @@
  * Pages - Main page
  */
 
-.top {
-    width: 100%;
+.main {
+    @extend %effect-nav;
+
+    height: 100%;
+
+    &.is-active {
+        padding-left: $sidebar-w;
+    }
+
+    // When on larger screen
+    @include adaptive($tablet-w, false) {
+        padding-left: $sidebar-w;
+    }
 }
 
-.top__nav {
+.main__sidebar {
     @extend .box;
     @extend %effect-nav;
 
+    width: $sidebar-w;
+    height: 100%;
     background-color: $sidebar-bg;
     position: fixed;
     top: 0;
-    left: -20%;
+    left: -$sidebar-w;
 
     &.is-active {
         left: 0;
@@ -23,11 +36,6 @@
     @include adaptive($tablet-w, false) {
         left: 0;
     }
-}
-
-.top__news {
-    margin-left: 20%;
-    background-color: $brand;
 }
 
 .main__container {
