@@ -662,6 +662,7 @@ a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000312}}
 .uilist,
 .uilist--h,
+.news,
 .uilist--spread,
 .socialnav,
 .sbnav {
@@ -671,7 +672,7 @@ a:hover {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000321}}
-.uilist--h > li {
+.uilist--h > li, .news > li {
   float: left;
 }
 
@@ -1026,11 +1027,6 @@ a:hover {
 .news {
   width: 10000px;
   background-color: black;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_news\.scss}line{font-family:\0000311}}
-.news__item {
-  float: left;
 }
 
 /**

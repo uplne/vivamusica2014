@@ -3,11 +3,12 @@
  */
 .news {
     @extend %cf;
+    @extend .uilist--h;
 
     width: 10000px;
     background-color: $brand-beta;
 }
 
 .news__item {
-    float: left;
+    
 }
