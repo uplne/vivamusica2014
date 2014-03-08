@@ -4,9 +4,14 @@
 
 .box,
 %box {
-    display: block;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .box {
     padding: $base-padding;
+}
+
+.box__content {
+    padding: $base-padding-small;
 }

@@ -7,7 +7,7 @@
  */
 .btn--nav {
     @extend %btn;
-    @extend %effect-nav;
+    @extend %effect-btn;
     @include font-size(11px);
 
     position: fixed;
@@ -47,7 +47,7 @@
  */
 .btn--nav {
     @extend %btn;
-    @extend %effect-nav;
+    @extend %effect-btn;
     @include font-size(11px);
 
     position: fixed;
@@ -84,7 +84,7 @@
 
 .btn--close {
     @extend %btn;
-    @extend %effect-nav;
+    @extend %effect-btn;
     @include font-size(11px);
 
     position: absolute;
@@ -96,7 +96,7 @@
     background-color: $sidebar-bg;
 
     &:hover {
-        background-color: #1a1a1a;
+        background-color: $brand-btn-hover;
     }
 }
 

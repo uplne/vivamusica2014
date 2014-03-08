@@ -1,0 +1,57 @@
+/**
+ * Program
+ */
+
+$list-line-height: 1.4em;
+
+.programlist {
+    padding: $base-padding 0;
+    background-color: white;
+}
+
+.programlist__list {
+    @extend %cf;
+    @extend .uilist--h;
+
+    overflow: hidden;
+}
+
+/**
+ * Handles whole program list box
+ *
+ * Top image animation
+ * Bottom content box (p)
+ */
+.programlist__link {
+    @extend %btn;
+    @extend %effect-btn;
+
+    display: inline-block;
+    vertical-align: top;
+    width: 12.143em;
+    overflow: hidden;
+    background-color: $brand-beta;
+
+    p {
+        line-height: $list-line-height;
+        height: $list-line-height * 2.8;
+        padding: 0;
+        margin: 0;
+        color: $brand-text;
+    }
+
+    img {
+        @include vendor(transform, scale(1));
+        @include vendor(transition, 0.25s ease-out);
+    }
+
+    &:hover {
+        background-color: $brand-btn-hover;
+    }
+
+    &:hover img {
+        @include vendor(transform, scale(1.5));
+        @include vendor(transition, 10s ease-out);
+    }
+
+}
