@@ -20,6 +20,14 @@ $title--beta--t: $title--alpha--t + 1.2em;
     @extend .thumbnail;
 
     position: relative;
+
+    img {
+        width: $mobile-portrait-w;
+
+        @include adaptive($mobile-landscape-w, false) {
+            width: 100%;
+        }
+    }
 }
 
 .news__title {
