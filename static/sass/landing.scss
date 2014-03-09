@@ -26,28 +26,30 @@
 /**
  * Generic styles
  */
-@import "generic/_brand";
-@import "generic/_dimensions";
-@import "generic/_mixins";
-@import "generic/_normalize";
-@import "generic/_base";
-@import "generic/_clearfix";
-@import "generic/_effects";
-@import "generic/_helpers";
+@import "generic/brand";
+@import "generic/dimensions";
+@import "generic/fonts";
+@import "generic/zindex";
+@import "generic/mixins";
+@import "generic/normalize";
+@import "generic/base";
+@import "generic/clearfix";
+@import "generic/effects";
+@import "generic/helpers";
 
 /**
  * Objects
  */
-@import "objects/_buttons";
-@import "objects/_pop";
+@import "objects/buttons";
+@import "objects/pop";
 
 /**
  * Components
  */
-@import "components/_buttons";
-@import "components/_icons";
+@import "components/buttons";
+@import "components/icons";
 
 /**
  * Pages
  */
-@import "pages/_landing";
+@import "pages/landing";

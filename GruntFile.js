@@ -182,7 +182,7 @@ module.exports = function(grunt) {
             options: {
               nodeArgs: ['--debug'],
               env: {
-                PORT: '1955'
+                PORT: '1985'
               },
               // omit this property if you aren't serving HTML files and 
               // don't want to open a browser tab on start
@@ -209,7 +209,7 @@ module.exports = function(grunt) {
 
         open: {
             dev: {
-              path: 'http://localhost:1955',
+              path: 'http://localhost:1985',
               app: 'Google Chrome'
             }
         },

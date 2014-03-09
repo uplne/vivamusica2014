@@ -1,6 +1,13 @@
 /**
  * News
  */
+
+$title--alpha--l: 2em;
+$title--alpha--t: 3em;
+
+$title--beta--l: $title--alpha--l + 1em;
+$title--beta--t: $title--alpha--t + 1.2em;
+
 .news {
     @extend %cf;
     @extend .uilist--h;
@@ -9,6 +16,34 @@
     background-color: $brand-beta;
 }
 
-.news__item {
-    
+.news__link {
+    @extend .thumbnail;
+
+    position: relative;
+}
+
+.news__title {
+    @include font-size(26px, false);
+
+    position: absolute;
+    z-index: 2;
+    font-style: italic;
+    line-height: 1em;
+    color: $brand-text;
+    background-color: $brand-beta;
+    padding: .2em .5em;
+}
+
+.news__title--alpha {
+    @extend .news__title;
+
+    left: $title--alpha--l;
+    top: $title--alpha--t;
+}
+
+.news__title--beta {
+    @extend .news__title;
+
+    left: $title--beta--l;
+    top: $title--beta--t;
 }

@@ -7,12 +7,13 @@
  */
 .btn--nav {
     @extend %btn;
-    @extend %effect-btn;
+    @extend %effect-trans;
     @include font-size(11px);
 
     position: fixed;
     left: 0;
     top: 0;
+    z-index: $zindex-omega;
     width: $navlink-size;
     height: $navlink-size;
     padding: 1em;
@@ -47,7 +48,7 @@
  */
 .btn--nav {
     @extend %btn;
-    @extend %effect-btn;
+    @extend %effect-trans;
     @include font-size(11px);
 
     position: fixed;
@@ -84,7 +85,7 @@
 
 .btn--close {
     @extend %btn;
-    @extend %effect-btn;
+    @extend %effect-trans;
     @include font-size(11px);
 
     position: absolute;

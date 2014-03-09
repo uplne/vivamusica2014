@@ -32,7 +32,7 @@ $icon-close-line-h: .6em;
  */
 .icon--nav {
     @extend %icon--nav__line;
-    @extend %effect-nav;
+    @extend %effect-trans;
 
     display: block;
     margin-top: .29em;
@@ -61,7 +61,7 @@ $icon-close-line-h: .6em;
  * Close icon
  */
 .icon--close {
-    @extend %effect-nav;
+    @extend %effect-trans;
 
     display: block;
     margin-top: .29em;

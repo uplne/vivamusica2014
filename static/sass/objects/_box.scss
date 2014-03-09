@@ -12,6 +12,20 @@
     padding: $base-padding;
 }
 
+/**
+ * Special effects for image in box
+ */
+.box__media {
+    @extend %effect-scale;
+
+    &:hover {
+        @extend %effect-descale;
+    }
+}
+
+/**
+ * Special settings for content in box
+ */
 .box__content {
     padding: $base-padding-small;
 }

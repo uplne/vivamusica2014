@@ -2,7 +2,7 @@
  * Program
  */
 
-$list-line-height: 1.4em;
+$list-line-height: 1.2em;
 
 .programlist {
     padding: $base-padding 0;
@@ -24,7 +24,7 @@ $list-line-height: 1.4em;
  */
 .programlist__link {
     @extend %btn;
-    @extend %effect-btn;
+    @extend %effect-trans;
 
     display: inline-block;
     vertical-align: top;
@@ -33,6 +33,7 @@ $list-line-height: 1.4em;
     background-color: $brand-beta;
 
     p {
+        font-style: italic;
         line-height: $list-line-height;
         height: $list-line-height * 2.8;
         padding: 0;
@@ -40,18 +41,11 @@ $list-line-height: 1.4em;
         color: $brand-text;
     }
 
-    img {
-        @include vendor(transform, scale(1));
-        @include vendor(transition, 0.25s ease-out);
-    }
-
     &:hover {
         background-color: $brand-btn-hover;
-    }
 
-    &:hover img {
-        @include vendor(transform, scale(1.5));
-        @include vendor(transition, 10s ease-out);
+        img {
+            @extend %effect-descale;
+        }
     }
-
 }

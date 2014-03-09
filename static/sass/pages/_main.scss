@@ -3,7 +3,7 @@
  */
 
 .main {
-    @extend %effect-nav;
+    @extend %effect-trans;
 
     height: 100%;
 
@@ -19,7 +19,7 @@
 
 .main__sidebar {
     @extend .box;
-    @extend %effect-nav;
+    @extend %effect-trans;
 
     width: $sidebar-w;
     height: 100%;

@@ -15,7 +15,7 @@
  */
 .sbnav__link {
     @extend %btn;
-    @extend %effect-nav;
+    @extend %effect-trans;
     @include font-size(16px, false);
 
     display: block;
