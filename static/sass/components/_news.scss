@@ -24,6 +24,7 @@ $title--beta--t: $title--alpha--t + 1.2em;
     img {
         width: $mobile-portrait-w;
 
+        // Bigger than mobile
         @include adaptive($mobile-landscape-w, false) {
             width: 100%;
         }
