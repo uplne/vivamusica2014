@@ -53,6 +53,9 @@
  * POP
  */
 /**
+ * Display: inline-block 2px margin fix
+ */
+/**
  * Fonts
  */
 /**
@@ -598,10 +601,16 @@ a:hover {
   visibility: hidden;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000313}}
+.programlist__list {
+  margin: 0 auto;
+  text-align: center;
+}
+
 /**
  * Pulls
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000321}}
 .pull--left {
   margin-left: -1em;
 }
@@ -609,7 +618,7 @@ a:hover {
 /**
  * Pushes
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000326}}
 .push--left {
   margin-left: 1em;
 }
@@ -1168,6 +1177,12 @@ a:hover {
 .programlist__list {
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000319}}
+.programlist__list > li {
+  float: none;
+  display: inline-block;
+  margin-right: -2px;
+}
 
 /**
  * Handles whole program list box
@@ -1175,24 +1190,31 @@ a:hover {
  * Top image animation
  * Bottom content box (p)
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000332}}
 .programlist__link {
   display: inline-block;
   vertical-align: top;
-  width: 12.143em;
   overflow: hidden;
   background-color: black;
+  width: 9.3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000335}}
+@media only screen and (min-width: 479px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000332}}
+  .programlist__link {
+    width: 12.143em;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000347}}
 .programlist__link p {
   font-style: italic;
   line-height: 1.2em;
   height: 3.36em;
+  text-align: left;
   padding: 0;
   margin: 0;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000357}}
 .programlist__link:hover {
   background-color: #333333;
 }

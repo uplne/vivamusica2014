@@ -11,9 +11,16 @@ $list-line-height: 1.2em;
 
 .programlist__list {
     @extend %cf;
+    @extend %center;
     @extend .uilist--h;
 
     overflow: hidden;
+
+    > li {
+        float: none;
+        display: inline-block;
+        margin-right: $display-fix;
+    }
 }
 
 /**
@@ -28,14 +35,20 @@ $list-line-height: 1.2em;
 
     display: inline-block;
     vertical-align: top;
-    width: 12.143em;
     overflow: hidden;
     background-color: $brand-beta;
+
+    width: 9.3em;
+
+    @include adaptive($mobile-landscape-w, false) {
+        width: 12.143em;
+    }
 
     p {
         font-style: italic;
         line-height: $list-line-height;
         height: $list-line-height * 2.8;
+        text-align: left;
         padding: 0;
         margin: 0;
         color: $brand-text;
