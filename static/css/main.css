@@ -1248,7 +1248,12 @@ a:hover {
  * Program list box with just information
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000392}}
-.programlist__info > p {
+.programlist__info > h2 {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\0000397}}
+.programlist__title {
   font-size: 30px;
   font-size: 2.14286rem;
   margin-top: 0;
@@ -1256,6 +1261,29 @@ a:hover {
   line-height: 1;
   text-align: left;
   color: black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_program-list\.scss}line{font-family:\00003107}}
+.programlist__text {
+  font-size: 12px;
+  font-size: 0.85714rem;
+  height: 6em;
+  margin: 0;
+  padding: 3em 0 0 0;
+  line-height: 1;
+  overflow: hidden;
+  text-align: left;
+}
+
+/**
+ * Right sidebar (content bar)
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_contentbar\.scss}line{font-family:\000034}}
+.contentbar {
+  float: right;
+  width: 35%;
+  height: 100%;
+  background-color: black;
 }
 
 /**
@@ -1301,9 +1329,9 @@ a:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000341}}
 .main__container {
-  width: 100%;
+  float: left;
+  width: 65%;
   min-height: 100%;
-  background-color: #ccc;
 }
 
 /**

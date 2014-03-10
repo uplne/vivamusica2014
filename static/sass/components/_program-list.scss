@@ -89,13 +89,28 @@ $list-line-height: 1.2;
     @extend %inline-block;
     @extend .programlist__item;
 
-    > p {
-        @include font-size(30px, false);
-
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1;
-        text-align: left;
-        color: $brand-beta;
+    > h2 {
+        margin: 0;
     }
+}
+
+.programlist__title {
+    @include font-size(30px, false);
+
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1;
+    text-align: left;
+    color: $brand-beta;
+}
+
+.programlist__text {
+    @include font-size(12px, false);
+
+    height: 6em;
+    margin: 0;
+    padding: 3em 0 0 0;
+    line-height: 1;
+    overflow: hidden;
+    text-align: left;
 }
