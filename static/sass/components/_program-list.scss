@@ -22,7 +22,7 @@ $list-line-height: 1.2;
         margin-right: $display-fix;
 
         // Bigger than mobile
-        @include adaptive($mobile-landscape-w, false) {
+        @include rwd($mobile-landscape-w, false) {
             float: left;
             margin: 0;
         }
@@ -39,12 +39,12 @@ $list-line-height: 1.2;
     width: 9.3em;
 
     // Bigger than mobile portrait
-    @include adaptive($mobile-landscape-w, false) {
+    @include rwd($mobile-landscape-w, false) {
         width: 11.6em;
     }
 
     // Bigger than mobile
-    @include adaptive($tablet-w, false) {
+    @include rwd($tablet-w, false) {
         width: 12.143em;
     }
 }

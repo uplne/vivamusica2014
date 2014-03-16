@@ -2,6 +2,8 @@
  * BOX OBJECTS
  */
 
+$box-media-bottom-p: 5px;
+
 .box,
 %box {
     display: inline-block;
@@ -13,14 +15,18 @@
 }
 
 /**
- * Special effects for image in box
+ * Special effects for image in box (media)
  */
-.box__media {
+.box__m {
     @extend %effect-scale;
 
     &:hover {
         @extend %effect-descale;
     }
+}
+
+.box__m--static {
+    border-bottom: $box-media-bottom-p solid $brand;
 }
 
 /**

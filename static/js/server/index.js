@@ -52,14 +52,21 @@ function setupServer() {
         });
     });
 
+    // Actual item
+    app.get("/program/:id", function(req, res) {
+        res.render('content/programdetail', {
+            title: 'Viva Hapka'
+        });
+    });
+
     exphbs.registerHelper('imageAssets', function (context, options) {
-        var output = 'static/images' + context;
+        var output = '/static/images' + context;
 
         return new exphbs.SafeString(output);
     });
 
     exphbs.registerHelper('cssAssets', function (context, options) {
-        var output = 'static/css' + context;
+        var output = '/static/css' + context;
 
         return new exphbs.SafeString(output);
     });

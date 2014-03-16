@@ -1,0 +1,34 @@
+/**
+ * Vivamusica specific titles
+ */
+$title--alpha--l: 2em;
+$title--alpha--t: 3em;
+
+$title--beta--l: $title--alpha--l + 1em;
+$title--beta--t: $title--alpha--t + 1.2em;
+
+.title {
+    @include font-size(26px, false);
+
+    position: absolute;
+    z-index: 2;
+    font-style: italic;
+    line-height: 1em;
+    color: $brand-text;
+    background-color: $brand-beta;
+    padding: .2em .5em;
+}
+
+.title--alpha {
+    @extend .title;
+
+    left: $title--alpha--l;
+    top: $title--alpha--t;
+}
+
+.title--beta {
+    @extend .title;
+
+    left: $title--beta--l;
+    top: $title--beta--t;
+}

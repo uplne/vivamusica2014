@@ -12,7 +12,7 @@
     }
 
     // When on larger screen
-    @include adaptive($tablet-w, false) {
+    @include rwd($tablet-w, false) {
         padding-left: $sidebar-w;
     }
 }
@@ -33,14 +33,14 @@
     }
 
     // When on larger screen
-    @include adaptive($tablet-w, false) {
+    @include rwd($tablet-w, false) {
         left: 0;
     }
 }
 
 .main__container {
     float: left;
-    width: 65%;
+    width: 100%;
     min-height: 100%;
 }
 

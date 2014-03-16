@@ -10,6 +10,8 @@
 }
 
 .g__item {
+    @include vendor(box-sizing, border-box);
+
     display: inline-block;
     width: 100%;
     padding-left: $base-padding;

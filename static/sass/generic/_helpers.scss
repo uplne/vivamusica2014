@@ -23,7 +23,10 @@
 /**
  * Pulls
  */
-.pull--left { margin-left: -$base-padding; }
+.pull--top    { margin-top   : -$base-padding; }
+.pull--right  { margin-right : -$base-padding; }
+.pull--bottom { margin-bottom: -$base-padding; }
+.pull--left   { margin-left  : -$base-padding; }
 
 /**
  * Pushes

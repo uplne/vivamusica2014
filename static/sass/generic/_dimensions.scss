@@ -1,15 +1,16 @@
 /**
  * DIMENSIONS
  *
- * ADAPTIVE DESIGN
+ * rwd DESIGN
  * FONTS
  * PADDINGS/MARGINS
+ * DIMENSIONS
  */
 
 /**
- * ADAPTIVE DESIGN
+ * rwd DESIGN
  * 
- * Dimensions for adaptive design.
+ * Dimensions for rwd design.
  */
 $base-w: 1000px;
 $tablet-w: 768px;
@@ -45,3 +46,13 @@ $pop-border-size: .5em;
  * Display: inline-block 2px margin fix
  */
 $display-fix: -2px;
+
+/**
+ * DIMENSTIONS
+ */
+
+/**
+ * Main layout
+ */
+$main-container-w: 70%;
+$contentbar-w: 100% - $main-container-w;

@@ -38,7 +38,7 @@
     }
 
     // When on larger screen disable this button
-    @include adaptive($tablet-w, false) {
+    @include rwd($tablet-w, false) {
         display: none;
     }
 }
@@ -78,7 +78,7 @@
     }
 
     // When on larger screen disable this button
-    @include adaptive($tablet-w, false) {
+    @include rwd($tablet-w, false) {
         display: none;
     }
 }

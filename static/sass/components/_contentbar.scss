@@ -2,8 +2,13 @@
  * Right sidebar (content bar)
  */
 .contentbar {
-    float: right;
-    width: 35%;
-    height: 100%;
-    background-color: $brand-beta;
+    display: none;
+
+    @include rwd(1060px, false) {
+        float: right;
+        display: inline-block;
+        width: $contentbar-w;
+        height: 100%;
+        background-color: $brand-beta;
+    }
 }
