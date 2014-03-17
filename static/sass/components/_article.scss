@@ -1,5 +1,7 @@
 /**
  * Article component
+ *
+ * Mobile first. We are going from mobile resolution up using RWD.
  */
 .article {
     @extend .g;
@@ -15,26 +17,34 @@
 .article__header {
     position: relative;
     margin-top: $base-padding * 3;
-    //max-height: 22em;
-    //overflow: hidden;
+
+    @include rwd($tablet-w, false) {
+        max-height: 22em;
+        overflow: hidden;
+        margin-top: 0;
+    }
 }
 
 .article__item,
 .article__intro {
     @extend .g__item;
-    @extend .nullp--left;
-    //@extend .g-half;
+
+    width: 100%;
+    padding-left: 0;
+
+    @include rwd(550px, false) {
+        width: 50%;
+    }
 }
 
 .article__intro {
-    width: 100%;
     margin-top: $base-padding * 5;
 
-    //height: 307px + $box-media-bottom-p;
-    display: inline-flex;
-    flex-flow: column wrap;
-    justify-content: flex-end;
-    //padding: $base-padding 0 0 $base-padding * 2;
+    @include rwd(550px, false) {
+        width: 50%;
+        height: 307px + $box-media-bottom-p;
+        padding: $base-padding 0 0 $base-padding;
+    }
 }
 
 .article__title--alpha {
@@ -45,7 +55,7 @@
     
     // Larger than mobile
     @include rwd(997px, false) {
-        left: $base-padding * 1.8;
+        left: $base-padding * 1.4;
     }
 }
 
@@ -63,19 +73,24 @@
 
 .article__img {
     @extend .box__m--static;
-
-    //max-height: 307px;
+    
+    @include rwd($tablet-w, false) {
+        max-height: 307px;
+    }
 }
 
 .article__introtext {
     @extend .box;
-    //@extend .pull--bottom;
     @include font-size(18px, false);
 
     margin: 0;
-    align-self: flex-end;
     font-style: italic;
+    font-weight: bold;
     line-height: 1.2;
+
+    @include rwd(997px, false) {
+        margin-bottom: -1em;
+    }
 }
 
 .article__text {
@@ -83,11 +98,14 @@
     @extend .box;
 
     margin-left: -1em;
-    //padding: $base-padding * 2;
 
     // Larger than mobile
     @include rwd($mobile-portrait-w, false) {
-        @include vendor(column-count, 2);
-        @include vendor(column-gap, $base-padding * 4);
+        column-count: 2;
+        column-gap: $base-padding * 4;
+    }
+
+    @include rwd(997px, false) {
+        padding: $base-padding $base-padding * 2;
     }
 }

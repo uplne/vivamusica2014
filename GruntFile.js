@@ -95,9 +95,9 @@ module.exports = function(grunt) {
                     debugInfo: true
                 },
                 expand: true,
-                cwd: 'static/sass/',
+                cwd: '<%= dir.sass %>/',
                 src: ['*.scss', '!_*.scss'],
-                dest: 'static/css',
+                dest: '<%= dir.css %>',
                 ext: '.css'
             },
             build: {
@@ -106,9 +106,9 @@ module.exports = function(grunt) {
                     noCache: true
                 },
                 expand: true,
-                cwd: 'static/sass/',
+                cwd: '<%= dir.sass %>/',
                 src: ['*.scss', '!_*.scss'],
-                dest: 'static/css',
+                dest: '<%= dir.css %>',
                 ext: '.css'
             }
         },
@@ -131,6 +131,18 @@ module.exports = function(grunt) {
           },
         },
 
+        autoprefixer: {
+            dev: {
+                options: {
+                    browsers: ['last 2 versions', 'ie 8', 'ie 9']
+                },
+                expand: true,
+                flatten: true,
+                src: '<%= dir.css %>/*.css',
+                dest: '<%= dir.css %>/'
+            }
+        },
+
         // The watch command watches a given set of files and runs a task when one of them changes.
         watch: {
 
@@ -142,8 +154,14 @@ module.exports = function(grunt) {
 
             //Automatic compilation of SASS changes
             sass: {
-                files: ['static/sass/**/*.scss'],
-                tasks: ['sass:dev', 'notify:sass'],
+                files: ['<%= dir.sass %>/**/*.scss'],
+                tasks: ['sass:dev', 'notify:sass']
+            },
+
+            // Add vendor prefixes
+            prefix: {
+                files: ['<%= dir.sass %>/**/*.scss'],
+                tasks: ['autoprefixer:dev', 'notify:prefix'],
                 options: {
                     livereload: true
                 }
@@ -241,6 +259,12 @@ module.exports = function(grunt) {
                 options: {
                     message: "SASS compiled."
                 }
+            },
+
+            prefix: {
+                options: {
+                    message: "Autoprefixer finished."
+                }
             }
         }
     });
@@ -259,11 +283,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     grunt.registerTask('dev', [
         'concurrent:dev',
         'notify:dev'
     ]);
+
+    grunt.registerTask('prefix', ['autoprefixer:dev']);
 
     grunt.registerTask('build', [
         'jshint',
