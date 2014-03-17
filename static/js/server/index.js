@@ -30,6 +30,7 @@ function setupServer() {
             showStack: true
         }));
 
+        // Template engine
         app.engine('hbs', exphbs.express3({
             partialsDir: appRoot + '/static/views/partials',
             defaultLayout: appRoot + '/static/views/layouts/default.hbs'

@@ -3,6 +3,7 @@
  */
 .article {
     @extend .g;
+    @extend .nullm--left;
 
     width: 100%;
 
@@ -13,46 +14,62 @@
 
 .article__header {
     position: relative;
-    max-height: 22em;
-    overflow: hidden;
+    margin-top: $base-padding * 3;
+    //max-height: 22em;
+    //overflow: hidden;
 }
 
 .article__item,
 .article__intro {
     @extend .g__item;
-    @extend .g-half;
+    @extend .nullp--left;
+    //@extend .g-half;
 }
 
 .article__intro {
-    height: 307px + $box-media-bottom-p;
+    width: 100%;
+    margin-top: $base-padding * 5;
+
+    //height: 307px + $box-media-bottom-p;
     display: inline-flex;
     flex-flow: column wrap;
     justify-content: flex-end;
-    padding: $base-padding 0 0 $base-padding * 2;
+    //padding: $base-padding 0 0 $base-padding * 2;
 }
 
 .article__title--alpha {
     @extend .title--alpha;
 
     top: 1em;
-    left: $base-padding * 1.8;
+    left: $base-padding * .7;
+    
+    // Larger than mobile
+    @include rwd(997px, false) {
+        left: $base-padding * 1.8;
+    }
 }
 
 .article__title--beta {
     @extend .title--beta;
 
     top: 1em + 1.2em;
-    left: $base-padding * 2.4;
+    left: $base-padding * 1.4;
+
+    // Larger than mobile
+    @include rwd(997px, false) {
+        left: $base-padding * 2.4;
+    }
 }
 
 .article__img {
     @extend .box__m--static;
 
-    max-height: 307px;
+    //max-height: 307px;
 }
 
 .article__introtext {
     @extend .box;
+    //@extend .pull--bottom;
     @include font-size(18px, false);
 
     margin: 0;
@@ -63,10 +80,14 @@
 
 .article__text {
     @include font-size(16px);
+    @extend .box;
 
-    margin: 0;
-    padding: $base-padding * 2;
+    margin-left: -1em;
+    //padding: $base-padding * 2;
 
-    @include vendor(column-count, 2);
-    @include vendor(column-gap, $base-padding * 4);
+    // Larger than mobile
+    @include rwd($mobile-portrait-w, false) {
+        @include vendor(column-count, 2);
+        @include vendor(column-gap, $base-padding * 4);
+    }
 }
