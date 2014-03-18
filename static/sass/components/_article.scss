@@ -9,7 +9,7 @@
 
     width: 100%;
 
-    @include rwd(997px, false) {
+    @include rwd(997px) {
         width: em(996) - $sidebar-w;
     }
 }
@@ -18,8 +18,12 @@
     position: relative;
     margin-top: $base-padding * 3;
 
-    @include rwd($tablet-w, false) {
-        max-height: 22em;
+    @include rwd($tablet-w) {
+        margin-top: 0;
+    }
+
+    @include rwd(997px) {
+        max-height: em(312);
         overflow: hidden;
         margin-top: 0;
     }
@@ -32,7 +36,7 @@
     width: 100%;
     padding-left: 0;
 
-    @include rwd(550px, false) {
+    @include rwd(550px) {
         width: 50%;
     }
 }
@@ -40,9 +44,12 @@
 .article__intro {
     margin-top: $base-padding * 5;
 
-    @include rwd(550px, false) {
+    @include rwd(550px) {
         width: 50%;
         height: 307px + $box-media-bottom-p;
+    }
+
+    @include rwd(997px) {
         padding: $base-padding 0 0 $base-padding;
     }
 }
@@ -54,7 +61,7 @@
     left: $base-padding * .7;
     
     // Larger than mobile
-    @include rwd(997px, false) {
+    @include rwd(997px) {
         left: $base-padding * 1.4;
     }
 }
@@ -66,7 +73,7 @@
     left: $base-padding * 1.4;
 
     // Larger than mobile
-    @include rwd(997px, false) {
+    @include rwd(997px) {
         left: $base-padding * 2.4;
     }
 }
@@ -74,38 +81,38 @@
 .article__img {
     @extend .box__m--static;
     
-    @include rwd($tablet-w, false) {
-        max-height: 307px;
+    @include rwd($tablet-w) {
+        max-height: 312px;
     }
 }
 
 .article__introtext {
     @extend .box;
-    @include font-size(18px, false);
+    @include font-size(18px);
 
     margin: 0;
     font-style: italic;
     font-weight: bold;
     line-height: 1.2;
 
-    @include rwd(997px, false) {
+    @include rwd(997px) {
         margin-bottom: -1em;
     }
 }
 
 .article__text {
     @include font-size(16px);
-    @extend .box;
 
     margin-left: -1em;
+    padding: em(18);
 
     // Larger than mobile
-    @include rwd($mobile-portrait-w, false) {
+    @include rwd(470px) {
         column-count: 2;
         column-gap: $base-padding * 4;
     }
 
-    @include rwd(997px, false) {
+    @include rwd(997px) {
         padding: $base-padding $base-padding * 2;
     }
 }
