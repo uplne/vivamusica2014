@@ -8,15 +8,19 @@
  * TRANSITIONS
  */
 %effect-trans {
-    @include vendor(transition, all 0.25s ease-out);
+    transition: all 0.25s ease-out;
+}
+
+%effect-trans--slow {
+    transition: all 1.6s ease-out;
 }
 
 %effect-scale {
-    @include vendor(transform, scale(1));
-    @include vendor(transition, 0.25s ease-out);
+    transform: scale(1);
+    transition: 0.25s ease-out;
 }
 
 %effect-descale {
-    @include vendor(transform, scale(1.5));
-    @include vendor(transition, 10s ease-out);
+    transform: scale(1.5);
+    transition: 10s ease-out;
 }

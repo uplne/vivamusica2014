@@ -28,5 +28,13 @@
         img {
             @extend %effect-descale;
         }
+
+        .title--alpha {
+            left: $title--alpha--l - 1em;
+        }
+
+        .title--beta {
+            left: $title--alpha--l - .5em;
+        }
     }
 }

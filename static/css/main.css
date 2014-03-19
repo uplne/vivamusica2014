@@ -562,6 +562,12 @@ a:hover {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000314}}
+.title, .title--alpha, .article__title--alpha, .title--beta, .article__title--beta {
+  -webkit-transition: all 1.6s ease-out;
+  transition: all 1.6s ease-out;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000318}}
 .box__m {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -570,7 +576,7 @@ a:hover {
   transition: 0.25s ease-out;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000323}}
 .box__m:hover, .news__link:hover img, .programlist__link:hover img {
   -webkit-transform: scale(1.5);
   -ms-transform: scale(1.5);
@@ -1048,13 +1054,13 @@ a:hover {
   padding: .2em .5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_title\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_title\.scss}line{font-family:\0000323}}
 .title--alpha, .article__title--alpha {
   left: 2em;
   top: 3em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_title\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_title\.scss}line{font-family:\0000330}}
 .title--beta, .article__title--beta {
   left: 3em;
   top: 4.2em;
@@ -1159,6 +1165,14 @@ a:hover {
   .news__link img {
     width: 100%;
   }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_news\.scss}line{font-family:\0000332}}
+.news__link:hover .title--alpha, .news__link:hover .article__title--alpha {
+  left: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_news\.scss}line{font-family:\0000336}}
+.news__link:hover .title--beta, .news__link:hover .article__title--beta {
+  left: 1.5em;
 }
 
 /**
