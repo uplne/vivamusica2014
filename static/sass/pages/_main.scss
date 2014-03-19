@@ -18,7 +18,6 @@
 }
 
 .main__sidebar {
-    @extend .box;
     @extend %effect-trans;
 
     width: $sidebar-w;

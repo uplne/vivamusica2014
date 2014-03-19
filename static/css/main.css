@@ -670,13 +670,13 @@ a:hover {
  * BOX OBJECTS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\000038}}
-.box, .article__introtext, .main__sidebar {
+.box, .article__introtext {
   display: inline-block;
   vertical-align: top;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\0000313}}
-.box, .article__introtext, .main__sidebar {
+.box, .article__introtext {
   padding: 1em;
 }
 
@@ -711,7 +711,8 @@ a:hover {
 .programlist__list,
 .uilist--spread,
 .socialnav,
-.sbnav {
+.sbnav,
+.sbpartners {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1094,6 +1095,35 @@ a:hover {
 }
 
 /**
+ * SIDEBAR PARTNERS
+ */
+/**
+ * 1. Magic number to align partners box with news on the homepage.
+ *    As this is very specific it will probably need some refactoring
+ *    in the future.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_sidebar-partners\.scss}line{font-family:\0000310}}
+.sbpartners {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-top: -4px;
+  /* [1] */
+  padding: 1em 0;
+  background-color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_sidebar-partners\.scss}line{font-family:\0000321}}
+.sbpartners__link {
+  display: block;
+  padding: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_sidebar-partners\.scss}line{font-family:\0000325}}
+.sbpartners__link > img {
+  margin: 0 auto;
+}
+
+/**
  * SOCIAL NAVIGATION
  *
  * Based in sidebar.
@@ -1426,7 +1456,7 @@ a:hover {
   top: 0;
   left: -15em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000330}}
 .main__sidebar.is-active {
   left: 0;
 }
@@ -1437,7 +1467,7 @@ a:hover {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000340}}
 .main__container {
   float: left;
   width: 100%;
@@ -1447,7 +1477,7 @@ a:hover {
 /**
  * Top
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000349}}
 .top {
   width: 100%;
   padding-bottom: 5px;
