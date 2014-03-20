@@ -7,7 +7,11 @@ module.exports = function(app) {
         res.render('content/index', {
             title: 'Vivamusica! festival 2014',
             imageAssets: config.paths.images,
-            cssAssets: config.paths.css
+            cssAssets: config.paths.css,
+            news: [
+                {title1: "Yehuda", title2: "Katz", img: "static/images/news/news1.jpg"},
+                {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"}
+            ]
         });
     });
 
@@ -28,5 +32,14 @@ module.exports = function(app) {
         var output = '/static/css' + context;
 
         return new exphbs.SafeString(output);
+    });
+
+    exphbs.registerHelper('foreach', function (context, options) {
+        var result = "";
+
+        for (var i = 0; i < context.length; i++) {
+            result = result + options.fn(context[i]);
+        }
+        return result;
     });
 };
