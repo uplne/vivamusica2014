@@ -3,6 +3,10 @@
  * @version 0.0.1
  */
 module.exports = function(grunt) {
+
+    // load all grunt tasks
+    require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
+
     grunt.initConfig({
 
         /**
@@ -75,12 +79,16 @@ module.exports = function(grunt) {
           },
         },
 
-        // Define Karma test runner configuration
-        karma: {
-            // Run unit test automation
+        // Server side unit tests
+        mochacli: {
+            options: {
+                ui: "tdd",
+                reporter: "spec",
+                timeout: "15000"
+            },
+
             unit: {
-                configFile: 'karma.conf.js',
-                autoRun: true
+                src: ["static/js/tests/unit/**/*.js"]
             }
         },
 
@@ -269,21 +277,9 @@ module.exports = function(grunt) {
         }
     });
 
-    /**
-     * Load all NPM tasks
-     */
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-concurrent');
-    grunt.loadNpmTasks('grunt-notify');
-    grunt.loadNpmTasks('grunt-nodemon');
-    grunt.loadNpmTasks('grunt-open');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.registerTask('test-unit', 'Run unit tests - mocha', [
+        'mochacli:unit'
+    ]);
 
     grunt.registerTask('dev', [
         'concurrent:dev',

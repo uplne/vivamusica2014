@@ -2,58 +2,25 @@
 // Generated on Sun Oct 20 2013 07:28:56 GMT+0200 (CEST)
 
 module.exports = function(config) {
-  config.set({
+    config.set({
+        frameworks: ["mocha", "chai"],
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
+        files: [
+            "static/js/tests/**/*.js"
+        ],
 
-    // frameworks to use
-    frameworks: ['jasmine', 'requirejs'],
+        reporters: ["progress"],
 
-    // list of files / patterns to load in the browser
-    files: [
-        {pattern: 'static/js/lib/**/*.js', included: false},
-        {pattern: 'static/js/modules/*.js', included: false},
-        {pattern: 'static/js/tests/unit/specs/*Spec.js', included: false},
+        port: 1999,
 
-        'static/js/tests/unit/helpers/*.js'
-    ],
+        color: true,
 
-    // list of files to exclude
-    exclude: [],
+        autoWatch: false,
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+        browsers: ["Chrome"],
 
-    // web server port
-    port: 9876,
+        captureTimeout: 6000,
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Chrome'],
-
-    // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
-
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
-  });
+        singleRun: true
+    });
 };
