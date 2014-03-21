@@ -4,6 +4,7 @@ var express  = require('express'),
     mongoose = require('mongoose'),
     config   = require('./config'),
     routes   = require('./routes'),
+    helpers  = require('./helpers'),
     appRoot  = config.paths.appRoot;
 
 function init() {
@@ -38,6 +39,8 @@ function setupServer() {
         }));
         app.set('view engine', 'hbs');
         app.set('views', appRoot + '/static/views');
+
+        helpers.registerHelpers();
     });
 
     // Start server

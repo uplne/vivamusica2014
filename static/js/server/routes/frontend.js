@@ -1,5 +1,4 @@
-var config = require('../config'),
-    exphbs = require('express-hbs');
+var config = require('../config');
 
 module.exports = function(app) {
     // Home route
@@ -10,6 +9,7 @@ module.exports = function(app) {
             cssAssets: config.paths.css,
             news: [
                 {title1: "Yehuda", title2: "Katz", img: "static/images/news/news1.jpg"},
+                {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"},
                 {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"}
             ]
         });
@@ -22,7 +22,7 @@ module.exports = function(app) {
         });
     });
 
-    exphbs.registerHelper('imageAssets', function (context, options) {
+    /*exphbs.registerHelper('imageAssets', function (context, options) {
         var output = '/static/images' + context;
 
         return new exphbs.SafeString(output);
@@ -32,14 +32,5 @@ module.exports = function(app) {
         var output = '/static/css' + context;
 
         return new exphbs.SafeString(output);
-    });
-
-    exphbs.registerHelper('foreach', function (context, options) {
-        var result = "";
-
-        for (var i = 0; i < context.length; i++) {
-            result = result + options.fn(context[i]);
-        }
-        return result;
-    });
+    });*/
 };
