@@ -20,6 +20,9 @@ $box-media-bottom-p: 5px;
 .box__m {
     @extend %effect-scale;
 
+    width: 100%;
+    height: auto;
+
     &:hover {
         @extend %effect-descale;
     }

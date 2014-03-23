@@ -12,7 +12,7 @@
     }
 
     // When on larger screen
-    @include rwd($tablet-w, false) {
+    @include rwd($tablet-w) {
         padding-left: $sidebar-w;
     }
 }
@@ -32,7 +32,7 @@
     }
 
     // When on larger screen
-    @include rwd($tablet-w, false) {
+    @include rwd($tablet-w) {
         left: 0;
     }
 }
