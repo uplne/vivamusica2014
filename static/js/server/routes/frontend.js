@@ -10,7 +10,8 @@ module.exports = function(app) {
             news: [
                 {title1: "Yehuda", title2: "Katz", img: "static/images/news/news1.jpg"},
                 {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"},
-                {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"}
+                {title1: "Yehuda3", title2: "Katz2", img: "static/images/news/news1.jpg"},
+                {title1: "Yehuda4", title2: "Katz2", img: "static/images/news/news1.jpg"}
             ]
         });
     });
