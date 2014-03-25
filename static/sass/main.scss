@@ -52,13 +52,18 @@
 @import "components/buttons";
 @import "components/icons";
 @import "components/title";
-@import "components/sidebar-navigation";
-@import "components/sidebar-partners";
-@import "components/social-navigation";
-@import "components/news";
-@import "components/program-list";
 @import "components/contentbar";
-@import "components/article";
+
+/**
+ * Modules
+ */
+@import "modules/article";
+@import "modules/news";
+@import "modules/program-list";
+@import "modules/sidebar-navigation";
+@import "modules/sidebar-partners";
+@import "modules/social-navigation";
+@import "modules/tickets";
 
 /**
  * Pages
