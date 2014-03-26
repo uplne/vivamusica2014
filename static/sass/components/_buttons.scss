@@ -116,6 +116,7 @@
  */
 .btn--buy {
     @extend %btn;
+    @extend %effect-trans;
     @include font-size(16px);
 
     margin: 1em auto .7em auto;
@@ -123,7 +124,7 @@
     border: 1px solid $brand-text;
     color: $brand-text;
 
-    @include rwd($tablet-w) {
-        display: none;
+    &:hover {
+        background-color: $brand-beta;
     }
 }

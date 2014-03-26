@@ -21,6 +21,15 @@
 }
 
 /**
+ * To hide on small screen
+ */
+.hidesmallscreen {
+    @include rwd($tablet-w) {
+        display: none;
+    }
+}
+
+/**
  * Pulls
  */
 .pull--top    { margin-top   : -$base-padding; }

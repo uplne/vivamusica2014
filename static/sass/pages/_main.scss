@@ -3,9 +3,10 @@
  */
 
 .main {
+    @extend .cf;
     @extend %effect-trans;
 
-    height: 100%;
+    height: auto;
 
     &.is-active {
         padding-left: $sidebar-w;
