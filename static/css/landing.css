@@ -678,7 +678,8 @@ a:hover {
 .btn,
 .btn--nav,
 .btn--close,
-.btn--brand {
+.btn--brand,
+.btn--buy {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
@@ -694,7 +695,8 @@ a:hover {
 .btn:hover,
 .btn--nav:hover,
 .btn--close:hover,
-.btn--brand:hover {
+.btn--brand:hover,
+.btn--buy:hover {
   text-decoration: none;
 }
 
@@ -837,6 +839,26 @@ a:hover {
 .btn--brand {
   float: right;
   margin-bottom: 1em;
+}
+
+/**
+ * Button buy tickets
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\00003117}}
+.btn--buy {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  line-height: 1.5;
+  margin: 1em auto .7em auto;
+  padding: .5em 2em;
+  border: 1px solid white;
+  color: white;
+}
+@media only screen and (min-width: 819px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\00003117}}
+  .btn--buy {
+    display: none;
+  }
 }
 
 /**

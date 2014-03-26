@@ -5,7 +5,8 @@
 // Main brand pallete
 $brand: #ff0091;
 $brand-beta: #000;
-$brand-text: #fff;
+$brand-gamma: #fff;
+$brand-text: $brand-gamma;
 
 $brand-link: $brand;
 $brand-btn-hover: #333333;
