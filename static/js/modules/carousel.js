@@ -14,11 +14,11 @@
  *
  */
 
-'use strict';
-
 define([
     'jquery'
 ], function($) {
+
+    'use strict';
 
     var Carousel = function() {
 
@@ -48,7 +48,7 @@ define([
                 }
 
                 return false;
-            }
+            },
 
             /**
              * Get the parent (container) width
@@ -82,8 +82,8 @@ define([
                 e.preventDefault();
                 console.log('next');
             }
-        }
-    }
+        };
+    };
 
     return Carousel;
 });

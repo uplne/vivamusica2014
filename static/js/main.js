@@ -13,8 +13,7 @@ require([
     'modules/carousel'
 ], function ($, Carousel) {
 
-    console.log('start');
-
     var carousel = new Carousel();
+
         carousel.init();
 });
