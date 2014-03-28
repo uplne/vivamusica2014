@@ -3,6 +3,14 @@
  *
  * JS hook for container: data-module="carousel"
  * JS hooks for arrows: data-move="prev", data-move="next"
+
+    <ul data-module="carousel">
+        <li>
+            <a href=""></a>
+        </li>
+    </ul>
+    <a data-move="prev" href="#nogo">Prev</a>
+    <a data-move="next" href="#nogo">Next</a>
  *
  */
 
@@ -17,6 +25,7 @@ define([
         var self        = null,
 
             // DOM elements
+            $holder     = $('[data-model="carousel"]'),
             $arrowLeft  = $('[data-move="prev"]'),
             $arrowRight = $('[data-move="next"]');
 
@@ -24,7 +33,39 @@ define([
             init: function() {
                 self = this;
 
-                self.bindEvents();
+                if (self.doWeNeedCarousel()) {
+                    console.log('Carousel: bind');
+                    self.bindEvents();
+                }
+            },
+
+            doWeNeedCarousel: function() {
+                var parentwidth   = self.getParentWidth(),
+                    carouselwidth = self.getCarouselWidth();
+
+                if (parentwidth > carouselwidth) {
+                    return true;
+                }
+
+                return false;
+            }
+
+            /**
+             * Get the parent (container) width
+             *
+             * @return {Number} Parent width
+             */
+            getParentWidth: function() {
+                return $holder.parent().width();
+            },
+
+            /**
+             * Get the carousel width
+             *
+             * @return {Number} Carousel width
+             */
+            getCarouselWidth: function() {
+                return $holder.width();
             },
 
             bindEvents: function() {
