@@ -1,6 +1,10 @@
 /**
  * z-index
+ *
+ * Each Greek letter is starting new z-index scope
  */
+
+$zindex-alpha: 100;
 
 /**
  * z-index Omega

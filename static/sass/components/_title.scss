@@ -12,7 +12,7 @@ $title--beta--t: $title--alpha--t + 1.2em;
     @include font-size(26px, false);
 
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     font-style: italic;
     line-height: 1em;
     color: $brand-text;

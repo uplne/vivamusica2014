@@ -88,7 +88,7 @@ module.exports = function(grunt) {
             },
 
             unit: {
-                src: ["static/js/tests/unit/**/*.js"]
+                src: ["tests/unit/**/*.js"]
             }
         },
 
@@ -173,6 +173,14 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true
                 }
+            },
+
+            unittests: {
+                files: [
+                    'tests/unit/**/*_spec.js',
+                    '<%= dir.js %>/**/*.js'
+                ],
+                tasks: ['mochacli:unit']
             },
 
             server: {

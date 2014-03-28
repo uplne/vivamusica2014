@@ -90,6 +90,8 @@
  */
 /**
  * z-index
+ *
+ * Each Greek letter is starting new z-index scope
  */
 /**
  * z-index Omega
@@ -638,6 +640,8 @@ a:hover {
 .btn--close,
 .btn--brand,
 .btn--buy,
+.arrow--prev,
+.arrow--next,
 .programlist__link,
 .sbnav__link {
   display: inline-block;
@@ -657,6 +661,8 @@ a:hover {
 .btn--close:hover,
 .btn--brand:hover,
 .btn--buy:hover,
+.arrow--prev:hover,
+.arrow--next:hover,
 .programlist__link:hover,
 .sbnav__link:hover {
   text-decoration: none;
@@ -1073,7 +1079,7 @@ a:hover {
   font-size: 26px;
   font-size: 1.85714rem;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   font-style: italic;
   line-height: 1em;
   color: white;
@@ -1109,6 +1115,35 @@ a:hover {
     height: 100%;
     background-color: black;
   }
+}
+
+/**
+ * Arrows
+ *
+ * Extending: objects/_buttons
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\000036}}
+.arrow--prev, .arrow--next {
+  font-size: 40px;
+  font-size: 2.85714rem;
+  position: absolute;
+  z-index: 100;
+  width: 3em;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000318}}
+.arrow--prev {
+  top: 0;
+  left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000325}}
+.arrow--next {
+  top: 0;
+  right: 0;
 }
 
 /**
@@ -1570,6 +1605,7 @@ a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000350}}
 .top {
   width: 100%;
+  position: relative;
   padding-bottom: .4em;
   overflow: hidden;
   text-align: center;

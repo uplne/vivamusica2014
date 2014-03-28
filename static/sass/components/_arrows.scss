@@ -1,0 +1,30 @@
+/**
+ * Arrows
+ *
+ * Extending: objects/_buttons
+ */
+%arrow {
+    @extend %btn;
+    @include font-size(40px, false);
+
+    position: absolute;
+    z-index: $zindex-alpha;
+    width: 3em;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    color: $brand-gamma;
+}
+
+.arrow--prev {
+    @extend %arrow;
+
+    top: 0;
+    left: 0;
+}
+
+.arrow--next {
+    @extend %arrow;
+
+    top: 0;
+    right: 0;
+}
