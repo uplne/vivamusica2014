@@ -92,6 +92,11 @@ module.exports = function(grunt) {
             }
         },
 
+        // Client tests with requirejs
+        mocha_phantomjs: {
+            all: ['tests/client/**/*.html']
+        },
+
         /**
          * Compile SASS
          */
@@ -285,9 +290,11 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('test-unit', 'Run unit tests - mocha', [
+    grunt.registerTask('test-server', 'Run unit tests - mocha', [
         'mochacli:unit'
     ]);
+
+    grunt.registerTask('test-client', ['mocha_phantomjs']);
 
     grunt.registerTask('dev', [
         'concurrent:dev',

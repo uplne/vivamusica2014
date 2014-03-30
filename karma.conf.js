@@ -3,11 +3,26 @@
 
 module.exports = function(config) {
     config.set({
-        frameworks: ["mocha", "chai"],
+        frameworks: ["mocha"],
 
         files: [
-            "static/js/tests/**/*.js"
+            {pattern: 'static/js/lib/**/*.js', included: false},
+            {pattern: 'static/js/modules/**/*.js', included: false},
+            {pattern: 'tests/unit/**/*.js', included: false}
+
         ],
+
+        exclude: [
+            'static/js/main.js'
+        ],
+
+        client: {
+            mocha: {
+                ui: "tdd",
+                reporter: "spec",
+                timeout: "15000"
+            }
+        },
 
         reporters: ["progress"],
 
