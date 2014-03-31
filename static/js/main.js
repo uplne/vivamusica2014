@@ -14,6 +14,6 @@ require([
 ], function ($, Carousel) {
 
     var carousel = new Carousel();
-
+        console.log('carousel load');
         carousel.init();
 });

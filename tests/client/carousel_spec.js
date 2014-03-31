@@ -9,7 +9,7 @@ define([
     describe("Carousel", function() {
 
         it("should intialize", function() {
-
+            expect()
         });
 
         it("should bind events", function() {

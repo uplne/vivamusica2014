@@ -180,13 +180,13 @@ module.exports = function(grunt) {
                 }
             },
 
-            unittests: {
-                files: [
-                    'tests/unit/**/*_spec.js',
-                    '<%= dir.js %>/**/*.js'
-                ],
-                tasks: ['mochacli:unit']
-            },
+//            unittests: {
+//                files: [
+//                    'tests/unit/**/*_spec.js',
+//                    '<%= dir.js %>/**/*.js'
+//                ],
+//                tasks: ['mochacli:unit']
+//            },
 
             server: {
                 files: ['.rebooted'],
