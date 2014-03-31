@@ -8,14 +8,14 @@
 
     height: auto;
 
-    &.is-active {
+   /* &.is-active {
         padding-left: $sidebar-w;
     }
 
     // When on larger screen
     @include rwd($tablet-w) {
         padding-left: $sidebar-w;
-    }
+    }*/
 }
 
 .main__sidebar {
@@ -27,6 +27,8 @@
     position: fixed;
     top: 0;
     left: -$sidebar-w;
+    z-index: $zindex-omega;
+    box-shadow: 3px -2px 3px rgba(0,0,0,.3);
 
     &.is-active {
         left: 0;

@@ -2,18 +2,12 @@
  * SIDEBAR PARTNERS
  */
 
-/**
- * 1. Magic number to align partners box with news on the homepage.
- *    As this is very specific it will probably need some refactoring
- *    in the future.
- */
 .sbpartners {
     @extend %uilist;
 
     display: inline-block;
     vertical-align: top;
     width: 100%;
-    margin-top: -.2em; /* [1] */
     padding: $base-padding 0;
     background-color: $sidebar-partners-bg;
 }

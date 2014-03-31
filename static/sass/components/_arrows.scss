@@ -7,12 +7,17 @@
     @extend %btn;
     @include font-size(40px, false);
 
+    display: none;
     position: absolute;
     z-index: $zindex-alpha;
     width: 3em;
     height: 100%;
     background-color: rgba(0,0,0,.3);
     color: $brand-gamma;
+
+    @include rwd($tablet-w) {
+        display: block;
+    }
 }
 
 .arrow--prev {
