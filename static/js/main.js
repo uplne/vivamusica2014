@@ -10,12 +10,8 @@ require.config({
 
 require([
     'jquery',
-    'modules/carousel',
     'modules/toggleMenu'
-], function ($, Carousel, ToggleMenu) {
-
-    var carousel = new Carousel();
-        carousel.init();
+], function ($, ToggleMenu) {
 
     var toggleMenu = new ToggleMenu();
         toggleMenu.init();

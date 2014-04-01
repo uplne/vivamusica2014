@@ -35,10 +35,11 @@ define([
             itemWidth : 0,
             carouselLength: 0,
 
+            // Public methods
             init: function() {
                 self = this;
 
-                if (self.doWeNeedCarousel()) {
+                if (self.§()) {
                     self.bindEvents();
                 }
             },

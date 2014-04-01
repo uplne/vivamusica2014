@@ -17,6 +17,13 @@ module.exports = function(app) {
     });
 
     // Actual item
+    app.get("/program/viva-opera", function(req, res) {
+        res.render('content/programdetailvivaopera', {
+            title: 'Viva Opera!'
+        });
+    });
+
+    // Actual item
     app.get("/program/:id", function(req, res) {
         res.render('content/programdetail', {
             title: 'Viva Hapka'

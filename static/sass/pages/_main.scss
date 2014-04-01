@@ -10,12 +10,12 @@
 
    /* &.is-active {
         padding-left: $sidebar-w;
-    }
+    }*/
 
     // When on larger screen
     @include rwd($tablet-w) {
         padding-left: $sidebar-w;
-    }*/
+    }
 }
 
 .main__sidebar {
@@ -37,6 +37,7 @@
     // When on larger screen
     @include rwd($tablet-w) {
         left: 0;
+        box-shadow: none;
     }
 }
 

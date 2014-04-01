@@ -128,3 +128,18 @@
         background-color: $brand-beta;
     }
 }
+
+/**
+ * Button buy tickets with background
+ */
+.btn--buy--contrast {
+    @extend .btn--buy;
+
+    margin: 0;
+    color: $brand-gamma;
+    background-color: $brand;
+
+    &:hover {
+        background-color: $brand-beta;
+    }
+}
