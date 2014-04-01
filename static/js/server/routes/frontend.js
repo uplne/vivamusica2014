@@ -29,4 +29,11 @@ module.exports = function(app) {
             title: 'Viva Hapka'
         });
     });
+
+    // Actual item
+    app.get("/vstupenky", function(req, res) {
+        res.render('content/vstupenky', {
+            title: 'Vstupenky'
+        });
+    });
 };

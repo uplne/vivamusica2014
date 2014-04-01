@@ -23,6 +23,11 @@ helpers = {
         var output = '/static/css' + context;
 
         return new exphbs.SafeString(output);
+    },
+
+    menu: function(context, options) {
+        console.log(context, options);
+        return options.fn(context);
     }
 };
 
@@ -33,6 +38,7 @@ api = {
 
     registerHelpers: function() {
         this.registerHelper('foreach', helpers.foreach);
+        this.registerHelper('menu', helpers.menu);
         this.registerHelper('imageAssets', helpers.imageAssets);
         this.registerHelper('cssAssets', helpers.cssAssets);
     }

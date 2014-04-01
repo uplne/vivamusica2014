@@ -1313,15 +1313,28 @@ a:hover {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003119}}
-.article__btn {
+.article__btn, .article__btn--top {
   margin: 0 0 1em 1em;
   text-align: center;
 }
 @media only screen and (min-width: 549px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003119}}
-  .article__btn {
+  .article__btn, .article__btn--top {
     margin: 0 0 0 1em;
     text-align: left;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003129}}
+.article__btn--top {
+  position: absolute;
+  top: 3em;
+  right: 1em;
+}
+@media only screen and (min-width: 549px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003129}}
+  .article__btn--top {
+    display: none;
   }
 }
 

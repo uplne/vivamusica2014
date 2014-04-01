@@ -125,3 +125,15 @@
         text-align: left;
     }
 }
+
+.article__btn--top {
+    @extend .article__btn;
+
+    position: absolute;
+    top: 3em;
+    right: 1em;
+
+    @include rwd(550px) {
+        display: none;
+    }
+}

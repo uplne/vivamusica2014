@@ -3,12 +3,12 @@
     <div class="box">
         <a class="btn--brand" href="" title="Vivamusica! festival"><img src="/static/images/viva-logo.png" width="160" height="109" alt="   Vivamusica! festival" /></a>
         <ul class="sbnav">
-            <li><a class="sbnav__link is-active" href="/" title="Home">home</a></li>
-            <li><a class="sbnav__link" href="/program" title="Home">program</a></li>
-            <li><a class="sbnav__link" href="/vstupenky" title="Home">vstupenky</a></li>
-            <li><a class="sbnav__link" href="/galeria" title="Home">galeria</a></li>
-            <li><a class="sbnav__link" href="/hall-of-fame" title="Home">hall of fame</a></li>
-            <li><a class="sbnav__link" href="/kontakt" title="Kontakt">Kontakt</a></li>
+            <li><a class="sbnav__link {{#if home}}is-active{{/if}}" href="/" title="Home">home</a></li>
+            <li><a class="sbnav__link {{#if program}}is-active{{/if}}" href="/" title="Home">program</a></li>
+            <li><a class="sbnav__link {{#if vstupenky}}is-active{{/if}}" href="/vstupenky" title="Home">vstupenky</a></li>
+            <li><a class="sbnav__link {{#if galeria}}is-active{{/if}}" href="/galeria" title="Home">galeria</a></li>
+            <li><a class="sbnav__link {{#if halloffame}}is-active{{/if}}" href="/hall-of-fame" title="Home">hall of fame</a></li>
+            <li><a class="sbnav__link {{#if kontakt}}is-active{{/if}}" href="/kontakt" title="Kontakt">Kontakt</a></li>
         </ul>
     </div>
     <ul class="sbpartners">
