@@ -12,7 +12,8 @@ module.exports = function(app) {
                 {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"},
                 {title1: "Yehuda3", title2: "Katz2", img: "static/images/news/news1.jpg"},
                 {title1: "Yehuda4", title2: "Katz2", img: "static/images/news/news1.jpg"}
-            ]
+            ],
+            clientNav: clientNav
         });
     });
 
@@ -36,4 +37,37 @@ module.exports = function(app) {
             title: 'Vstupenky'
         });
     });
+
+    var clientNav = [
+        {
+            name: 'Home',
+            key: 'admin.navbar.content',
+            path: '/'
+        },
+        {
+            name: 'Program',
+            key: 'admin.navbar.content',
+            path: '/program'
+        },
+        {
+            name: 'Vstupenky',
+            key: 'admin.navbar.content',
+            path: '/vstupenky'
+        },
+        {
+            name: 'galeria',
+            key: 'admin.navbar.content',
+            path: '/galeria'
+        },
+        {
+            name: 'Hall of fame',
+            key: 'admin.navbar.content',
+            path: '/halloffame'
+        },
+        {
+            name: 'Kontakt',
+            key: 'admin.navbar.content',
+            path: '/kontakt'
+        }
+    ];
 };

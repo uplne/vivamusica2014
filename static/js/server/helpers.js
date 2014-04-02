@@ -1,12 +1,24 @@
 var exphbs  = require('express-hbs'),
     helpers = {},
-    api     = {};
+    api     = {},
+    utils   = {};
 
 helpers = {
     foreach: function(context, options) {
         var result = "";
 
         for (var i = 0; i < context.length; i++) {
+            result = result + options.fn(context[i]);
+        }
+
+        return result;
+    },
+
+    eachNav: function(context, options) {
+        var result = "";
+
+        for (var i = 0; i < context.length; i++) {
+
             result = result + options.fn(context[i]);
         }
 
@@ -23,13 +35,15 @@ helpers = {
         var output = '/static/css' + context;
 
         return new exphbs.SafeString(output);
-    },
-
-    menu: function(context, options) {
-        console.log(context, options);
-        return options.fn(context);
     }
 };
+
+// TODO - move to utils module
+utils = {
+    getSelected: function(item) {
+
+    }
+}
 
 api = {
     registerHelper: function(name, fn) {
@@ -38,7 +52,7 @@ api = {
 
     registerHelpers: function() {
         this.registerHelper('foreach', helpers.foreach);
-        this.registerHelper('menu', helpers.menu);
+        this.registerHelper('eachNav', helpers.eachNav);
         this.registerHelper('imageAssets', helpers.imageAssets);
         this.registerHelper('cssAssets', helpers.cssAssets);
     }
