@@ -8,10 +8,18 @@ module.exports = function(app) {
             imageAssets: config.paths.images,
             cssAssets: config.paths.css,
             news: [
-                {title1: "Yehuda", title2: "Katz", img: "static/images/news/news1.jpg"},
-                {title1: "Yehuda2", title2: "Katz2", img: "static/images/news/news1.jpg"},
-                {title1: "Yehuda3", title2: "Katz2", img: "static/images/news/news1.jpg"},
-                {title1: "Yehuda4", title2: "Katz2", img: "static/images/news/news1.jpg"}
+                {
+                    title1: "1. potvrdený koncert",
+                    title2: "Operné gala",
+                    img: "static/images/news/news1.jpg",
+                    path: "progam/viva-opera"
+                },
+                {
+                    title1: "2%",
+                    title2: "z daní",
+                    img: "static/images/news/news1.jpg",
+                    path: "novinky/2-z-dani"
+                }
             ],
             clientnav: setSelected('Home', clientNav),
             program: program
