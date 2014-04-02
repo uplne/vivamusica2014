@@ -14,17 +14,6 @@ helpers = {
         return result;
     },
 
-    eachNav: function(context, options) {
-        var result = "";
-
-        for (var i = 0; i < context.length; i++) {
-
-            result = result + options.fn(context[i]);
-        }
-
-        return result;
-    },
-
     imageAssets: function (context, options) {
         var output = '/static/images' + context;
 
@@ -38,13 +27,6 @@ helpers = {
     }
 };
 
-// TODO - move to utils module
-utils = {
-    getSelected: function(item) {
-
-    }
-}
-
 api = {
     registerHelper: function(name, fn) {
         exphbs.registerHelper(name, fn);
@@ -52,7 +34,6 @@ api = {
 
     registerHelpers: function() {
         this.registerHelper('foreach', helpers.foreach);
-        this.registerHelper('eachNav', helpers.eachNav);
         this.registerHelper('imageAssets', helpers.imageAssets);
         this.registerHelper('cssAssets', helpers.cssAssets);
     }

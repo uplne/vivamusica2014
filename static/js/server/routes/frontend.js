@@ -13,60 +13,69 @@ module.exports = function(app) {
                 {title1: "Yehuda3", title2: "Katz2", img: "static/images/news/news1.jpg"},
                 {title1: "Yehuda4", title2: "Katz2", img: "static/images/news/news1.jpg"}
             ],
-            clientNav: clientNav
+            clientnav: setSelected('Home', clientNav)
         });
     });
+
+    // TODO - create utils module, use underscore or create own functional library
+    var setSelected = function(item, items) {
+        var len = items.length,
+            i;
+
+        for (i = 0; i < len; i++) {
+            items[i].selected = items[i].name=== item;
+        }
+
+        return items;
+    };
 
     // Actual item
     app.get("/program/viva-opera", function(req, res) {
         res.render('content/programdetailvivaopera', {
-            title: 'Viva Opera!'
+            title: 'Viva Opera!',
+            clientnav: setSelected('Program', clientNav)
         });
     });
 
     // Actual item
     app.get("/program/:id", function(req, res) {
         res.render('content/programdetail', {
-            title: 'Viva Hapka'
+            title: 'Viva Hapka',
+            clientnav: setSelected('Program', clientNav)
         });
     });
 
     // Actual item
     app.get("/vstupenky", function(req, res) {
         res.render('content/vstupenky', {
-            title: 'Vstupenky'
+            title: 'Vstupenky',
+            clientnav: setSelected('Vstupenky', clientNav)
         });
     });
 
     var clientNav = [
         {
             name: 'Home',
-            key: 'admin.navbar.content',
             path: '/'
         },
         {
             name: 'Program',
-            key: 'admin.navbar.content',
             path: '/program'
         },
         {
             name: 'Vstupenky',
-            key: 'admin.navbar.content',
             path: '/vstupenky'
         },
         {
-            name: 'galeria',
-            key: 'admin.navbar.content',
+            name: 'Galéria',
             path: '/galeria'
         },
         {
             name: 'Hall of fame',
-            key: 'admin.navbar.content',
             path: '/halloffame'
         },
         {
             name: 'Kontakt',
-            key: 'admin.navbar.content',
             path: '/kontakt'
         }
     ];

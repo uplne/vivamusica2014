@@ -3,11 +3,11 @@
     <div class="box">
         <a class="btn--brand" href="" title="Vivamusica! festival"><img src="/static/images/viva-logo.png" width="160" height="109" alt="   Vivamusica! festival" /></a>
         <ul class="sbnav">
-            {{#eachNav clientNav}}
+            {{#each clientnav}}
                 <li>
-                    <a class="sbnav__link{{#if selected}} is-active{{/if}}" href="{{path}}" title="{{title}}">{{name}}</a>
+                    <a class="sbnav__link{{#if selected}} is-active{{/if}}" href="{{path}}" title="{{name}}">{{name}}</a>
                 </li>
-            {{/eachNav}}
+            {{/each}}
         </ul>
     </div>
     <ul class="sbpartners">
