@@ -13,7 +13,8 @@ module.exports = function(app) {
                 {title1: "Yehuda3", title2: "Katz2", img: "static/images/news/news1.jpg"},
                 {title1: "Yehuda4", title2: "Katz2", img: "static/images/news/news1.jpg"}
             ],
-            clientnav: setSelected('Home', clientNav)
+            clientnav: setSelected('Home', clientNav),
+            program: program
         });
     });
 
@@ -86,6 +87,50 @@ module.exports = function(app) {
         {
             name: 'Kontakt',
             path: '/kontakt'
+        }
+    ];
+
+    var program = [
+        {
+            title: 'program 1',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            title: 'program 2',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            title: 'program 3',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            title: 'program 4',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            title: 'program 5',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            title: 'program 6',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            title: 'program 7',
+            path: '1',
+            img: 'static/images/news/news1.jpg'
+        },
+        {
+            date: '28. jún, 20:00',
+            title: 'Viva opera!',
+            path: '#viva-opera',
+            img: 'static/images/news/news1.jpg'
         }
     ];
 };
