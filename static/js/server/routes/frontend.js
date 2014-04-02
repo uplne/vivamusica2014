@@ -40,7 +40,7 @@ module.exports = function(app) {
     // Actual item
     app.get("/program/:id", function(req, res) {
         res.render('content/programdetail', {
-            title: 'Viva Hapka',
+            title: 'Už čoskoro!',
             clientnav: setSelected('Program', clientNav)
         });
     });
