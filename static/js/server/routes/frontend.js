@@ -29,7 +29,7 @@ module.exports = function(app) {
         return items;
     };
 
-    // Actual item
+    // Actual program item
     app.get("/program/viva-opera", function(req, res) {
         res.render('content/programdetailvivaopera', {
             title: 'Viva Opera!',
@@ -37,7 +37,7 @@ module.exports = function(app) {
         });
     });
 
-    // Actual item
+    // Program
     app.get("/program/:id", function(req, res) {
         res.render('content/programdetail', {
             title: 'Už čoskoro!',
@@ -45,7 +45,7 @@ module.exports = function(app) {
         });
     });
 
-    // Actual item
+    // Vstupenky
     app.get("/vstupenky", function(req, res) {
         res.render('content/vstupenky', {
             title: 'Vstupenky',
@@ -53,14 +53,23 @@ module.exports = function(app) {
         });
     });
 
+    // Festival
+    app.get("/festival", function(req, res) {
+        res.render('content/festival', {
+            title: 'Festival',
+            clientnav: setSelected('Festival', clientNav)
+        });
+    });
+
+    // TODO - do it nicer
     var clientNav = [
-        {
-            name: 'Home',
-            path: '/'
-        },
         {
             name: 'Program',
             path: '/program'
+        },
+        {
+            name: 'Festival',
+            path: '/festival'
         },
         {
             name: 'Vstupenky',

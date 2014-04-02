@@ -99,6 +99,9 @@
     }
 }
 
+/**
+ * Text splitted into two columns
+ */
 .article__text {
     @include font-size(17px, false);
 
@@ -113,6 +116,19 @@
 
     @include rwd(997px) {
         padding: $base-padding $base-padding * 2;
+    }
+}
+
+/**
+ * Full width text
+ */
+.article__text--full {
+    @extend .article__text;
+
+    // Larger than mobile
+    @include rwd(470px) {
+        column-count: 1;
+        column-gap: 0;
     }
 }
 
