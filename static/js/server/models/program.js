@@ -8,14 +8,17 @@ var mongoose = require('mongoose'),
 /**
  * Program schema
  */
-var NewsSchema = new Schema({
-    title1: {type: String, default: ''},
-    title2: {type: String, default: ''},
-    img: {type: String, default: ''},
-    path: {type: String, default: ''}
+var ProgramSchema = new Schema({
+    date:    {type: String, default: ''},
+    title1:  {type: String, default: ''},
+    title2:  {type: String, default: ''},
+    text:    {type: String, default: ''},
+    img:     {type: String, default: ''},
+    path:    {type: String, default: ''},
+    tickets: {type: String, default: ''}
 },
 {
-    collection: 'news'
+    collection: 'program'
 });
 
-mongoose.model('News', NewsSchema, 'news');
+mongoose.model('Program', ProgramSchema, 'program');

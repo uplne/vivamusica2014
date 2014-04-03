@@ -9,15 +9,15 @@
                 <p class="programlist__text">21. - 28. jún 2014<br />Bratislava</p>
             </div>
         </li>
-        {{#each program}}
+        {{#foreach program}}
         <li class="programlist__item">
             <a href="/program/{{path}}" class="programlist__link">
                 <div class="thumbnail">
                     <img class="box__m" src="{{img}}" width="379" height="307" alt="" />
                 </div>
-                <div class="box__content"><p>{{date}}<br />{{title}}</p></div>
+                <div class="box__content"><p>{{date}}<br />{{title1}} {{title2}}</p></div>
             </a>
         </li>
-        {{/each}}
+        {{/foreach}}
     </ul>
 </div>

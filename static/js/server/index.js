@@ -4,6 +4,7 @@ var express  = require('express'),
     mongoose = require('mongoose'),
     config   = require('./config'),
     news     = require(config.paths.js + '/server/models/news'),
+    program  = require(config.paths.js + '/server/models/program'),
     routes   = require('./routes'),
     helpers  = require('./helpers'),
     appRoot  = config.paths.appRoot;

@@ -1,11 +1,35 @@
-var config  = require('../config'),
-    news    = require('../controllers/news'),
-    program = require('../controllers/program');
+var config   = require('../config'),
+    async    = require('async'),
+    mongoose = require('mongoose');
+
+    /*news    = require('../controllers/news'),
+    program = require('../controllers/program');*/
 
 module.exports = function(app) {
     // Home route
     app.get("/", function(req, res) {
-        news.list(function(items, err) {
+        var newsModel    = mongoose.model('News'),
+            newsQuery    = newsModel.find({}),
+            programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}),
+
+            resources = {
+            newsQuery:    newsQuery.exec.bind(newsQuery),
+            programQuery: programQuery.exec.bind(programQuery)
+        }
+
+        async.parallel(resources, function(err, results) {
+            res.render('content/index', {
+                title: 'Vivamusica! festival 2014',
+                imageAssets: config.paths.images,
+                cssAssets: config.paths.css,
+                news: results.newsQuery,
+                clientnav: setSelected('Home', clientNav),
+                program: results.programQuery
+            });
+        });
+
+        /*news.list(function(items, err) {
             res.render('content/index', {
                 title: 'Vivamusica! festival 2014',
                 imageAssets: config.paths.images,
@@ -14,7 +38,15 @@ module.exports = function(app) {
                 clientnav: setSelected('Home', clientNav),
                 program: program
             });
-        });
+
+            function(err, news) {
+        if (!err) {
+            callback(news, null)
+        } else {
+            callback(null, err);
+        }
+    }
+        });*/
     });
 
     // TODO - create utils module, use underscore or create own functional library
