@@ -3,6 +3,7 @@ var express  = require('express'),
     path     = require('path'),
     mongoose = require('mongoose'),
     config   = require('./config'),
+    news     = require(config.paths.js + '/server/models/news'),
     routes   = require('./routes'),
     helpers  = require('./helpers'),
     appRoot  = config.paths.appRoot;
@@ -14,6 +15,7 @@ function init() {
 }
 
 function setupServer() {
+
     // Configure server
     app.configure(function() {
         app.use(express.bodyParser());
@@ -42,6 +44,25 @@ function setupServer() {
 
         helpers.registerHelpers();
     });
+
+    // Bootstrap db connection
+    // Connect to mongodb
+    var connect = function () {
+      var options = { server: { socketOptions: { keepAlive: 1 } } }
+      mongoose.connect('mongodb://localhost/viva_db', options)
+    };
+
+    connect();
+
+    // Error handler
+    /*mongoose.connection.on('error', function (err) {
+      console.log(err);
+    });
+
+    // Reconnect when closed
+    mongoose.connection.on('disconnected', function () {
+      connect();
+    });*/
 
     // Start server
     app.listen(config.server.port, function() {

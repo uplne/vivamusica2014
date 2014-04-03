@@ -1,28 +1,19 @@
-var config = require('../config');
+var config  = require('../config'),
+    news    = require('../controllers/news'),
+    program = require('../controllers/program');
 
 module.exports = function(app) {
     // Home route
     app.get("/", function(req, res) {
-        res.render('content/index', {
-            title: 'Vivamusica! festival 2014',
-            imageAssets: config.paths.images,
-            cssAssets: config.paths.css,
-            news: [
-                {
-                    title1: "1. potvrdený koncert",
-                    title2: "Operné gala",
-                    img: "static/images/news/news1.jpg",
-                    path: "progam/viva-opera"
-                },
-                {
-                    title1: "2%",
-                    title2: "z daní",
-                    img: "static/images/news/news1.jpg",
-                    path: "novinky/2-z-dani"
-                }
-            ],
-            clientnav: setSelected('Home', clientNav),
-            program: program
+        news.list(function(items, err) {
+            res.render('content/index', {
+                title: 'Vivamusica! festival 2014',
+                imageAssets: config.paths.images,
+                cssAssets: config.paths.css,
+                news: items,
+                clientnav: setSelected('Home', clientNav),
+                program: program
+            });
         });
     });
 
@@ -47,7 +38,7 @@ module.exports = function(app) {
     });
 
     // Program
-    app.get("/program/:id", function(req, res) {
+    app.get("/program/:page", function(req, res) {
         res.render('content/programdetail', {
             title: 'Už čoskoro!',
             clientnav: setSelected('Program', clientNav)
@@ -74,7 +65,7 @@ module.exports = function(app) {
     var clientNav = [
         {
             name: 'Program',
-            path: '/program'
+            path: '/'
         },
         {
             name: 'Festival',
@@ -137,7 +128,7 @@ module.exports = function(app) {
         {
             date: '28. jún, 20:00',
             title: 'Viva opera!',
-            path: '#viva-opera',
+            path: 'viva-opera',
             img: 'static/images/news/news1.jpg'
         }
     ];
