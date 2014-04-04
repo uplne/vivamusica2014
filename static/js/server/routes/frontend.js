@@ -14,9 +14,9 @@ module.exports = function(app) {
             programQuery = programModel.find({}),
 
             resources = {
-            newsQuery:    newsQuery.exec.bind(newsQuery),
-            programQuery: programQuery.exec.bind(programQuery)
-        }
+                newsQuery:    newsQuery.exec.bind(newsQuery),
+                programQuery: programQuery.exec.bind(programQuery)
+            };
 
         async.parallel(resources, function(err, results) {
             res.render('content/index', {
@@ -24,7 +24,7 @@ module.exports = function(app) {
                 imageAssets: config.paths.images,
                 cssAssets: config.paths.css,
                 news: results.newsQuery,
-                clientnav: setSelected('Home', clientNav),
+                clientnav: setSelected('Program', clientNav),
                 program: results.programQuery
             });
         });
@@ -62,18 +62,35 @@ module.exports = function(app) {
     };
 
     // Actual program item
-    app.get("/program/viva-opera", function(req, res) {
+    /*app.get("/program/viva-opera", function(req, res) {
         res.render('content/programdetailvivaopera', {
             title: 'Viva Opera!',
             clientnav: setSelected('Program', clientNav)
         });
-    });
+    });*/
 
     // Program
     app.get("/program/:page", function(req, res) {
-        res.render('content/programdetail', {
-            title: 'Už čoskoro!',
-            clientnav: setSelected('Program', clientNav)
+        var programModel = mongoose.model('Program'),
+            programQuery = programModel.find({'path': req.params.page}),
+
+            resources = {
+                programQuery: programQuery.exec.bind(programQuery)
+            };
+
+        async.parallel(resources, function(err, results) {
+            var item = results.programQuery[0];
+
+            res.render('content/programdetail', {
+                date: item.date,
+                place: item.place,
+                title1: item.title1,
+                title2: item.title2,
+                intro: item.intro,
+                text: item.text,
+                img: item.img,
+                tickets: item.tickets
+            });
         });
     });
 
@@ -118,50 +135,6 @@ module.exports = function(app) {
         {
             name: 'Kontakt',
             path: '/kontakt'
-        }
-    ];
-
-    var program = [
-        {
-            title: 'program 1',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            title: 'program 2',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            title: 'program 3',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            title: 'program 4',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            title: 'program 5',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            title: 'program 6',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            title: 'program 7',
-            path: '1',
-            img: 'static/images/news/news1.jpg'
-        },
-        {
-            date: '28. jún, 20:00',
-            title: 'Viva opera!',
-            path: 'viva-opera',
-            img: 'static/images/news/news1.jpg'
         }
     ];
 };
