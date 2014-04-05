@@ -6,7 +6,8 @@ var config   = require('../config'),
     program = require('../controllers/program');*/
 
 module.exports = function(app) {
-    // Home route
+
+    // Home/Program route
     app.get("/", function(req, res) {
         var newsModel    = mongoose.model('News'),
             newsQuery    = newsModel.find({}),
@@ -18,6 +19,7 @@ module.exports = function(app) {
                 programQuery: programQuery.exec.bind(programQuery)
             };
 
+        // Parallel requests to DB
         async.parallel(resources, function(err, results) {
             res.render('content/index', {
                 title: 'Vivamusica! festival 2014',
@@ -48,18 +50,6 @@ module.exports = function(app) {
     }
         });*/
     });
-
-    // TODO - create utils module, use underscore or create own functional library
-    var setSelected = function(item, items) {
-        var len = items.length,
-            i;
-
-        for (i = 0; i < len; i++) {
-            items[i].selected = items[i].name=== item;
-        }
-
-        return items;
-    };
 
     // Actual program item
     /*app.get("/program/viva-opera", function(req, res) {
@@ -102,6 +92,14 @@ module.exports = function(app) {
         });
     });
 
+    // Kontakt
+    app.get("/kontakt", function(req, res) {
+        res.render('content/kontakt', {
+            title: 'Kontakt',
+            clientnav: setSelected('Kontakt', clientNav)
+        });
+    });
+
     // Festival
     app.get("/festival", function(req, res) {
         res.render('content/festival', {
@@ -137,4 +135,16 @@ module.exports = function(app) {
             path: '/kontakt'
         }
     ];
+
+    // TODO - create utils module, use underscore or create own functional library
+    var setSelected = function(item, items) {
+        var len = items.length,
+            i;
+
+        for (i = 0; i < len; i++) {
+            items[i].selected = items[i].name=== item;
+        }
+
+        return items;
+    };
 };

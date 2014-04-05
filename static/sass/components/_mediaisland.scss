@@ -1,0 +1,14 @@
+/**
+ * Versions of mediaisland
+ */
+
+.mediaisland--solid {
+    @extend .mediaisland;
+
+    background-color: $brand-beta;
+    color: $brand-gamma;
+
+    h2 {
+        margin: 0;
+    }
+}

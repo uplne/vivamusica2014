@@ -4,14 +4,7 @@
  * Mobile first. We are going from mobile resolution up using RWD.
  */
 .article {
-    @extend .g;
-    @extend .nullm--left;
-
-    width: 100%;
-
-    @include rwd(997px) {
-        width: em(996) - $sidebar-w;
-    }
+    @extend .contentbox;
 }
 
 .article__header {

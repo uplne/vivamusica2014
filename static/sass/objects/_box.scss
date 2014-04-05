@@ -6,8 +6,7 @@ $box-media-bottom-p: 5px;
 
 .box,
 %box {
-    display: inline-block;
-    vertical-align: top;
+    @extend %inline-block;
 }
 
 .box {

@@ -440,7 +440,6 @@ html input[disabled] {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003338}}
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -457,6 +456,7 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -510,7 +510,6 @@ table {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\000035}}
 * {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -558,7 +557,6 @@ a:hover {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000310}}
 .btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close {
-  -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
 
@@ -769,13 +767,17 @@ a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000330}}
 .btn--nav.is-active .icon--nav:before {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000334}}
 .btn--nav.is-active .icon--nav:after {
   -webkit-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -moz-transform: rotate(-45deg) translate(0.45em, -0.45em);
   -ms-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -o-transform: rotate(-45deg) translate(0.45em, -0.45em);
   transform: rotate(-45deg) translate(0.45em, -0.45em);
 }
 @media only screen and (min-width: 819px) {
@@ -812,13 +814,17 @@ a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000370}}
 .btn--nav.is-active .icon--nav:before {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000374}}
 .btn--nav.is-active .icon--nav:after {
   -webkit-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -moz-transform: rotate(-45deg) translate(0.45em, -0.45em);
   -ms-transform: rotate(-45deg) translate(0.45em, -0.45em);
+  -o-transform: rotate(-45deg) translate(0.45em, -0.45em);
   transform: rotate(-45deg) translate(0.45em, -0.45em);
 }
 @media only screen and (min-width: 819px) {
@@ -954,14 +960,18 @@ a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000377}}
 .icon--close:before {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: .4em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000384}}
 .icon--close:after {
   -webkit-transform: rotate(-45deg) translate(0.44em, -0.44em);
+  -moz-transform: rotate(-45deg) translate(0.44em, -0.44em);
   -ms-transform: rotate(-45deg) translate(0.44em, -0.44em);
+  -o-transform: rotate(-45deg) translate(0.44em, -0.44em);
   transform: rotate(-45deg) translate(0.44em, -0.44em);
   top: 1.05em;
 }
@@ -999,6 +1009,8 @@ a:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_landing\.scss}line{font-family:\0000329}}
 .lcontainer__popup {
+  -webkit-box-shadow: 3px 0 22px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 0 22px 0 rgba(0, 0, 0, 0.75);
   -ms-box-shadow: 3px 0 22px 0 rgba(0, 0, 0, 0.75);
   -o-box-shadow: 3px 0 22px 0 rgba(0, 0, 0, 0.75);
   box-shadow: 3px 0 22px 0 rgba(0, 0, 0, 0.75);
