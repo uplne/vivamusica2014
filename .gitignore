@@ -2,3 +2,8 @@ node_modules
 npm-debug.log
 .sass-cache
 .rebooted
+/static/images/gallery/
+/static/images/team/
+/static/images/sien/
+/static/images/titles/
+/static/images/news/
