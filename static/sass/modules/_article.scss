@@ -84,7 +84,7 @@
     @extend .box__m--static;
 
     @include rwd($tablet-w) {
-        //max-height: 307px;
+        max-height: 307px;
     }
 }
 
@@ -169,8 +169,11 @@
 .article--small {
     @extend .contentbox--small;
 
-    max-width: em(920);
-    margin-left: $sidebar-w;
+
+    @include rwd($tablet-w) {
+        max-width: 60%;
+        margin-left: $sidebar-w;
+    }
 
     .article__header {
         @include rwd($tablet-w) {
@@ -213,7 +216,8 @@
 
     .article__img {
         @include rwd($tablet-w) {
-            //max-height: em(312);
+            max-width: em(741);
+            max-height: em(307);
         }
     }
 

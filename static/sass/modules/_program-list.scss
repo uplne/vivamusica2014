@@ -82,6 +82,12 @@ $list-line-height: 1.2;
     }
 }
 
+.programlist__thumb {
+    @extend .thumbnail;
+
+    max-height: em(119);
+}
+
 /**
  * Program list box with just information
  */
