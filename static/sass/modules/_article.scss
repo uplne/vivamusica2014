@@ -5,6 +5,16 @@
  */
 .article {
     @extend .contentbox;
+
+    h2 {
+        @extend %inline-block;
+
+        font-style: italic;
+        line-height: 1em;
+        color: $brand-text;
+        background-color: $brand-beta;
+        padding: .2em .5em;
+    }
 }
 
 .article__header {
@@ -74,7 +84,7 @@
     @extend .box__m--static;
 
     @include rwd($tablet-w) {
-        max-height: 312px;
+        //max-height: 307px;
     }
 }
 
@@ -144,5 +154,79 @@
 
     @include rwd(550px) {
         display: none;
+    }
+}
+
+.article__content {
+    overflow: hidden;
+}
+
+/**
+ * Small article
+ *
+ * For a pages like kontakt where is submenu
+ */
+.article--small {
+    @extend .contentbox--small;
+
+    max-width: em(920);
+    margin-left: $sidebar-w;
+
+    .article__header {
+        @include rwd($tablet-w) {
+            margin-top: 0;
+            max-height: auto;
+            overflow: hidden;
+        }
+    }
+
+    .article__item,
+    .article__intro {
+        @include rwd($tablet-w) {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        @include rwd(997px) {
+            width: 50%;
+            padding-left: 0;
+        }
+    }
+
+    .article__intro {
+        margin-top: $base-padding * 6;
+    }
+
+    .article__title--alpha {
+        @extend .title--alpha;
+
+        top: 1em;
+        left: $base-padding * .7;
+    }
+
+    .article__title--beta {
+        @extend .title--beta;
+
+        top: 1em + 1.2em;
+        left: $base-padding * 1.4;
+    }
+
+    .article__img {
+        @include rwd($tablet-w) {
+            //max-height: em(312);
+        }
+    }
+
+    .article__text {
+        @include rwd($tablet-w) {
+            column-count: 1;
+            padding: $base-padding $base-padding * 2;
+        }
+
+        // Larger than mobile
+        @include rwd(997px) {
+            column-count: 2;
+            column-gap: $base-padding * 4;
+        }
     }
 }

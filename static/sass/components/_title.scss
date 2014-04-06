@@ -9,7 +9,6 @@ $title--beta--t: $title--alpha--t + 1.2em;
 
 .title {
     @extend %effect-trans--slow;
-    @include font-size(26px, false);
 
     position: absolute;
     z-index: 1;

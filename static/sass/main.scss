@@ -36,6 +36,7 @@
 @import "generic/clearfix";
 @import "generic/effects";
 @import "generic/functions";
+@import "generic/headings";
 
 /**
  * Objects
@@ -56,6 +57,7 @@
 @import "components/contentbar";
 @import "components/arrows";
 @import "components/mediaisland";
+@import "components/headings";
 
 /**
  * Modules
@@ -68,6 +70,8 @@
 @import "modules/social-navigation";
 @import "modules/tickets";
 @import "modules/contentbox";
+@import "modules/submenu";
+@import "modules/gallery";
 
 /**
  * Pages

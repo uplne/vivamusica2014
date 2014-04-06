@@ -105,6 +105,7 @@ module.exports = function(grunt) {
                 options: {
                     style: 'expanded',
                     trace: true,
+                    sourcemap: true,
                     debugInfo: true
                 },
                 expand: true,

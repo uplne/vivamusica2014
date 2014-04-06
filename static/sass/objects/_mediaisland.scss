@@ -7,16 +7,22 @@
     </div>
  */
 
-.mediaisland {
+%mediaisland {
     @extend %inline-block;
 
     > img {
         float: left;
-        width: 50%;
     }
 
     .mediaisland__content {
         float: left;
-        width: 50%;
+    }
+}
+
+.mediaisland--small {
+    @extend %mediaisland;
+
+    > img {
+        height: 45px;
     }
 }

@@ -7,8 +7,17 @@
     @extend .nullm--left;
 
     width: 100%;
+    float: left;
 
     @include rwd(997px) {
         width: em(996) - $sidebar-w;
+    }
+}
+
+.contentbox--small {
+    width: 100%;
+
+    @include rwd(1000px) {
+        width: 80%;
     }
 }

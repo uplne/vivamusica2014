@@ -1,0 +1,44 @@
+/**
+ * Submenu
+ */
+.submenu {
+    @extend %effect-trans;
+    @extend %inline-block;
+
+    width: 100%;
+    margin-top: 3em;
+    background-color: $submenu-bg;
+
+    @include rwd($tablet-w) {
+        width: $sidebar-w;
+        height: 100%;
+        float: left;
+        position: fixed;
+        margin-top: 0;
+    }
+}
+
+.submenulist {
+    @extend .uilist;
+}
+
+.submenulist__link {
+    @extend .mediaisland--small;
+    @extend %effect-trans;
+    @include font-size(16px, false);
+
+    width: 100%;
+    font-style: italic;
+    color: $brand-text;
+    border-bottom: 1px solid $submenu-border-fallback;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+
+    &:hover {
+        background-color: rgba(0,0,0,1);
+    }
+}
+
+.submenulist__text {
+    padding: 1em;
+    line-height: 2.8em;
+}

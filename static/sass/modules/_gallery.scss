@@ -1,0 +1,25 @@
+.gallery {
+    @extend .g;
+
+    float: left;
+    width: 60%;
+    margin-left: $sidebar-w;
+}
+
+.gallery__item {
+    @extend .nullp--left;
+    @extend .g-half;
+
+    float: left;
+    overflow: hidden;
+
+    > img {
+        @extend %effect-trans;
+
+        width: 100%;
+
+        &:hover {
+            @extend %effect-descale;
+        }
+    }
+}

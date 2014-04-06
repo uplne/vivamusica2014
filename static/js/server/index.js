@@ -5,6 +5,8 @@ var express  = require('express'),
     config   = require('./config'),
     news     = require(config.paths.js + '/server/models/news'),
     program  = require(config.paths.js + '/server/models/program'),
+    halloffame  = require(config.paths.js + '/server/models/halloffame'),
+    kontatk  = require(config.paths.js + '/server/models/kontakt'),
     routes   = require('./routes'),
     helpers  = require('./helpers'),
     appRoot  = config.paths.appRoot;
@@ -49,7 +51,7 @@ function setupServer() {
     // Bootstrap db connection
     // Connect to mongodb
     var connect = function () {
-      var options = { server: { socketOptions: { keepAlive: 1 } } }
+      var options = { server: { socketOptions: { keepAlive: 1 } }, user: 'viva', pass: 'vbnm1234' }
       mongoose.connect('mongodb://localhost/viva_db', options)
     };
 

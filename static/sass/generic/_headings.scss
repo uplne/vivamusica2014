@@ -1,0 +1,9 @@
+/**
+ * Headings
+ */
+h1,.alpha{
+    @include font-size($h1-size);
+}
+h2,.beta{
+    @include font-size($h2-size);
+}
