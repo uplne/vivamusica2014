@@ -206,13 +206,22 @@ module.exports = function(app) {
         });
     });
 
+    /**
+     * Get all images by year from folder
+     *
+     * @param  {String} year Actual year from URL
+     * @return {Array}       The array of image paths
+     */
     var getImagesFromGallery = function(year) {
         var files = fs.readdirSync(config.paths.images + '/gallery/' + year),
             paths = [];
 
         for (var i in files) {
             if (files.hasOwnProperty(i)) {
-                paths.push({'img': '/static/images/gallery/' + year + '/' + files[i]});
+                paths.push({
+                    'img': '/static/images/gallery/' + year + '/' + files[i],
+                    'imgthumb': '/static/images/gallery/' + year + '/thumbs/' + files[i]
+                });
             }
         }
 

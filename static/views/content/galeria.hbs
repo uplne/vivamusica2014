@@ -32,8 +32,8 @@
     </div>
     <div class="gallery">
         {{#foreach imgs}}
-        <a class="gallery__item" href="">
-            <img src="{{img}}" />
+        <a class="gallery__item" href="" data-role="gallery" data-path="{{img}}">
+            <img src="{{imgthumb}}" />
         </a>
         {{/foreach}}
     </div>
