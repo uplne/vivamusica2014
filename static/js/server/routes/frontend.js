@@ -148,7 +148,7 @@ module.exports = function(app) {
             };
 
         async.parallel(resources, function(err, results) {
-            res.render('content/kontaktnew', {
+            res.render('content/kontakt', {
                 pagetitle: "Kontakt",
                 subnav: results.kontaktQuery,
                 clientnav: setSelected('Kontakt', clientNav),
