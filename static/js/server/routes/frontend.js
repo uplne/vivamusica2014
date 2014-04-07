@@ -1,6 +1,7 @@
 var config   = require('../config'),
     async    = require('async'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    fs       = require('fs');
 
     /*news    = require('../controllers/news'),
     program = require('../controllers/program');*/
@@ -197,12 +198,26 @@ module.exports = function(app) {
     });
 
     // Galeria
-    app.get("/galeria", function(req, res) {
+    app.get("/galeria/:year", function(req, res) {
         res.render('content/galeria', {
             title: 'Galeria',
+            imgs: getImagesFromGallery(req.params.year),
             clientnav: setSelected('Galéria', clientNav)
         });
     });
+
+    var getImagesFromGallery = function(year) {
+        var files = fs.readdirSync(config.paths.images + '/gallery/' + year),
+            paths = [];
+
+        for (var i in files) {
+            if (files.hasOwnProperty(i)) {
+                paths.push({'img': '/static/images/gallery/' + year + '/' + files[i]});
+            }
+        }
+
+        return paths;
+    };
 
     // TODO - do it nicer
     var clientNav = [
@@ -220,7 +235,7 @@ module.exports = function(app) {
         },
         {
             name: 'Galéria',
-            path: '/galeria'
+            path: '/galeria/2012'
         },
         {
             name: 'Hall of fame',
