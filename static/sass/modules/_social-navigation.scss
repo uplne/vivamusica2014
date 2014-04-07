@@ -5,9 +5,10 @@
  */
 .socialnav {
     @extend .uilist--spread;
-    
-    position: absolute;
+
+    position: fixed;
     left: 0;
+    bottom: 0;
     bottom: 4em;
     height: 4em;
     border-top: 1px solid #fff;

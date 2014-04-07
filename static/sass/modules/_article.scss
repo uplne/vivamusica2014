@@ -169,7 +169,6 @@
 .article--small {
     @extend .contentbox--small;
 
-
     @include rwd($tablet-w) {
         max-width: 60%;
         margin-left: $sidebar-w;
