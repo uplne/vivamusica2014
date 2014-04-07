@@ -3,31 +3,13 @@
 <div class="main__container">
     <div class="submenu">
         <ul class="submenulist">
+            {{#foreach galleries}}
             <li>
-                <a class="submenulist__link" href="/galeria/2012" title="">
-                    <span class="submenulist__text">2012</span>
+                <a class="submenulist__link" href="/galeria/{{title}}" title="">
+                    <span class="submenulist__text">{{title}}</span>
                 </a>
             </li>
-            <li>
-                <a class="submenulist__link" href="/galeria/2011" title="">
-                    <span class="submenulist__text">2011</span>
-                </a>
-            </li>
-            <li>
-                <a class="submenulist__link" href="/galeria/2010" title="">
-                    <span class="submenulist__text">2010</span>
-                </a>
-            </li>
-            <li>
-                <a class="submenulist__link" href="/galeria/2009" title="">
-                    <span class="submenulist__text">2009</span>
-                </a>
-            </li>
-            <li>
-                <a class="submenulist__link" href="/galeria/2008" title="">
-                    <span class="submenulist__text">2008</span>
-                </a>
-            </li>
+            {{/foreach}}
         </ul>
     </div>
     <div class="gallery">

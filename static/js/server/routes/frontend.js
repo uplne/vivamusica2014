@@ -201,6 +201,7 @@ module.exports = function(app) {
     app.get("/galeria/:year", function(req, res) {
         res.render('content/galeria', {
             title: 'Galeria',
+            galleries: getGalleries(),
             imgs: getImagesFromGallery(req.params.year),
             clientnav: setSelected('Galéria', clientNav)
         });
@@ -213,11 +214,12 @@ module.exports = function(app) {
      * @return {Array}       The array of image paths
      */
     var getImagesFromGallery = function(year) {
-        var files = fs.readdirSync(config.paths.images + '/gallery/' + year),
-            paths = [];
+        var files   = fs.readdirSync(config.paths.images + '/gallery/' + year),
+            paths   = [],
+            pattern = /(.(?:jpg|gif|png|jpeg|JPG|GIF|PNG|JPEG))/gm;
 
         for (var i in files) {
-            if (files.hasOwnProperty(i)) {
+            if (files.hasOwnProperty(i) && files[i].match(pattern)) {
                 paths.push({
                     'img': '/static/images/gallery/' + year + '/' + files[i],
                     'imgthumb': '/static/images/gallery/' + year + '/thumbs/' + files[i]
@@ -226,6 +228,22 @@ module.exports = function(app) {
         }
 
         return paths;
+    };
+
+    var getGalleries = function() {
+        var files   = fs.readdirSync(config.paths.images + '/gallery/'),
+            galls   = [],
+            pattern = /[0-9]+/;
+
+        for (var i in files) {
+            if (files.hasOwnProperty(i) && files[i].match(pattern)) {
+                galls.push({
+                    'title': files[i]
+                });
+            }
+        }
+
+        return galls.reverse();
     };
 
     // TODO - do it nicer
