@@ -27,7 +27,11 @@ define([
             clickHandler: function(e) {
                 e.preventDefault();
 
-                console.log(e.target);
+                self.openImage(e.target.src);
+            },
+
+            openImage: function(path) {
+                console.log(path);
             }
         }
     };
