@@ -1,14 +1,11 @@
 var express  = require('express'),
     exphbs   = require('express-hbs'),
     path     = require('path'),
-    mongoose = require('mongoose'),
     config   = require('./config'),
-    news     = require(config.paths.js + '/server/models/news'),
-    program  = require(config.paths.js + '/server/models/program'),
-    halloffame  = require(config.paths.js + '/server/models/halloffame'),
-    kontatk  = require(config.paths.js + '/server/models/kontakt'),
     routes   = require('./routes'),
     helpers  = require('./helpers'),
+    db       = require('./config/db'),
+    dbmodels = require('./controllers/dbmodels'),
     appRoot  = config.paths.appRoot;
 
 function init() {
@@ -48,29 +45,13 @@ function setupServer() {
         helpers.registerHelpers();
     });
 
-    // Bootstrap db connection
-    // Connect to mongodb
-    var connect = function () {
-      var options = { server: { socketOptions: { keepAlive: 1 } }, user: 'viva', pass: 'vbnm1234' }
-      mongoose.connect('mongodb://localhost/viva_db', options)
-    };
-
-    connect();
-
-    // Error handler
-    /*mongoose.connection.on('error', function (err) {
-      console.log(err);
-    });
-
-    // Reconnect when closed
-    mongoose.connection.on('disconnected', function () {
-      connect();
-    });*/
-
     // Start server
     app.listen(config.server.port, function() {
         console.log('Express server listening on port %d in %s mode', config.server.port, app.settings.env);
     });
+
+    // Connect to mongodb
+    db.connect();
 
     routes.frontend(app);
 }
