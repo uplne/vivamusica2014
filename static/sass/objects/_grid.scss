@@ -12,10 +12,9 @@
 .g__item {
     @include vendor(box-sizing, border-box);
 
-    display: inline-block;
+    float: left;
     width: 100%;
-    padding-left: $base-padding;
-    vertical-align: top;
+    margin-left: $base-padding;
 }
 
 .g-half { width: 50%; }

@@ -13,7 +13,6 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: $zindex-omega;
     width: $navlink-size;
     height: $navlink-size;
     padding: 1em;
@@ -21,7 +20,7 @@
 
     // When mobile menu is active move
     &.is-active {
-        left: $sidebar-w + $navlink-size;
+        left: $sidebar-w + $navlink-size - .2;
 
         // When mobile menu is active we need to transform icon into X shape
         .icon--nav {
@@ -46,43 +45,6 @@
 /**
  * Popup close button
  */
-.btn--nav {
-    @extend %btn;
-    @extend %effect-trans;
-    @include font-size(11px);
-
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: $navlink-size;
-    height: $navlink-size;
-    padding: 1em;
-    background-color: $sidebar-bg;
-
-    // When mobile menu is active move
-    &.is-active {
-        left: $sidebar-w + $navlink-size;
-
-        // When mobile menu is active we need to transform icon into X shape
-        .icon--nav {
-            background-color: transparent;
-
-            &:before {
-                @include vendor(transform, rotate(45deg));
-            }
-
-            &:after {
-                @include vendor(transform, rotate(-45deg) translate(.45em, -.45em));
-            }
-        }
-    }
-
-    // When on larger screen disable this button
-    @include rwd($tablet-w, false) {
-        display: none;
-    }
-}
-
 .btn--close {
     @extend %btn;
     @extend %effect-trans;
@@ -108,7 +70,7 @@
     @extend %btn;
 
     float: right;
-    margin-bottom: $base-mb;
+    margin-bottom: $base-mb * 2;
 }
 
 /**

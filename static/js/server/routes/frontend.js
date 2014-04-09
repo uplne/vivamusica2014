@@ -131,14 +131,6 @@ module.exports = function(app) {
         });
     });
 
-    // Vstupenky
-    app.get("/vstupenky", function(req, res) {
-        res.render('content/vstupenky', {
-            title: 'Vstupenky',
-            clientnav: setSelected('Vstupenky', clientNav)
-        });
-    });
-
     // Kontakt
     app.get("/kontakt", function(req, res) {
         var kontaktModel = mongoose.model('Kontakt'),
@@ -255,10 +247,6 @@ module.exports = function(app) {
         {
             name: 'Festival',
             path: '/festival'
-        },
-        {
-            name: 'Vstupenky',
-            path: '/vstupenky'
         },
         {
             name: 'Galéria',

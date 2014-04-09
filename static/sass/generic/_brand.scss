@@ -3,7 +3,7 @@
  */
 
 // Main brand pallete
-$brand: #ff0091;
+$brand: #ed1c24;
 $brand-beta: #000;
 $brand-gamma: #fff;
 $brand-text: $brand-gamma;
@@ -19,8 +19,8 @@ $sidebar-links: #fff;
 $icon-nav: #666;
 
 // Sidebar menu
-$sidebar-menu-hover-bg: #fff;
-$sidebar-menu-hover-color: #000;
+$sidebar-menu-hover-bg: $brand;
+$sidebar-menu-hover-color: $brand-gamma;
 
 // Sidebar partners
 $sidebar-partners-bg: #fff;

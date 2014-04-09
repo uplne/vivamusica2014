@@ -6,7 +6,7 @@
     @extend .cf;
     @extend %effect-trans;
 
-    width: em(strip-units($main-w));
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     position: relative;
@@ -20,36 +20,34 @@
         right: em(122) * -1;
     }
 
-   /* &.is-active {
-        padding-left: $sidebar-w;
-    }*/
-
-    // When on larger screen
-    /*@include rwd($tablet-w) {
-        padding-left: $sidebar-w;
-    }*/
+    @include rwd($tablet-w) {
+        width: em(strip-units($main-w));
+    }
 }
 
-/*.main__sidebar {
+.main__sidebar {
     @extend %effect-trans;
 
     width: $sidebar-w;
     height: 100%;
-    background-color: $sidebar-bg;
     position: fixed;
     top: 0;
     left: -$sidebar-w;
-    z-index: $zindex-omega;
+    background-color: $sidebar-bg;
     box-shadow: 3px -2px 3px rgba(0,0,0,.3);
 
     &.is-active {
         left: 0;
     }
 
-    // When on larger screen
+    /**
+     * 1. So the animation transition between mobile and desktop is not visible
+     */
     @include rwd($tablet-w) {
-        left: 0;
-        box-shadow: none;
+        position: static;
+        float: left;
+        width: 20%;
+        transition: none; /* [1] */
     }
 }
 
@@ -57,16 +55,21 @@
     float: left;
     width: 100%;
     height: 100%;
-}/*/
+    background-color: $brand-gamma;
+}
 
 /**
  * Top
  */
 .top {
+    @extend %cf;
+    @extend %effect-trans;
+
     width: 100%;
-    position: relative;
-    padding-bottom: .4em;
-    overflow: hidden;
-    text-align: center;
-    background-color: $brand;
+    background-color: transparent;
+
+    // When on larger screen
+    @include rwd($tablet-w) {
+        background-color: $brand-beta;
+    }
 }

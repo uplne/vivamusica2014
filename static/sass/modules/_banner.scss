@@ -1,0 +1,11 @@
+/**
+ * Top banner
+ */
+.banner {
+    @extend .g__item;
+    @extend .nullm--left;
+
+    @include rwd($tablet-w) {
+        width: 80%;
+    }
+}
