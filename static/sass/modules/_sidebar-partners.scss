@@ -5,12 +5,16 @@
 .sbpartners {
     @extend %uilist;
 
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    padding: $base-padding 0;
-    margin-top: -1px;
-    background-color: $sidebar-partners-bg;
+    display: none;
+
+    @include rwd($tablet-w) {
+        display: block;
+        float: left;
+        width: $fifth;
+        padding: $base-padding 0;
+        margin-top: -1px;
+        background-color: $sidebar-partners-bg;
+    }
 }
 
 .sbpartners__link {

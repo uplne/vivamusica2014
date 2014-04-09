@@ -5,8 +5,12 @@
 $list-line-height: 1.2;
 
 .programlist {
-    padding: $base-padding 0;
     background-color: white;
+
+    @include rwd($tablet-w) {
+        float: left;
+        width: $fourfifths;
+    }
 }
 
 .programlist__list {
@@ -20,6 +24,8 @@ $list-line-height: 1.2;
         float: none;
         display: inline-block;
         margin-right: $display-fix;
+        border-left: 1px solid $brand-gamma;
+        border-bottom: 1px solid $brand-gamma;
 
         // Bigger than mobile
         @include rwd($tablet-w) {
@@ -34,18 +40,13 @@ $list-line-height: 1.2;
  * program list item - abstraction
  */
 .programlist__item {
-    @extend .box;
-
     overflow: hidden;
-
-    width: 30%;
-    max-width: 11.6em;
-    min-width: 9.3em;
+    width: $quarter;
 
     // Bigger than mobile
     @include rwd($tablet-w) {
-        width: 30%;
-        max-width: 12.5em;
+        width: $quarter;
+        min-height: em(190);
     }
 }
 
@@ -61,31 +62,10 @@ $list-line-height: 1.2;
     @extend %inline-block;
 
     background-color: $brand-beta;
-
-    p {
-        font-style: italic;
-        line-height: $list-line-height;
-        height: $list-line-height * 2.8em;
-        text-align: left;
-        padding: 0;
-        margin: 0;
-        color: $brand-text;
-        white-space: normal;
-    }
-
-    &:hover {
-        background-color: $brand-btn-hover;
-
-        img {
-            @extend %effect-descale;
-        }
-    }
 }
 
 .programlist__thumb {
     @extend .thumbnail;
-
-    max-height: em(119);
 }
 
 /**
