@@ -6,19 +6,31 @@
     @extend .cf;
     @extend %effect-trans;
 
+    width: em(strip-units($main-w));
     height: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    &:after {
+        content: url('/static/images/assets/claim.png');
+        width: 126px;
+        height: 69px;
+        position: absolute;
+        top: 2em;
+        right: em(122) * -1;
+    }
 
    /* &.is-active {
         padding-left: $sidebar-w;
     }*/
 
     // When on larger screen
-    @include rwd($tablet-w) {
+    /*@include rwd($tablet-w) {
         padding-left: $sidebar-w;
-    }
+    }*/
 }
 
-.main__sidebar {
+/*.main__sidebar {
     @extend %effect-trans;
 
     width: $sidebar-w;
@@ -45,7 +57,7 @@
     float: left;
     width: 100%;
     height: 100%;
-}
+}/*/
 
 /**
  * Top

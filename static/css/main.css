@@ -92,6 +92,25 @@
  * Dimensions for rwd design in _dimensions.scss
  */
 /**
+ * Functions
+ */
+/**
+ * Strip units
+ */
+/**
+ * Convert number in whatever units to em
+ *
+ * @param  {Number} $number Number in whatever units (px, %, etc)
+ * @return {Number}         Number in EMs
+ */
+/**
+ * Convert number to EMs
+ * 
+ * @param  {Number} $target      Number with no units
+ * @param  {Number} $context: 14 Defalt size
+ * @return {Number in ems}
+ */
+/**
  * z-index
  *
  * Each Greek letter is starting new z-index scope
@@ -527,14 +546,15 @@ html {
 body {
   width: 100%;
   height: 100%;
+  background: #e2e2e2 url("/static/images/assets/main-bg.jpg") top center repeat-y;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000320}}
 a {
   text-decoration: none;
   color: #ff0091;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\0000324}}
 a:hover {
   text-decoration: underline;
 }
@@ -562,7 +582,7 @@ a:hover {
  * TRANSITIONS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000310}}
-.btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close, .programlist__link, .sbnav__link, .submenu, .submenulist__link, .gallery__item > img, .main, .main__sidebar {
+.btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close, .programlist__link, .sbnav__link, .submenu, .submenulist__link, .gallery__item > img, .main {
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
@@ -591,25 +611,6 @@ a:hover {
   transition: 10s ease-out;
 }
 
-/**
- * Functions
- */
-/**
- * Strip units
- */
-/**
- * Convert number in whatever units to em
- *
- * @param  {Number} $number Number in whatever units (px, %, etc)
- * @return {Number}         Number in EMs
- */
-/**
- * Convert number to EMs
- * 
- * @param  {Number} $target      Number with no units
- * @param  {Number} $context: 14 Defalt size
- * @return {Number in ems}
- */
 /**
  * Headings
  */
@@ -1852,52 +1853,59 @@ h2, .beta {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000035}}
 .main {
+  width: 67.14286em;
   height: 100%;
+  margin: 0 auto;
+  position: relative;
   /* &.is-active {
        padding-left: $sidebar-w;
    }*/
+  /*@include rwd($tablet-w) {
+      padding-left: $sidebar-w;
+  }*/
 }
-@media only screen and (min-width: 819px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\000035}}
-  .main {
-    padding-left: 15em;
-  }
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000321}}
-.main__sidebar {
-  width: 15em;
-  height: 100%;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  left: -15em;
-  z-index: 10000;
-  box-shadow: 3px -2px 3px rgba(0, 0, 0, 0.3);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000333}}
-.main__sidebar.is-active {
-  left: 0;
-}
-@media only screen and (min-width: 819px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000321}}
-  .main__sidebar {
-    left: 0;
-    box-shadow: none;
-  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000314}}
+.main:after {
+  content: url("/static/images/assets/claim.png");
+  width: 126px;
+  height: 69px;
+  position: absolute;
+  top: 2em;
+  right: -8.71429em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000344}}
+ /*.main__sidebar {
+    @extend %effect-trans;
+
+    width: $sidebar-w;
+    height: 100%;
+    background-color: $sidebar-bg;
+    position: fixed;
+    top: 0;
+    left: -$sidebar-w;
+    z-index: $zindex-omega;
+    box-shadow: 3px -2px 3px rgba(0,0,0,.3);
+
+    &.is-active {
+        left: 0;
+    }
+
+    // When on larger screen
+    @include rwd($tablet-w) {
+        left: 0;
+        box-shadow: none;
+    }
+}
+
 .main__container {
-  float: left;
-  width: 100%;
-  height: 100%;
-}
-
+    float: left;
+    width: 100%;
+    height: 100%;
+}/*/
 /**
  * Top
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_main\.scss}line{font-family:\0000365}}
 .top {
   width: 100%;
   position: relative;

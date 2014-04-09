@@ -27,7 +27,7 @@ define([
             clickHandler: function(e) {
                 e.preventDefault();
 
-                self.openImage(e.target.src);
+                self.openImage(e.target.srcr);
             },
 
             openImage: function(path) {
