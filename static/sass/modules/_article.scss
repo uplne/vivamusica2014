@@ -47,7 +47,7 @@
     @include font-size(142px);
 
     position: absolute;
-    top: -.15em;
+    top: -.16em;
     left: .06em;
     font-weight: bold;
     font-style: italic;
@@ -88,9 +88,9 @@
     @include font-size(17px, false);
 
     margin-left: -1em;
-    padding: 0 em(18);
 
     @include rwd(997px) {
-        padding: $base-padding $base-padding * 2;
+        margin: 0;
+        padding: $base-padding;
     }
 }

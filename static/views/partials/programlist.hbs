@@ -3,9 +3,9 @@
         {{#foreach program}}
         <li class="programlist__item">
             <a href="/program/{{path}}" class="programlist__link">
-                <img src="/static/images/program/test-small.jpg" width="190" height="190" alt="" />
-                <p class="programlist__date">26. <span>jun</span></p>
-                <p class="programlist__title">Korben Dallas Symphony</p>
+                <img src="{{img}}" width="190" height="190" alt="" />
+                <p class="programlist__date">{{datenum}}. <span>{{datemonth}}</span></p>
+                <p class="programlist__title">{{title}}</p>
             </a>
         </li>
         {{/foreach}}

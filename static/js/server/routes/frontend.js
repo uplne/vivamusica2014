@@ -13,7 +13,7 @@ module.exports = function(app) {
         var newsModel    = mongoose.model('News'),
             newsQuery    = newsModel.find({}),
             programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
                 newsQuery:    newsQuery.exec.bind(newsQuery),
@@ -73,10 +73,10 @@ module.exports = function(app) {
             var item = results.programQuery[0];
 
             res.render('content/programdetail', {
-                date: item.date,
+                datenum: item.datenum,
+                datemonth: item.datemonth,
                 place: item.place,
-                title1: item.title1,
-                title2: item.title2,
+                title: item.title,
                 intro: item.intro,
                 text: item.text,
                 img: item.img,

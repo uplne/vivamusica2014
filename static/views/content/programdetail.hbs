@@ -11,17 +11,17 @@
     <article class="article">
         <header class="article__header">
             <section class="article__intro">
-                <span class="article__date">26.</span>
-                <span class="article__month">jun</span>
-                <span class="article__place">Stara trznica</span>
+                <span class="article__date">{{datenum}}.</span>
+                <span class="article__month">{{datemonth}}</span>
+                <span class="article__place">{{place}}</span>
             </section>
             <section class="article__intro">
-                <p class="article__introtext box">Svetoznáme slovenské operné hviezdy po prvýkrát spolu na jednom pódiu!</p>
+                <p class="article__introtext box">{{intro}}</p>
             </section>
         </header>
         <p class="article__text">
-            {{text}}
+            {{{text}}}
         </p>
-        <a class="btn--buy--contrast" href="{{tickets}}">Kúpiť vstupenku</a>
+        {{#if tickets}}<a class="btn--buy--contrast" href="{{tickets}}">Kúpiť vstupenku</a>{{/if}}
     </article>
 </div>

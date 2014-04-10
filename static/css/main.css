@@ -558,7 +558,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background: #e2e2e2 url("/static/images/assets/main-bg.jpg") top center repeat-y;
 }
 
@@ -1266,7 +1266,7 @@ h2, .beta {
   font-size: 10.14286rem;
   line-height: 1.01408;
   position: absolute;
-  top: -.15em;
+  top: -.16em;
   left: .06em;
   font-weight: bold;
   font-style: italic;
@@ -1314,12 +1314,12 @@ h2, .beta {
   font-size: 17px;
   font-size: 1.21429rem;
   margin-left: -1em;
-  padding: 0 1.28571em;
 }
 @media only screen and (min-width: 996px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000387}}
   .article__text {
-    padding: 1em 2em;
+    margin: 0;
+    padding: 1em;
   }
 }
 
