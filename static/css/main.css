@@ -1695,17 +1695,16 @@ h2, .beta {
     float: left;
     width: 20%;
     padding: 1em 0;
-    margin-top: -1px;
     background-color: white;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000319}}
 .sbpartners__link {
   display: block;
   padding: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000323}}
 .sbpartners__link > img {
   margin: 0 auto;
 }
