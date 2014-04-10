@@ -18,6 +18,7 @@
 }
 
 .article__header {
+    @extend %cf;
     position: relative;
     margin-top: $base-padding * 3;
 
@@ -32,74 +33,52 @@
     }
 }
 
-.article__item,
 .article__intro {
-    @extend .g__item;
-
-    width: 100%;
-    padding-left: 0;
-
-    @include rwd(550px) {
-        width: 50%;
-    }
+    position: relative;
+    float: left;
+    width: $half;
+    min-height: 8em;
 }
 
-.article__intro {
-    margin-top: $base-padding * 6;
+/**
+ * TODO - abstract text styles
+ */
+.article__date {
+    @include font-size(142px);
 
-    @include rwd(550px) {
-        width: 50%;
-    }
-
-    @include rwd(997px) {
-        padding: $base-padding 0 0 $base-padding;
-    }
+    position: absolute;
+    top: -.15em;
+    left: .06em;
+    font-weight: bold;
+    font-style: italic;
 }
 
-.article__title--alpha {
-    @extend .title--alpha;
+.article__month {
+    @include font-size(69px);
 
-    top: 1em;
-    left: $base-padding * .7;
-
-    // Larger than mobile
-    @include rwd(997px) {
-        left: $base-padding * 1.4;
-    }
+    position: absolute;
+    top: -.04em;
+    left: 2.55em;
+    font-weight: bold;
+    font-style: italic;
 }
 
-.article__title--beta {
-    @extend .title--beta;
+.article__place {
+    @include font-size(24px);
 
-    top: 1em + 1.2em;
-    left: $base-padding * 1.4;
-
-    // Larger than mobile
-    @include rwd(997px) {
-        left: $base-padding * 2.4;
-    }
-}
-
-.article__img {
-    @extend .box__m--static;
-
-    @include rwd($tablet-w) {
-        max-height: 307px;
-    }
+    position: absolute;
+    bottom: .45em;
+    left: 8em;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .article__introtext {
-    @extend .box;
-    @include font-size(18px);
+    @include font-size(24px);
 
     margin: 0;
-    font-style: italic;
     font-weight: bold;
-    line-height: 1.2;
-
-    @include rwd(997px) {
-        margin-bottom: -1em;
-    }
+    font-style: italic;
 }
 
 /**
@@ -113,95 +92,5 @@
 
     @include rwd(997px) {
         padding: $base-padding $base-padding * 2;
-    }
-}
-
-/**
- * Full width text
- */
-.article__text--full {
-    @extend .article__text;
-
-    // Larger than mobile
-    @include rwd(470px) {
-        column-count: 1;
-        column-gap: 0;
-    }
-}
-
-.article__content {
-    overflow: hidden;
-}
-
-/**
- * Small article
- *
- * For a pages like kontakt where is submenu
- */
-.article--small {
-    @extend .contentbox--small;
-
-    @include rwd($tablet-w) {
-        max-width: 60%;
-        margin-left: $sidebar-w;
-    }
-
-    .article__header {
-        @include rwd($tablet-w) {
-            margin-top: 0;
-            max-height: auto;
-            overflow: hidden;
-        }
-    }
-
-    .article__item,
-    .article__intro {
-        @include rwd($tablet-w) {
-            width: 100%;
-            padding-left: 0;
-        }
-
-        @include rwd(997px) {
-            width: 50%;
-            padding-left: 0;
-        }
-    }
-
-    .article__intro {
-        margin-top: $base-padding * 6;
-    }
-
-    .article__title--alpha {
-        @extend .title--alpha;
-
-        top: 1em;
-        left: $base-padding * .7;
-    }
-
-    .article__title--beta {
-        @extend .title--beta;
-
-        top: 1em + 1.2em;
-        left: $base-padding * 1.4;
-    }
-
-    .article__img {
-        @include rwd($tablet-w) {
-            max-width: em(741);
-            max-height: em(307);
-        }
-    }
-
-    .article__text {
-        @include rwd($tablet-w) {
-            column-count: 1;
-            padding: $base-padding $base-padding * 2;
-        }
-
-        // Larger than mobile
-        @include rwd(997px) {
-            column-count: 2;
-            column-gap: $base-padding * 4;
-        }
     }
 }
