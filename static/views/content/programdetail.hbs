@@ -1,31 +1,20 @@
-{{>sidebar}}
+<div class="top">
+    {{>sidebar}}
 
+    <div class="banner">
+        <img src="/static/images/program/test.jpg" width="100%" />
+    </div>
+</div>
 <div class="main__container">
+    {{>sidebarpartners}}
+
     <article class="article">
         <header class="article__header">
-            <div class="article__intro">
-                <h1>
-                    <span class="article__title--alpha">{{title1}}</span>
-                    <span class="article__title--beta">{{title2}}</span>
-                </h1>
-                <p class="article__introtext">{{date}}<br />{{place}}<br /><br />{{intro}}</p>
-            </div><!--
-         --><div class="article__item">
-                <div class="thumbnail">
-                    <img class="article__img" src="{{img}}" width="100%" alt="" />
-                </div>
-            </div>
+
         </header>
-        <div class="g__item">
-            <div class="article__btn--top">
-                <a class="btn--buy--contrast" href="{{tickets}}">Kúpiť vstupenku</a>
-            </div>
-            <p class="article__text">
-                {{text}}
-            </p>
-            <div class="article__btn">
-                <a class="btn--buy--contrast" href="{{tickets}}">Kúpiť vstupenku</a>
-            </div>
-        </div>
+        <p class="article__text">
+            {{text}}
+        </p>
+        <a class="btn--buy--contrast" href="{{tickets}}">Kúpiť vstupenku</a>
     </article>
 </div>

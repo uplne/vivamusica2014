@@ -6,12 +6,9 @@
     @extend .g;
     @extend .nullm--left;
 
-    width: 100%;
+    width: $fourfifths;
     float: left;
-
-    @include rwd(997px) {
-        width: em(996) - $sidebar-w;
-    }
+    margin-bottom: $base-padding * 2;
 }
 
 .contentbox--small {

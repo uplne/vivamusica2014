@@ -109,13 +109,7 @@
     @include font-size(17px, false);
 
     margin-left: -1em;
-    padding: em(18);
-
-    // Larger than mobile
-    @include rwd(470px) {
-        column-count: 2;
-        column-gap: $base-padding * 4;
-    }
+    padding: 0 em(18);
 
     @include rwd(997px) {
         padding: $base-padding $base-padding * 2;
@@ -132,28 +126,6 @@
     @include rwd(470px) {
         column-count: 1;
         column-gap: 0;
-    }
-}
-
-.article__btn {
-    margin: 0 0 1em 1em;
-    text-align: center;
-
-    @include rwd(550px) {
-        margin: 0 0 0 1em;
-        text-align: left;
-    }
-}
-
-.article__btn--top {
-    @extend .article__btn;
-
-    position: absolute;
-    top: 3em;
-    right: 1em;
-
-    @include rwd(550px) {
-        display: none;
     }
 }
 
