@@ -15,6 +15,10 @@
     transition: all 1.6s ease-out;
 }
 
+%effect-trans--delay {
+    transition: all 0.25s ease-out 30ms;
+}
+
 %effect-scale {
     transform: scale(1);
     transition: 0.25s ease-out;

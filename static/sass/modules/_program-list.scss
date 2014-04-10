@@ -24,8 +24,6 @@ $list-line-height: 1.2;
         float: none;
         display: inline-block;
         margin-right: $display-fix;
-        border-left: 1px solid $brand-gamma;
-        border-bottom: 1px solid $brand-gamma;
 
         // Bigger than mobile
         @include rwd($tablet-w) {
@@ -42,6 +40,8 @@ $list-line-height: 1.2;
 .programlist__item {
     overflow: hidden;
     width: $quarter;
+    border-left: 1px solid $brand-gamma;
+    border-top: 1px solid $brand-gamma;
 
     // Bigger than mobile
     @include rwd($tablet-w) {
@@ -61,45 +61,82 @@ $list-line-height: 1.2;
     @extend %effect-trans;
     @extend %inline-block;
 
-    background-color: $brand-beta;
+    position: relative;
+
+    &:hover {
+        .programlist__date {
+            margin-bottom: 50%;
+        }
+
+        .programlist__title {
+            bottom: 0;
+        }
+    }
 }
 
-.programlist__thumb {
-    @extend .thumbnail;
+%programlist__textstyle {
+    font-family: Times;
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+    white-space: normal;
 }
 
-/**
- * Program list box with just information
- */
-.programlist__info {
-    @extend %inline-block;
+.programlist__date {
+    @extend %effect-trans--delay;
+    @include font-size(43px, false);
+    @extend %programlist__textstyle;
 
-    > h2 {
-        margin: 0;
+    width: 1em;
+    margin: 0;
+    position: absolute;
+    bottom: .4em;
+    left: .4em;
+    color: $brand-gamma;
+    line-height: .7;
+
+    > span {
+        @include font-size(29px, false);
     }
 }
 
 .programlist__title {
-    @include font-size(16px, false);
+    @extend %effect-trans;
+    @include font-size(22px, false);
+    @extend %programlist__textstyle;
 
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 1;
-    text-align: left;
-    color: $brand-beta;
-
-    @include rwd(550px) {
-        @include font-size(22px, false);
-    }
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    padding: .5em;
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    background-color: $brand;
+    line-height: 1.2;
+    color: $brand-gamma;
 }
 
-.programlist__text {
-    @include font-size(12px, false);
+.programlist__extlink {
+    @include font-size(22px, false);
+    @extend %programlist__textstyle;
 
-    height: 6em;
-    margin: 0;
-    padding: 3em 0 0 0;
+    width: 6em;
+    margin: 90% 0 0 0;
+    padding-left: .3em;
+    position: relative;
+    background-color: transparent;
     line-height: 1;
-    overflow: hidden;
-    text-align: left;
+    color: $brand-beta;
+
+    &:before {
+        @include font-size(80px);
+
+        content: '{';
+        font-weight: normal;
+        font-style: normal;
+        position: absolute;
+        left: -.3em;
+        bottom: -.27em;
+    }
 }
