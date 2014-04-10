@@ -583,7 +583,7 @@ a:hover {
 /**
  * To hide on small screen
  */
-@media only screen and (min-width: 819px) {
+@media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000326}}
   .hidesmallscreen {
     display: none;
@@ -782,7 +782,7 @@ a:hover {
   -ms-transform: rotate(-45deg) translate(0.45em, -0.45em);
   transform: rotate(-45deg) translate(0.45em, -0.45em);
 }
-@media only screen and (min-width: 819px) {
+@media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\000038}}
   .btn--nav {
     display: none;

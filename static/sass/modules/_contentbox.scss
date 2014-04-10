@@ -6,15 +6,11 @@
     @extend .g;
     @extend .nullm--left;
 
-    width: $fourfifths;
+    width: 100%;
     float: left;
     margin-bottom: $base-padding * 2;
-}
 
-.contentbox--small {
-    width: 100%;
-
-    @include rwd(1000px) {
-        width: 80%;
+    @include rwd($tablet-w) {
+        width: $fourfifths;
     }
 }

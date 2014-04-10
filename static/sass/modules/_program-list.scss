@@ -21,9 +21,11 @@ $list-line-height: 1.2;
     overflow: hidden;
 
     > li {
+        @extend %inline-block;
+
         float: none;
-        display: inline-block;
-        margin-right: $display-fix;
+        margin-right: -4px;
+
 
         // Bigger than mobile
         @include rwd($tablet-w) {
@@ -39,7 +41,7 @@ $list-line-height: 1.2;
  */
 .programlist__item {
     overflow: hidden;
-    width: $quarter;
+    width: auto;
     border-left: 1px solid $brand-gamma;
     border-top: 1px solid $brand-gamma;
 
@@ -92,11 +94,16 @@ $list-line-height: 1.2;
     position: absolute;
     bottom: .4em;
     left: .4em;
+    margin-bottom: 50%;
     color: $brand-gamma;
     line-height: .7;
 
     > span {
         @include font-size(29px, false);
+    }
+
+    @include rwd($tablet-w) {
+        margin-bottom: 0;
     }
 }
 
@@ -110,11 +117,15 @@ $list-line-height: 1.2;
     margin: 0;
     padding: .5em;
     position: absolute;
-    bottom: -50%;
+    bottom: 0;
     left: 0;
     background-color: $brand;
     line-height: 1.2;
     color: $brand-gamma;
+
+    @include rwd($tablet-w) {
+        bottom: -50%;
+    }
 }
 
 .programlist__extlink {

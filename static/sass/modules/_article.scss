@@ -5,22 +5,11 @@
  */
 .article {
     @extend .contentbox;
-
-    h2 {
-        @extend %inline-block;
-
-        font-style: italic;
-        line-height: 1em;
-        color: $brand-text;
-        background-color: $brand-beta;
-        padding: .2em .5em;
-    }
 }
 
 .article__header {
     @extend %cf;
     position: relative;
-    margin-top: $base-padding * 3;
 
     @include rwd($tablet-w) {
         margin-top: 0;
@@ -35,9 +24,15 @@
 
 .article__intro {
     position: relative;
-    float: left;
-    width: $half;
-    min-height: 8em;
+    float: none;
+    width: 100%;
+    min-height: 9em;
+
+    @include rwd(680px) {
+        float: left;
+        width: $half;
+        min-height: 8em;
+    }
 }
 
 /**
@@ -67,7 +62,7 @@
     @include font-size(24px);
 
     position: absolute;
-    bottom: .45em;
+    top: 3.1em;
     left: 8em;
     font-weight: bold;
     font-style: italic;
@@ -75,6 +70,8 @@
 
 .article__introtext {
     @include font-size(24px);
+
+    padding: 1em .7em;
 
     margin: 0;
     font-weight: bold;
@@ -85,12 +82,12 @@
  * Text splitted into two columns
  */
 .article__text {
+    @extend .box;
     @include font-size(17px, false);
 
-    margin-left: -1em;
+    width: 100%;
 
-    @include rwd(997px) {
-        margin: 0;
-        padding: $base-padding;
+    @include rwd(965px) {
+        margin: 0 0 0 -1em;
     }
 }
