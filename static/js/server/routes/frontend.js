@@ -60,18 +60,21 @@ module.exports = function(app) {
     app.get("/halloffame", function(req, res) {
         var halloffameModel = mongoose.model('Halloffame'),
             halloffameQuery = halloffameModel.find(),
+            programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
-                newsQuery:    newsQuery.exec.bind(newsQuery),
-                halloffameQuery: halloffameQuery.exec.bind(halloffameQuery)
+                halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
+                programQuery: programQuery.exec.bind(programQuery)
             };
 
         async.parallel(resources, function(err, results) {
 
             res.render('content/halloffame', {
-                items: results.halloffameQuery,
-                news: results.newsQuery,
+                pagetitle: "Vivamusica! festival 2014 - Hall of fame",
+                halloffame: results.halloffameQuery,
                 clientnav: setSelected('Hall of fame', clientNav),
+                program: results.programQuery
             });
         });
     });
@@ -80,9 +83,12 @@ module.exports = function(app) {
     app.get("/halloffame/:page", function(req, res) {
         var halloffameModel = mongoose.model('Halloffame'),
             halloffameQuery = halloffameModel.find({'path': req.params.page}),
+            programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
-                halloffameQuery: halloffameQuery.exec.bind(halloffameQuery)
+                halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
+                programQuery: programQuery.exec.bind(programQuery)
             };
 
         async.parallel(resources, function(err, results) {
@@ -95,6 +101,7 @@ module.exports = function(app) {
                 text: item.text,
                 img: item.img,
                 clientnav: setSelected('Hall of fame', clientNav),
+                program: results.programQuery
             });
         });
     });
@@ -149,14 +156,6 @@ module.exports = function(app) {
             });
         });
     });
-
-    // Kontakt
-    /*app.get("/kontakt", function(req, res) {
-        res.render('content/kontakt', {
-            title: 'Kontakt',
-            clientnav: setSelected('Kontakt', clientNav)
-        });
-    });*/
 
     // Festival
     app.get("/festival", function(req, res) {

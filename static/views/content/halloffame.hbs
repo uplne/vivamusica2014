@@ -1,12 +1,24 @@
-{{>sidebar}}
+<div class="top">
+    {{>sidebar}}
 
-<div class="main__container">
-    <div class="top">
-        {{>news}}
-        {{>buytickets}}
+    <div class="banner">
+        <img src="/static/images/team/all.jpg" width="100%" />
     </div>
+</div>
+<div class="main__container">
+    {{>sidebarpartners}}
 
-    {{>halloffamelist}}
-
-    {{>tickets}}
+    <div class="programlist">
+        <ul class="programlist__list">
+            {{#foreach halloffame}}
+            <li class="programlist__item">
+                <a href="/halloffame/{{path}}" class="programlist__link">
+                    <img src="{{img}}" width="190" height="190" alt="" />
+                    <p class="programlist__date">{{title1}} <span>{{title2}}</span></p>
+                    <p class="programlist__title">{{title}}</p>
+                </a>
+            </li>
+            {{/foreach}}
+        </ul>
+    </div>
 </div>
