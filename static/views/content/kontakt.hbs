@@ -1,16 +1,24 @@
-{{>sidebar}}
+<div class="top">
+    {{>sidebar}}
 
+    <div class="banner">
+        <img src="/static/images/team/all.jpg" width="100%" />
+    </div>
+</div>
 <div class="main__container">
-    {{>kontaktsubmenu}}
-    <div class="article--small">
-        <header class="article__header">
-            <h1 class="article__title--alpha">Kontakt</h1>
-            <img class="article__img" src="/static/images/team/all.jpg" width="100%" alt="" />
-        </header>
-        <div class="article__content">
-            <p class="article__text">
-                Autor myšlienky Viva Musica! festivalu, jeho riaditeľ a zároveň duša tohto projektu. Kedysi bol špičkovým klarinetistom, dnes sa na profesionálnej úrovni venuje hudobnému manažmentu a priznáva, že sa v tomto odbore doslova našiel. Matej každý rok na Vive predstaví odvážnu hudobnú dramaturgiu, ktorá stiera hranice medzi žánrami. Menuet is not dead!
-            </p>
-        </div>
+    {{>sidebarpartners}}
+
+    <div class="programlist">
+        <ul class="programlist__list">
+            {{#foreach kontakt}}
+            <li class="programlist__item">
+                <a href="/kontakt/{{path}}" class="programlist__link">
+                    <img src="{{img}}" width="190" height="190" alt="" />
+                    <p class="programlist__date">{{title1}} <span>{{title2}}</span></p>
+                    <p class="programlist__title">{{title}}</p>
+                </a>
+            </li>
+            {{/foreach}}
+        </ul>
     </div>
 </div>

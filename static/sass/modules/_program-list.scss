@@ -127,27 +127,3 @@ $list-line-height: 1.2;
         bottom: -50%;
     }
 }
-
-.programlist__extlink {
-    @include font-size(22px, false);
-    @extend %programlist__textstyle;
-
-    width: 6em;
-    margin: 90% 0 0 0;
-    padding-left: .3em;
-    position: relative;
-    background-color: transparent;
-    line-height: 1;
-    color: $brand-beta;
-
-    &:before {
-        @include font-size(80px);
-
-        content: '{';
-        font-weight: normal;
-        font-style: normal;
-        position: absolute;
-        left: -.3em;
-        bottom: -.27em;
-    }
-}

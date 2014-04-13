@@ -5,6 +5,10 @@
  */
 .article {
     @extend .contentbox;
+
+    @include rwd(960px) {
+        border-left: 1px solid $brand-beta;
+    }
 }
 
 .article__header {
@@ -12,13 +16,12 @@
     position: relative;
 
     @include rwd($tablet-w) {
-        margin-top: 0;
+        margin-top: -1em;
     }
 
     @include rwd(997px) {
         max-height: em(312);
         overflow: hidden;
-        margin-top: 0;
     }
 }
 
@@ -35,37 +38,84 @@
     }
 }
 
-/**
- * TODO - abstract text styles
- */
-.article__date {
-    @include font-size(142px);
+.article__intro--full {
+    @extend .article__intro;
 
+    min-height: 6em;
+
+    @include rwd(680px) {
+        float: none;
+        width: 100%;
+        min-height: 9em;
+    }
+}
+
+%article__introtext {
     position: absolute;
-    top: -.16em;
-    left: .06em;
     font-weight: bold;
     font-style: italic;
+}
+
+.article__date {
+    @extend %article__introtext;
+    @include font-size(142px);
+
+    top: -.16em;
+    left: .06em;
 }
 
 .article__month {
+    @extend %article__introtext;
     @include font-size(69px);
 
-    position: absolute;
     top: -.04em;
     left: 2.55em;
-    font-weight: bold;
-    font-style: italic;
 }
 
 .article__place {
+    @extend %article__introtext;
     @include font-size(24px);
 
-    position: absolute;
     top: 3.1em;
     left: 8em;
-    font-weight: bold;
-    font-style: italic;
+}
+
+.article__name {
+    @extend %article__introtext;
+    @include font-size(100px);
+
+    top: -.23em;
+    left: .2em;
+
+    @include rwd(680px) {
+        left: .06em;
+    }
+}
+
+.article__surname {
+    @extend %article__introtext;
+    @include font-size(49px);
+
+    top: 1.2em;
+    left: 1em;
+
+    @include rwd(680px) {
+        left: 5.16em;
+    }
+}
+
+.article__title {
+    @extend %article__introtext;
+    @include font-size(24px);
+
+    top: 0;
+    right: 1em;
+    text-align: right;
+
+    @include rwd(680px) {
+        top: 1em;
+        left: 10.2em;
+    }
 }
 
 .article__introtext {

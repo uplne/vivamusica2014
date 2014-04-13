@@ -11,6 +11,7 @@ var mongoose = require('mongoose'),
 var ProgramSchema = new Schema({
     datenum:     {type: Number, default: ''},
     datemonth:   {type: String, default: 'jún'},
+    datetime:    {type: String, default: ''},
     time:        {type: String, default: ''},
     place:       {type: String, default: ''},
     title:       {type: String, default: ''},
@@ -18,7 +19,8 @@ var ProgramSchema = new Schema({
     text:        {type: String, default: ''},
     img:         {type: String, default: ''},
     path:        {type: String, default: ''},
-    tickets:     {type: String, default: ''}
+    tickets:     {type: String, default: ''},
+    price:       {type: String, default: ''}
 },
 {
     collection: 'program'

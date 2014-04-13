@@ -10,13 +10,10 @@ module.exports = function(app) {
 
     // Home/Program route
     app.get("/", function(req, res) {
-        var newsModel    = mongoose.model('News'),
-            newsQuery    = newsModel.find({}),
-            programModel = mongoose.model('Program'),
+        var programModel = mongoose.model('Program'),
             programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
-                newsQuery:    newsQuery.exec.bind(newsQuery),
                 programQuery: programQuery.exec.bind(programQuery)
             };
 
@@ -26,51 +23,23 @@ module.exports = function(app) {
                 title: 'Vivamusica! festival 2014',
                 imageAssets: config.paths.images,
                 cssAssets: config.paths.css,
-                news: results.newsQuery,
                 clientnav: setSelected('Program', clientNav),
                 program: results.programQuery
             });
         });
-
-        /*news.list(function(items, err) {
-            res.render('content/index', {
-                title: 'Vivamusica! festival 2014',
-                imageAssets: config.paths.images,
-                cssAssets: config.paths.css,
-                news: items,
-                clientnav: setSelected('Home', clientNav),
-                program: program
-            });
-
-            function(err, news) {
-        if (!err) {
-            callback(news, null)
-        } else {
-            callback(null, err);
-        }
-    }
-        });*/
     });
-
-    // Actual program item
-    /*app.get("/program/viva-opera", function(req, res) {
-        res.render('content/programdetailvivaopera', {
-            title: 'Viva Opera!',
-            clientnav: setSelected('Program', clientNav)
-        });
-    });*/
 
     // Program
     app.get("/program/:page", function(req, res) {
         var programModel = mongoose.model('Program'),
-            programQuery = programModel.find({'path': req.params.page}),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
 
         async.parallel(resources, function(err, results) {
-            var item = results.programQuery[0];
+            var item = getActualItem(results.programQuery, req.params.page);
 
             res.render('content/programdetail', {
                 datenum: item.datenum,
@@ -81,6 +50,7 @@ module.exports = function(app) {
                 text: item.text,
                 img: item.img,
                 tickets: item.tickets,
+                program: results.programQuery,
                 clientnav: setSelected('Program', clientNav)
             });
         });
@@ -88,9 +58,7 @@ module.exports = function(app) {
 
     // Hall of fame
     app.get("/halloffame", function(req, res) {
-        var newsModel    = mongoose.model('News'),
-            newsQuery    = newsModel.find({}),
-            halloffameModel = mongoose.model('Halloffame'),
+        var halloffameModel = mongoose.model('Halloffame'),
             halloffameQuery = halloffameModel.find(),
 
             resources = {
@@ -135,16 +103,20 @@ module.exports = function(app) {
     app.get("/kontakt", function(req, res) {
         var kontaktModel = mongoose.model('Kontakt'),
             kontaktQuery = kontaktModel.find(),
+            programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
-                kontaktQuery: kontaktQuery.exec.bind(kontaktQuery)
+                kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
+                programQuery: programQuery.exec.bind(programQuery)
             };
 
         async.parallel(resources, function(err, results) {
             res.render('content/kontakt', {
-                pagetitle: "Kontakt",
-                subnav: results.kontaktQuery,
+                pagetitle: "Vivamusica! festival 2014 - Kontakt",
+                kontakt: results.kontaktQuery,
                 clientnav: setSelected('Kontakt', clientNav),
+                program: results.programQuery
             });
         });
     });
@@ -153,22 +125,27 @@ module.exports = function(app) {
     app.get("/kontakt/:page", function(req, res) {
         var kontaktModel = mongoose.model('Kontakt'),
             kontaktQuery = kontaktModel.find(),
+            programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
 
             resources = {
-                kontaktQuery: kontaktQuery.exec.bind(kontaktQuery)
+                kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
+                programQuery: programQuery.exec.bind(programQuery)
             };
 
         async.parallel(resources, function(err, results) {
-            var item = getSelected(req.params.page, results.kontaktQuery);
+            var item = getActualItem(results.kontaktQuery, req.params.page);
 
             res.render('content/kontaktdetail', {
+                pagetitle: "Vivamusica! festival 2014 - " + item.title1 + " " + item.title2,
                 title1: item.title1,
                 title2: item.title2,
                 title: item.title,
                 text: item.text,
                 img: item.img,
-                subnav: results.kontaktQuery,
+                kontakt: results.kontaktQuery,
                 clientnav: setSelected('Kontakt', clientNav),
+                program: results.programQuery
             });
         });
     });
@@ -183,9 +160,20 @@ module.exports = function(app) {
 
     // Festival
     app.get("/festival", function(req, res) {
-        res.render('content/festival', {
-            title: 'Festival',
-            clientnav: setSelected('Festival', clientNav)
+        var programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
+
+            resources = {
+                programQuery: programQuery.exec.bind(programQuery)
+            };
+
+        // Parallel requests to DB
+        async.parallel(resources, function(err, results) {
+            res.render('content/festival', {
+                title: 'Vivamusica! festival 2014 - Festival',
+                clientnav: setSelected('Festival', clientNav),
+                program: results.programQuery
+            });
         });
     });
 
@@ -275,13 +263,17 @@ module.exports = function(app) {
         return items;
     };
 
-    var getSelected = function(item, items) {
-        var len = items.length,
-            i;
-
-        for (i = 0; i < len; i++) {
-            if (items[i].path === item) {
-                return items[i];
+    /**
+     * Get actual item from DB results. FindOne functionality
+     *
+     * @param  {Array}  arr  The array of results
+     * @param  {String} item Path
+     * @return {Object}      Return actual array field matching the item/path
+     */
+    var getActualItem = function(arr, item) {
+        for (var i in arr) {
+            if (arr.hasOwnProperty(i) && arr[i].path === item) {
+                return arr[i];
             }
         }
     };

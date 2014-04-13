@@ -12,17 +12,17 @@
     position: relative;
     background-color: $brand-gamma;
 
-    &:after {
-        content: url('/static/images/assets/claim.png');
-        width: 126px;
-        height: 69px;
-        position: absolute;
-        top: 2em;
-        right: em(122) * -1;
-    }
-
     @include rwd($tablet-w) {
         width: em(strip-units($main-w));
+
+        &:after {
+            content: url('/static/images/assets/claim.png');
+            width: 126px;
+            height: 69px;
+            position: absolute;
+            top: 2em;
+            right: em(122) * -1;
+        }
     }
 }
 

@@ -5,20 +5,22 @@
     @extend %cf;
 
     width: 100%;
-    height: 15em;
-    background-color: $brand;
+    height: auto;
+    padding-bottom: $base-padding;
+    background-color: $brand-gamma;
 }
 
 .tickets__main {
     @extend .box;
 
     > h2 {
-        @include font-size(26px, false);
+        @include font-size(32px, false);
 
         margin: 0;
-        font-weight: normal;
+        font-weight: bold;
+        font-style: italic;
         line-height: 1;
-        color: $brand-text;
+        color: $brand-beta;
     }
 }
 
@@ -35,10 +37,11 @@
 .tickets__text {
     @include font-size(12px, false);
 
-    color: $brand-text;
+    color: $brand-beta;
 }
 
-.tickets__buy {
-    display: inline-block;
-    margin: 4em 0 0 10em;
+.tickets__link {
+    @include font-size(12px, false);
+
+    font-style: italic;
 }
