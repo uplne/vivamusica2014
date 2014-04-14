@@ -8,14 +8,14 @@
 <div class="main__container">
     {{>sidebarpartners}}
 
-    <div class="programlist">
-        <ul class="programlist__list">
+    <div class="thumbnaillist">
+        <ul class="thumbnaillist__list">
             {{#foreach kontakt}}
-            <li class="programlist__item">
-                <a href="/kontakt/{{path}}" class="programlist__link">
+            <li class="thumbnaillist__item">
+                <a href="/kontakt/{{path}}" class="thumbnaillist__link">
                     <img src="{{img}}" width="190" height="190" alt="" />
-                    <p class="programlist__date">{{title1}} <span>{{title2}}</span></p>
-                    <p class="programlist__title">{{title}}</p>
+                    <p class="thumbnaillist__date">{{title1}} <span>{{title2}}</span></p>
+                    <p class="thumbnaillist__title">{{title}}</p>
                 </a>
             </li>
             {{/foreach}}
