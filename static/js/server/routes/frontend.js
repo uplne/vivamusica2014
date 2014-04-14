@@ -94,7 +94,9 @@ module.exports = function(app) {
         async.parallel(resources, function(err, results) {
             var item = results.halloffameQuery[0];
 
-            res.render('content/hofdetail', {
+            res.render('content/persondetail', {
+                pagetitle: "Vivamusica! festival 2014 - Hall of fame - " + item.title1 + " " + item.title2,
+                banner: "/static/images/team/all.jpg",
                 title1: item.title1,
                 title2: item.title2,
                 intro: item.intro,
@@ -143,8 +145,9 @@ module.exports = function(app) {
         async.parallel(resources, function(err, results) {
             var item = getActualItem(results.kontaktQuery, req.params.page);
 
-            res.render('content/kontaktdetail', {
+            res.render('content/persondetail', {
                 pagetitle: "Vivamusica! festival 2014 - " + item.title1 + " " + item.title2,
+                banner: "/static/images/team/all.jpg",
                 title1: item.title1,
                 title2: item.title2,
                 title: item.title,
@@ -245,6 +248,7 @@ module.exports = function(app) {
         },
         {
             name: 'Kontakt',
+            banner: "/static/images/team/all.jpg",
             path: '/kontakt'
         }
     ];

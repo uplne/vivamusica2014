@@ -4,7 +4,7 @@
 
 $list-line-height: 1.2;
 
-.programlist {
+.thumbnaillist {
     background-color: white;
 
     @include rwd($tablet-w) {
@@ -13,7 +13,7 @@ $list-line-height: 1.2;
     }
 }
 
-.programlist__list {
+.thumbnaillist__list {
     @extend %cf;
     @extend %center;
     @extend .uilist--h;
@@ -39,7 +39,7 @@ $list-line-height: 1.2;
  * The default settings for each
  * program list item - abstraction
  */
-.programlist__item {
+.thumbnaillist__item {
     overflow: hidden;
     width: auto;
     border-left: 1px solid $brand-gamma;
@@ -58,7 +58,7 @@ $list-line-height: 1.2;
  * Top image animation
  * Bottom content box (p)
  */
-.programlist__link {
+.thumbnaillist__link {
     @extend %btn;
     @extend %effect-trans;
     @extend %inline-block;
@@ -66,17 +66,17 @@ $list-line-height: 1.2;
     position: relative;
 
     &:hover {
-        .programlist__date {
+        .thumbnaillist__date {
             margin-bottom: 50%;
         }
 
-        .programlist__title {
+        .thumbnaillist__title {
             bottom: 0;
         }
     }
 }
 
-%programlist__textstyle {
+%thumbnaillist__textstyle {
     font-family: Times;
     text-align: left;
     font-weight: bold;
@@ -84,10 +84,10 @@ $list-line-height: 1.2;
     white-space: normal;
 }
 
-.programlist__date {
+.thumbnaillist__date {
     @extend %effect-trans--delay;
     @include font-size(43px, false);
-    @extend %programlist__textstyle;
+    @extend %thumbnaillist__textstyle;
 
     width: 1em;
     margin: 0;
@@ -107,10 +107,10 @@ $list-line-height: 1.2;
     }
 }
 
-.programlist__title {
+.thumbnaillist__title {
     @extend %effect-trans;
     @include font-size(22px, false);
-    @extend %programlist__textstyle;
+    @extend %thumbnaillist__textstyle;
 
     width: 100%;
     height: 50%;
