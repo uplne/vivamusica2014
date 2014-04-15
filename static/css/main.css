@@ -683,8 +683,8 @@ h2, .beta {
 .btn--brand,
 .btn--buy,
 .btn--buy--contrast,
-.arrow--prev,
-.arrow--next,
+.arrow--left,
+.arrow--right,
 .thumbnaillist__link,
 .sbnav__link {
   display: inline-block;
@@ -705,8 +705,8 @@ h2, .beta {
 .btn--brand:hover,
 .btn--buy:hover,
 .btn--buy--contrast:hover,
-.arrow--prev:hover,
-.arrow--next:hover,
+.arrow--left:hover,
+.arrow--right:hover,
 .thumbnaillist__link:hover,
 .sbnav__link:hover {
   text-decoration: none;
@@ -764,7 +764,7 @@ h2, .beta {
  * BLOCK LISTS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000311}}
-.uilist, .tickets__list, .submenulist,
+.uilist, .tickets__list, .submenulist, .carousel__list,
 .uilist--h,
 .thumbnaillist__list,
 .uilist--spread,
@@ -1167,34 +1167,54 @@ h2, .beta {
  * Extending: objects/_buttons
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\000036}}
-.arrow--prev, .arrow--next {
-  font-size: 40px;
-  font-size: 2.85714rem;
+.arrow--left, .arrow--right {
+  font-size: 12px;
+  font-size: 0.85714rem;
   display: none;
   position: absolute;
   z-index: 100;
-  width: 3em;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  width: 7.5em;
+  padding: 1em 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
+  text-align: center;
 }
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\000036}}
-  .arrow--prev, .arrow--next {
+  .arrow--left, .arrow--right {
     display: block;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000323}}
-.arrow--prev {
-  top: 0;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000325}}
+.arrow--left {
+  bottom: 0;
   left: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000331}}
+.arrow--left:before {
+  font-size: 18px;
+  font-size: 1.28571rem;
+  content: "<";
+  position: absolute;
+  top: .3em;
+  left: .5em;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000330}}
-.arrow--next {
-  top: 0;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000340}}
+.arrow--right {
+  bottom: 0;
   right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000346}}
+.arrow--right:after {
+  font-size: 18px;
+  font-size: 1.28571rem;
+  content: ">";
+  position: absolute;
+  top: .3em;
+  right: .5em;
 }
 
 /**
@@ -1711,6 +1731,28 @@ h2, .beta {
   .banner {
     width: 80%;
   }
+}
+
+/**
+ * Carousel
+ *
+    <ul class="carousel__list">
+        <li>
+            <a class="carousel__link" href="">
+                <img src="" alt="" />
+            </a>
+        </li>
+    </ul>
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000312}}
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000317}}
+.carousel__list {
+  width: 714.28571em;
 }
 
 /**

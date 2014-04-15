@@ -5,31 +5,49 @@
  */
 %arrow {
     @extend %btn;
-    @include font-size(40px, false);
+    @include font-size(12px, false);
 
     display: none;
     position: absolute;
     z-index: $zindex-alpha;
-    width: 3em;
-    height: 100%;
-    background-color: rgba(0,0,0,.3);
+    width: 7.5em;
+    padding: 1em 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,.6);
     color: $brand-gamma;
+    text-align: center;
 
     @include rwd($tablet-w) {
         display: block;
     }
 }
 
-.arrow--prev {
+.arrow--left {
     @extend %arrow;
 
-    top: 0;
+    bottom: 0;
     left: 0;
+
+    &:before {
+        @include font-size(18px, false);
+        content: "<";
+        position: absolute;
+        top: .3em;
+        left: .5em;
+    }
 }
 
-.arrow--next {
+.arrow--right {
     @extend %arrow;
 
-    top: 0;
+    bottom: 0;
     right: 0;
+
+    &:after {
+        @include font-size(18px, false);
+        content: ">";
+        position: absolute;
+        top: .3em;
+        right: .5em;
+    }
 }

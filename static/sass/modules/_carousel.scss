@@ -1,0 +1,21 @@
+/**
+ * Carousel
+ *
+    <ul class="carousel__list">
+        <li>
+            <a class="carousel__link" href="">
+                <img src="" alt="" />
+            </a>
+        </li>
+    </ul>
+ */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__list {
+    @extend .uilist;
+
+    width: em(10000);
+}
