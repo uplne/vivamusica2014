@@ -5,6 +5,7 @@
  */
 %arrow {
     @extend %btn;
+    @extend %effect-trans;
     @include font-size(12px, false);
 
     display: none;
@@ -16,6 +17,12 @@
     background-color: rgba(0,0,0,.6);
     color: $brand-gamma;
     text-align: center;
+
+    // TODO - arrow animation
+    &:hover {
+        background-color: rgb(32,32,32);
+        background-color: rgba(0,0,0,1);
+    }
 
     @include rwd($tablet-w) {
         display: block;

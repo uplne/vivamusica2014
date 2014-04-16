@@ -7,3 +7,4 @@ npm-debug.log
 /static/images/sien/
 /static/images/titles/
 /static/images/news/
+/static/css/*.map

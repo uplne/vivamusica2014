@@ -597,7 +597,7 @@ a:hover {
  * TRANSITIONS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000310}}
-.btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close, .thumbnaillist__link, .thumbnaillist__title, .sbnav__link, .submenu, .submenulist__link, .gallery__item > img, .main, .main__sidebar {
+.btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close, .arrow--left, .arrow--right, .thumbnaillist__link, .thumbnaillist__title, .sbnav__link, .submenu, .submenulist__link, .gallery__item > img, .main, .main__sidebar {
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
@@ -1180,6 +1180,11 @@ h2, .beta {
   color: white;
   text-align: center;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000322}}
+.arrow--left:hover, .arrow--right:hover {
+  background-color: #202020;
+  background-color: black;
+}
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\000036}}
   .arrow--left, .arrow--right {
@@ -1187,12 +1192,12 @@ h2, .beta {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000332}}
 .arrow--left {
   bottom: 0;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000338}}
 .arrow--left:before {
   font-size: 18px;
   font-size: 1.28571rem;
@@ -1202,12 +1207,12 @@ h2, .beta {
   left: .5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000347}}
 .arrow--right {
   bottom: 0;
   right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_arrows\.scss}line{font-family:\0000353}}
 .arrow--right:after {
   font-size: 18px;
   font-size: 1.28571rem;
