@@ -188,49 +188,10 @@ module.exports = function(app) {
         res.render('content/galeria', {
             title: 'Galeria',
             galleries: getGalleries(),
-            imgs: getImagesFromGallery(req.params.year),
+            imgs: helpers.getImagesFromGallery(req.params.year),
             clientnav: helpers.setSelected('Galéria', clientNav)
         });
     });
-
-    /**
-     * Get all images by year from folder
-     *
-     * @param  {String} year Actual year from URL
-     * @return {Array}       The array of image paths
-     */
-    var getImagesFromGallery = function(year) {
-        var files   = fs.readdirSync(config.paths.images + '/gallery/' + year),
-            paths   = [],
-            pattern = /(.(?:jpg|gif|png|jpeg|JPG|GIF|PNG|JPEG))/gm;
-
-        for (var i in files) {
-            if (files.hasOwnProperty(i) && files[i].match(pattern)) {
-                paths.push({
-                    'img': '/static/images/gallery/' + year + '/' + files[i],
-                    'imgthumb': '/static/images/gallery/' + year + '/thumbs/' + files[i]
-                });
-            }
-        }
-
-        return paths;
-    };
-
-    var getGalleries = function() {
-        var files   = fs.readdirSync(config.paths.images + '/gallery/'),
-            galls   = [],
-            pattern = /[0-9]+/;
-
-        for (var i in files) {
-            if (files.hasOwnProperty(i) && files[i].match(pattern)) {
-                galls.push({
-                    'title': files[i]
-                });
-            }
-        }
-
-        return galls.reverse();
-    };
 
     // TODO - do it nicer
     var clientNav = [
