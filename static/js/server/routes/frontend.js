@@ -1,4 +1,5 @@
 var config   = require('../config'),
+    helpers  = require('./helpers'),
     async    = require('async'),
     mongoose = require('mongoose'),
     fs       = require('fs');
@@ -23,7 +24,7 @@ module.exports = function(app) {
                 title: 'Vivamusica! festival 2014',
                 imageAssets: config.paths.images,
                 cssAssets: config.paths.css,
-                clientnav: setSelected('Program', clientNav),
+                clientnav: helpers.setSelected('Program', clientNav),
                 program: results.programQuery
             });
         });
@@ -39,7 +40,8 @@ module.exports = function(app) {
             };
 
         async.parallel(resources, function(err, results) {
-            var item = getActualItem(results.programQuery, req.params.page);
+            // Add prev/next links and get actual item
+            var item = helpers.getActualItem(helpers.addProgramLinks(results.programQuery), req.params.page);
 
             res.render('content/programdetail', {
                 datenum: item.datenum,
@@ -49,9 +51,11 @@ module.exports = function(app) {
                 intro: item.intro,
                 text: item.text,
                 img: item.img,
+                prev: item.prev,
+                next: item.next,
                 tickets: item.tickets,
                 program: results.programQuery,
-                clientnav: setSelected('Program', clientNav)
+                clientnav: helpers.setSelected('Program', clientNav)
             });
         });
     });
@@ -73,7 +77,7 @@ module.exports = function(app) {
             res.render('content/halloffame', {
                 pagetitle: "Vivamusica! festival 2014 - Hall of fame",
                 halloffame: results.halloffameQuery,
-                clientnav: setSelected('Hall of fame', clientNav),
+                clientnav: helpers.setSelected('Hall of fame', clientNav),
                 program: results.programQuery
             });
         });
@@ -102,7 +106,7 @@ module.exports = function(app) {
                 intro: item.intro,
                 text: item.text,
                 img: item.img,
-                clientnav: setSelected('Hall of fame', clientNav),
+                clientnav: helpers.setSelected('Hall of fame', clientNav),
                 program: results.programQuery
             });
         });
@@ -124,7 +128,7 @@ module.exports = function(app) {
             res.render('content/kontakt', {
                 pagetitle: "Vivamusica! festival 2014 - Kontakt",
                 kontakt: results.kontaktQuery,
-                clientnav: setSelected('Kontakt', clientNav),
+                clientnav: helpers.setSelected('Kontakt', clientNav),
                 program: results.programQuery
             });
         });
@@ -154,7 +158,7 @@ module.exports = function(app) {
                 text: item.text,
                 img: item.img,
                 kontakt: results.kontaktQuery,
-                clientnav: setSelected('Kontakt', clientNav),
+                clientnav: helpers.setSelected('Kontakt', clientNav),
                 program: results.programQuery
             });
         });
@@ -173,7 +177,7 @@ module.exports = function(app) {
         async.parallel(resources, function(err, results) {
             res.render('content/festival', {
                 title: 'Vivamusica! festival 2014 - Festival',
-                clientnav: setSelected('Festival', clientNav),
+                clientnav: helpers.setSelected('Festival', clientNav),
                 program: results.programQuery
             });
         });
@@ -185,7 +189,7 @@ module.exports = function(app) {
             title: 'Galeria',
             galleries: getGalleries(),
             imgs: getImagesFromGallery(req.params.year),
-            clientnav: setSelected('Galéria', clientNav)
+            clientnav: helpers.setSelected('Galéria', clientNav)
         });
     });
 
@@ -252,32 +256,4 @@ module.exports = function(app) {
             path: '/kontakt'
         }
     ];
-
-    // TODO - create utils module, use underscore or create own functional library
-    var setSelected = function(item, items) {
-        var len = items.length,
-            i;
-
-        for (i = 0; i < len; i++) {
-
-            items[i].selected = items[i].name === item;
-        }
-
-        return items;
-    };
-
-    /**
-     * Get actual item from DB results. FindOne functionality
-     *
-     * @param  {Array}  arr  The array of results
-     * @param  {String} item Path
-     * @return {Object}      Return actual array field matching the item/path
-     */
-    var getActualItem = function(arr, item) {
-        for (var i in arr) {
-            if (arr.hasOwnProperty(i) && arr[i].path === item) {
-                return arr[i];
-            }
-        }
-    };
 };

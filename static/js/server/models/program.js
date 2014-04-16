@@ -20,7 +20,9 @@ var ProgramSchema = new Schema({
     img:         {type: String, default: ''},
     path:        {type: String, default: ''},
     tickets:     {type: String, default: ''},
-    price:       {type: String, default: ''}
+    price:       {type: String, default: ''},
+    next:        {type: String, default: ''},
+    prev:        {type: String, default: ''}
 },
 {
     collection: 'program'
