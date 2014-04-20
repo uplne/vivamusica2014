@@ -56,11 +56,14 @@ module.exports = function(grunt) {
         * @github.com/gruntjs/grunt-contrib-jshint
         */
         jshint: {
-          gruntfile: 'Gruntfile.js',
-          files: ['<%= dir.js %>/**/*.js'],
-          options: {
-            jshintrc: '.jshintrc'
-          }
+            gruntfile: 'Gruntfile.js',
+            all: [
+                '<%= dir.js %>/**/*.js',
+                'Grunfile.js'
+            ],
+            options: {
+                jshintrc: '.jshintrc'
+            }
         },
 
         /**
@@ -68,15 +71,15 @@ module.exports = function(grunt) {
         * @github.com/gruntjs/grunt-contrib-concat
         */
         concat: {
-          options: {
-            stripBanners: true,
-            banner: '<%= banner %>'
-          },
+            options: {
+                stripBanners: true,
+                banner: '<%= banner %>'
+            },
 
-          js: {
-            src: '<%= jshint.files %>',
-            dest: '<%= dir.js %>/<%= pkg.name %>.js'
-          },
+            js: {
+                rc: '<%= jshint.files %>',
+                dest: '<%= dir.js %>/<%= pkg.name %>.js'
+            },
         },
 
         // Server side unit tests
@@ -132,17 +135,16 @@ module.exports = function(grunt) {
         * @github.com/gruntjs/grunt-contrib-uglify
         */
         uglify: {
+            // Uglify options
+            options: {
+                banner: '<%= banner %>'
+            },
 
-          // Uglify options
-          options: {
-            banner: '<%= banner %>'
-          },
-
-          // Minify js files in static/js/
-          dist: {
-            src: ['<%= concat.js.dest %>'],
-            dest: '<%= dir.js %>/<%= pkg.name %>.min.js'
-          },
+            // Minify js files in static/js/
+            dist: {
+                src: ['<%= concat.js.dest %>'],
+                dest: '<%= dir.js %>/<%= pkg.name %>.min.js'
+            },
         },
 
         autoprefixer: {
@@ -180,14 +182,6 @@ module.exports = function(grunt) {
                     livereload: true
                 }
             },
-
-//            unittests: {
-//                files: [
-//                    'tests/unit/**/*_spec.js',
-//                    '<%= dir.js %>/**/*.js'
-//                ],
-//                tasks: ['mochacli:unit']
-//            },
 
             server: {
                 files: ['.rebooted'],
