@@ -56,9 +56,8 @@ module.exports = function(grunt) {
         * @github.com/gruntjs/grunt-contrib-jshint
         */
         jshint: {
-            gruntfile: 'Gruntfile.js',
             all: [
-                '<%= dir.js %>/**/*.js',
+                '<%= dir.js %>/server/*.js',
                 'Grunfile.js'
             ],
             options: {
@@ -161,13 +160,6 @@ module.exports = function(grunt) {
 
         // The watch command watches a given set of files and runs a task when one of them changes.
         watch: {
-
-            // JShint Gruntfile
-            gruntfile: {
-                files: 'Gruntfile.js',
-                tasks: ['jshint:gruntfile'],
-            },
-
             //Automatic compilation of SASS changes
             sass: {
                 files: ['<%= dir.sass %>/**/*.scss'],
