@@ -12,11 +12,19 @@
         <ul class="thumbnaillist__list">
             {{#foreach kontakt}}
             <li class="thumbnaillist__item">
-                <a href="/kontakt/{{path}}" class="thumbnaillist__link">
+                {{#if email}}
+                <a href="mailto:{{email}}" class="thumbnaillist__link">
+                    <img src="{{img}}" width="190" height="190" alt="" />
+                    <p class="thumbnaillist__date">{{title1}} <span>{{title2}}</span></p>
+                    <p class="thumbnaillist__title">{{title}} <span class="thumbnaillist__email">{{email}}</span></p>
+                </a>
+                {{else}}
+                <div class="thumbnaillist__box">
                     <img src="{{img}}" width="190" height="190" alt="" />
                     <p class="thumbnaillist__date">{{title1}} <span>{{title2}}</span></p>
                     <p class="thumbnaillist__title">{{title}}</p>
-                </a>
+                </div>
+                {{/if}}
             </li>
             {{/foreach}}
         </ul>

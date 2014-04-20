@@ -11,10 +11,8 @@ module.exports = function(app) {
 
     // Home/Program route
     app.get("/", function(req, res) {
-        var programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
-
-            resources = {
+        var programQuery = getProgram(),
+            resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
 
@@ -32,10 +30,8 @@ module.exports = function(app) {
 
     // Program
     app.get("/program/:page", function(req, res) {
-        var programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
-
-            resources = {
+        var programQuery = getProgram(),
+            resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
 
@@ -64,8 +60,7 @@ module.exports = function(app) {
     app.get("/halloffame", function(req, res) {
         var halloffameModel = mongoose.model('Halloffame'),
             halloffameQuery = halloffameModel.find(),
-            programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
+            programQuery    = getProgram(),
 
             resources = {
                 halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
@@ -87,8 +82,7 @@ module.exports = function(app) {
     app.get("/halloffame/:page", function(req, res) {
         var halloffameModel = mongoose.model('Halloffame'),
             halloffameQuery = halloffameModel.find({'path': req.params.page}),
-            programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
+            programQuery    = getProgram(),
 
             resources = {
                 halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
@@ -116,8 +110,7 @@ module.exports = function(app) {
     app.get("/kontakt", function(req, res) {
         var kontaktModel = mongoose.model('Kontakt'),
             kontaktQuery = kontaktModel.find(),
-            programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
+            programQuery = getProgram(),
 
             resources = {
                 kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
@@ -138,8 +131,7 @@ module.exports = function(app) {
     app.get("/kontakt/:page", function(req, res) {
         var kontaktModel = mongoose.model('Kontakt'),
             kontaktQuery = kontaktModel.find(),
-            programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
+            programQuery = getProgram(),
 
             resources = {
                 kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
@@ -166,10 +158,8 @@ module.exports = function(app) {
 
     // Festival
     app.get("/festival", function(req, res) {
-        var programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]),
-
-            resources = {
+        var programQuery = getProgram(),
+            resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
 
@@ -217,4 +207,16 @@ module.exports = function(app) {
             path: '/kontakt'
         }
     ];
+
+    /**
+     * Get data from DB for program
+     *
+     * @return {Array} Array of results from DB
+     */
+    var getProgram = function() {
+        var programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]);
+
+        return programQuery;
+    }
 };

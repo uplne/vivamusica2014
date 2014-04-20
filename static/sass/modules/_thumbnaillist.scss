@@ -58,8 +58,7 @@ $list-line-height: 1.2;
  * Top image animation
  * Bottom content box (p)
  */
-.thumbnaillist__link {
-    @extend %btn;
+%thumbnaillist__box {
     @extend %effect-trans;
     @extend %inline-block;
 
@@ -74,6 +73,18 @@ $list-line-height: 1.2;
             bottom: 0;
         }
     }
+}
+
+/**
+ * Extending %thumbnaillist__box and adding link behavior
+ */
+.thumbnaillist__link {
+    @extend %thumbnaillist__box;
+    @extend %btn;
+}
+
+.thumbnaillist__box {
+    @extend %thumbnaillist__box;
 }
 
 %thumbnaillist__textstyle {
@@ -120,10 +131,17 @@ $list-line-height: 1.2;
     bottom: 0;
     left: 0;
     background-color: $brand;
-    line-height: 1.2;
+    line-height: 1;
     color: $brand-gamma;
 
     @include rwd($tablet-w) {
         bottom: -50%;
     }
+}
+
+.thumbnaillist__email {
+    @extend .thumbnaillist__title;
+    @include font-size(18px, false);
+
+    background: transparent;
 }
