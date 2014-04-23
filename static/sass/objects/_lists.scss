@@ -35,20 +35,13 @@
         content: '';
         width: 100%;
         display: inline-block;
+        vertical-align: top;
     }
 
     > li {
         display: inline;
         text-align: center;
         margin: 0;
-
-        //This is here just to override global style for li in _base.scss (needs refactoring)
-        line-height: normal;
-
-        a {
-            display: inline-block;
-            vertical-align: top;
-        }
     }
 }
 

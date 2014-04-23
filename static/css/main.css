@@ -792,28 +792,23 @@ h2, .beta {
   content: '';
   width: 100%;
   display: inline-block;
+  vertical-align: top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000341}}
 .uilist--spread > li, .socialnav > li {
   display: inline;
   text-align: center;
   margin: 0;
-  line-height: normal;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000348}}
-.uilist--spread > li a, .socialnav > li a {
-  display: inline-block;
-  vertical-align: top;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000349}}
 .list--centered {
   position: relative;
   float: left;
   left: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000361}}
 .list--centered__item, .list--centered > li {
   position: relative;
   float: left;
@@ -1484,16 +1479,20 @@ h2, .beta {
 .thumbnaillist__date {
   font-size: 43px;
   font-size: 3.07143rem;
-  width: 1em;
+  width: 100%;
+  height: 50%;
   margin: 0;
+  padding: .4em;
   position: absolute;
-  bottom: .4em;
-  left: .4em;
+  bottom: 0;
+  left: 0;
   margin-bottom: 50%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   line-height: .7;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003116}}
 .thumbnaillist__date > span {
   font-size: 29px;
   font-size: 2.07143rem;
@@ -1505,7 +1504,7 @@ h2, .beta {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003125}}
 .thumbnaillist__title, .thumbnaillist__email {
   font-size: 22px;
   font-size: 1.57143rem;
@@ -1521,13 +1520,13 @@ h2, .beta {
   color: white;
 }
 @media only screen and (min-width: 959px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003125}}
   .thumbnaillist__title, .thumbnaillist__email {
     bottom: -50%;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_thumbnaillist\.scss}line{font-family:\00003146}}
 .thumbnaillist__email {
   font-size: 18px;
   font-size: 1.28571rem;
@@ -1603,12 +1602,26 @@ h2, .beta {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_social-navigation\.scss}line{font-family:\000036}}
 .socialnav {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  bottom: 4em;
-  height: 4em;
-  border-top: 1px solid #fff;
+  font-size: 20px;
+  font-size: 1.42857rem;
+  float: left;
+  width: 20%;
+  margin: 0;
+  background-color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_social-navigation\.scss}line{font-family:\0000315}}
+.socialnav > li {
+  width: 50%;
+  border-left: 1px solid white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_social-navigation\.scss}line{font-family:\0000320}}
+.socialnav > li:first-child {
+  border-left: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_social-navigation\.scss}line{font-family:\0000325}}
+.socialnav__link {
+  line-height: 2;
 }
 
 /**

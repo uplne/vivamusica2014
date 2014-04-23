@@ -5,11 +5,23 @@
  */
 .socialnav {
     @extend .uilist--spread;
+    @include font-size(20px, false);
 
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    bottom: 4em;
-    height: 4em;
-    border-top: 1px solid #fff;
+    float: left;
+    width: $fifth;
+    margin: 0;
+    background-color: $brand-beta;
+
+    > li {
+        width: $half;
+        border-left: 1px solid $brand-gamma;
+    }
+
+    > li:first-child {
+        border-left: none;
+    }
+}
+
+.socialnav__link {
+    line-height: 2;
 }
