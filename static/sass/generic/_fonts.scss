@@ -18,7 +18,7 @@ $base-font-family: 'Times';
     font-style: normal;
 }
 
-[class^="icon--"], [class*=" icon--"] {
+[class^="fonticon--"], [class*=" fonticon--"] {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -32,9 +32,9 @@ $base-font-family: 'Times';
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon--yt:before {
+.fonticon--yt:before {
     content: "\e600";
 }
-.icon--fb:before {
+.fonticon--fb:before {
     content: "\e601";
 }
