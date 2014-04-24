@@ -8,7 +8,8 @@ function getPaths() {
         'images' : path.join(appRoot, 'static/images'),
         'js'     : path.join(appRoot, 'static/js'),
         'css'    : path.join(appRoot, 'static/css'),
-        'pdf'    : path.join(appRoot, 'static/pdf')
+        'pdf'    : path.join(appRoot, 'static/pdf'),
+        'fonts'  : path.join(appRoot, 'static/fonts')
     };
 }
 

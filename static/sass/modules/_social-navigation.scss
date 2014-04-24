@@ -5,7 +5,6 @@
  */
 .socialnav {
     @extend .uilist--spread;
-    @include font-size(20px, false);
 
     float: left;
     width: $fifth;
@@ -14,6 +13,7 @@
 
     > li {
         width: $half;
+        float: left;
         border-left: 1px solid $brand-gamma;
     }
 
@@ -23,5 +23,20 @@
 }
 
 .socialnav__link {
+    @extend %effect-trans;
+    @extend %btn;
+
+    width: 100%;
     line-height: 2;
+
+    &:hover {
+        background-color: $brand-btn-hover;
+    }
+}
+
+.socialnav__icon {
+    @include font-size(20px, false);
+
+    color: $brand-gamma;
+    line-height: 1.6;
 }

@@ -28,6 +28,7 @@ function setupServer() {
     app.use('/static/images', express.static(config.paths.images));
     app.use('/static/js', express.static(config.paths.js));
     app.use('/static/css', express.static(config.paths.css));
+    app.use('/static/fonts', express.static(config.paths.fonts));
 
     // Route to PDFs and other documents
     app.use('/static/pdf', express.static(config.paths.pdf));
