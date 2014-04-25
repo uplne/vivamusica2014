@@ -85,13 +85,13 @@
  */
 @font-face {
   font-family: 'icons';
-  src: url("/static/fonts/icons.eot?-r78t6l");
-  src: url("/static/fonts/icons.eot?#iefix-r78t6l") format("embedded-opentype"), url("/static/fonts/icons.woff?-r78t6l") format("woff"), url("/static/fonts/icons.ttf?-r78t6l") format("truetype"), url("/static/fonts/icons.svg?-r78t6l#icons") format("svg");
+  src: url("/static/fonts/icons.eot?-vctiso");
+  src: url("/static/fonts/icons.eot?#iefix-vctiso") format("embedded-opentype"), url("/static/fonts/icons.woff?-vctiso") format("woff"), url("/static/fonts/icons.ttf?-vctiso") format("truetype"), url("/static/fonts/icons.svg?-vctiso#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000321}}
-[class^="fonticon--"], [class*=" fonticon--"] {
+[class^="fonticon-"], [class*=" fonticon-"] {
   font-family: 'icons';
   speak: none;
   font-style: normal;
@@ -105,13 +105,48 @@
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000335}}
-.fonticon--yt:before {
+.fonticon-date7:before {
+  content: "\e601";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000339}}
+.fonticon-date6:before {
+  content: "\e602";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000343}}
+.fonticon-date5:before {
+  content: "\e603";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000347}}
+.fonticon-date4:before {
+  content: "\e604";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000351}}
+.fonticon-date3:before {
+  content: "\e605";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000355}}
+.fonticon-date2:before {
+  content: "\e606";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000359}}
+.fonticon-date1:before {
   content: "\e600";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000338}}
-.fonticon--fb:before {
-  content: "\e601";
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000363}}
+.fonticon-yt:before {
+  content: "\e607";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000367}}
+.fonticon-fb:before {
+  content: "\e608";
 }
 
 /**
