@@ -79,7 +79,7 @@
   font-style: normal;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_fonts\.scss}line{font-family:\0000321}}
-[class^="fonticon-"], [class*=" fonticon-"] {
+[class^="fonticon--"], [class*=" fonticon--"] {
   font-family: 'icons';
   speak: none;
   font-style: normal;
