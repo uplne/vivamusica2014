@@ -1,0 +1,16 @@
+/**
+ * Notification
+ */
+.notification {
+    @include font-size(24px);
+
+    display: none;
+    position: absolute;
+    top: 10em;
+    left: 10em;
+    padding: $base-padding;
+    background-color: $brand-beta;
+    color: $brand-text;
+    font-style: italic;
+    box-shadow: 3px 3px 6px rgba(0,0,0,.6);
+}

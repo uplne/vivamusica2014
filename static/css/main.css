@@ -1936,6 +1936,25 @@ h2, .beta {
 }
 
 /**
+ * Notification
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_notification\.scss}line{font-family:\000034}}
+.notification {
+  font-size: 24px;
+  font-size: 1.71429rem;
+  line-height: 1;
+  display: none;
+  position: absolute;
+  top: 10em;
+  left: 10em;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  font-style: italic;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+/**
  * Pages
  */
 /**

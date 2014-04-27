@@ -17,7 +17,8 @@ define([
             els: {
                 $mainHolder: $('[data-module="newsletter"]'),
                 $input     : $('[data-role="check"]'),
-                $submit    : $('[data-role="send"]')
+                $submit    : $('[data-role="send"]'),
+                $notify    : $('[data-module="notify"]')
             },
 
             init: function() {
@@ -74,7 +75,17 @@ define([
             },
 
             notify: function() {
+                var $window = $(window),
+                    halfw   = $window.width() / 2,
+                    halfh   = $window.height() / 2,
+                    popw    = self.els.$notify.width() / 2;
+
                 self.els.$input.val(TEXT);
+
+                self.els.$notify.css({
+                    'top': halfh + 'px',
+                    'left': (halfw - popw) + 'px'
+                }).fadeIn().delay(1500).fadeOut();
             }
         };
     };
