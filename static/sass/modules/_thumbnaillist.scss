@@ -18,8 +18,6 @@ $list-line-height: 1.2;
     @extend %center;
     @extend .uilist--h;
 
-    overflow: hidden;
-
     > li {
         @extend %inline-block;
 

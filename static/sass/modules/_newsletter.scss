@@ -2,7 +2,12 @@
  * Newsletter module
  */
 .newsletter {
-    @extend %inline-block;
+    display: none;
+
+    @include rwd($tablet-w) {
+        display: inline-block;
+        vertical-align: top;
+    }
 }
 
 .newsletter__label {
