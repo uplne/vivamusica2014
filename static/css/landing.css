@@ -632,8 +632,8 @@ a:hover {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000312}}
 .btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close {
-  -webkit-transition-property: top, right, left, bottom, margin;
-  transition-property: top, right, left, bottom, margin;
+  -webkit-transition-property: top, right, left, bottom, margin, background;
+  transition-property: top, right, left, bottom, margin, background;
   -webkit-transition-duration: .25s;
   transition-duration: .25s;
   -webkit-transition-timing-function: ease-out;

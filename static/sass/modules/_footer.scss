@@ -1,0 +1,9 @@
+/**
+ * Page footer
+ */
+.footer {
+    @extend %cf;
+
+    width: 100%;
+    background-color: $brand-beta;
+}

@@ -4,21 +4,15 @@
  * Based in sidebar.
  */
 .socialnav {
-    @extend .uilist--spread;
+    @extend .uilist;
 
     float: left;
-    width: $fifth;
     margin: 0;
     background-color: $brand-beta;
 
     > li {
-        width: $half;
         float: left;
-        border-left: 1px solid $brand-gamma;
-    }
-
-    > li:first-child {
-        border-left: none;
+        border-right: 1px solid $brand-gamma;
     }
 }
 
@@ -28,6 +22,7 @@
 
     width: 100%;
     line-height: 2;
+    font-size: 0;
 
     &:hover {
         background-color: $brand-btn-hover;
@@ -39,4 +34,5 @@
 
     color: $brand-gamma;
     line-height: 1.6;
+    padding: 0 1em;
 }
