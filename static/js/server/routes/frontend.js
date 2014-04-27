@@ -4,9 +4,6 @@ var config   = require('../config'),
     mongoose = require('mongoose'),
     fs       = require('fs');
 
-    /*news    = require('../controllers/news'),
-    program = require('../controllers/program');*/
-
 module.exports = function(app) {
 
     // Home/Program route
@@ -180,6 +177,16 @@ module.exports = function(app) {
             galleries: getGalleries(),
             imgs: helpers.getImagesFromGallery(req.params.year),
             clientnav: helpers.setSelected('Galéria', clientNav)
+        });
+    });
+
+    // POST form newsletter form
+    app.post('/newsletter', function(req, res){
+        var item            = JSON.stringify(req.body),
+            newsletterModel = mongoose.model('Newsletter');
+
+        new newsletterModel({email: JSON.parse(item).email}).save(function (e) {
+            res.send(item);
         });
     });
 

@@ -1,5 +1,7 @@
-<form class="newsletter">
+<form class="newsletter" data-modul="newsletter">
     <label class="newsletter__label">Newsletter</label>
-    <input class="newsletter__input" type="text" value="" name="email" />
-    <button class="newsletter__button"></button>
+    <div class="newsletter__wrap">
+        <input class="newsletter__input" data-role="check" type="text" value="Zadajte e-mail" name="email" />
+        <button class="newsletter__button" data-role="send" type="submit">Odoberat</button>
+    </div>
 </form>

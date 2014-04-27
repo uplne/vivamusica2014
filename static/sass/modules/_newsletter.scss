@@ -4,3 +4,47 @@
 .newsletter {
     @extend %inline-block;
 }
+
+.newsletter__label {
+    @include font-size(16px, false);
+
+    line-height: 1.9;
+    font-style: italic;
+    color: $brand-text;
+    padding: 0 1em;
+}
+
+.newsletter__wrap {
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: $brand-gamma;
+    border-radius: .1em;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.newsletter__input {
+    width: 15em;
+    padding: 0 .4em;
+    line-height: 1.5;
+    font-style: italic;
+    border: none;
+    vertical-align: top;
+    color: rgba(0,0,0,.5);
+}
+
+.newsletter__button {
+    @extend %effect-trans;
+    @include font-size(12px, false);
+
+    margin: 1px 1px 0 0;
+    text-transform: uppercase;
+    border: none;
+    color: $brand-text;
+    background-color: $brand;
+
+    &:hover {
+        background-color: $icon-nav;
+    }
+}
