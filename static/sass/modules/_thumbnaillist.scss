@@ -81,6 +81,9 @@ $list-line-height: 1.2;
 .thumbnaillist__link {
     @extend %thumbnaillist__box;
     @extend %btn;
+
+    max-height: em(190);
+    overflow: hidden;
 }
 
 .thumbnaillist__box {
