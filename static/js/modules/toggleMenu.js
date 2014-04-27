@@ -15,7 +15,7 @@ define([
             el: {
                 $mainHolder: $('.main'),
                 $navlink:    $('[data-module="tooglemenu"]'),
-                $sidebar:    $('.main__sidebar')
+                $sidebar:    $('.main__menu')
             },
 
             init: function() {

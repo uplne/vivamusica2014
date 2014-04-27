@@ -10,7 +10,7 @@
     @include rwd($tablet-w) {
         display: block;
         float: left;
-        width: $fifth;
+        width: 100%;
         margin: $base-padding 0;
         background-color: $sidebar-partners-bg;
     }
@@ -18,7 +18,7 @@
 
 .sbpartners__link {
     display: block;
-    padding: $base-padding;
+    padding: .3em;
 
     > img {
         margin: 0 auto;

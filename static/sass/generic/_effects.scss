@@ -4,19 +4,28 @@
  * TRANSITIONS
  */
 
+$properties: 'top, right, left, bottom, margin';
+
 /**
  * TRANSITIONS
  */
 %effect-trans {
-    transition: all 0.25s ease-out;
+    transition-property: #{$properties};
+    transition-duration: .25s;
+    transition-timing-function: ease-out;
 }
 
 %effect-trans--slow {
-    transition: all 1.6s ease-out;
+    transition-property: #{$properties};
+    transition-duration: 1.6s;
+    transition-timing-function: ease-out;
 }
 
 %effect-trans--delay {
-    transition: all 0.25s ease-out 30ms;
+    transition-property: #{$properties};
+    transition-duration: .25s;
+    transition-timing-function: ease-out;
+    transition-delay: 30ms;
 }
 
 %effect-scale {

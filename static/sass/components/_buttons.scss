@@ -16,6 +16,7 @@
     width: $navlink-size;
     height: $navlink-size;
     padding: 1em;
+    z-index: $zindex-omega;
     background-color: $sidebar-bg;
 
     // When mobile menu is active move

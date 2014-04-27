@@ -27,6 +27,11 @@
 }
 
 .main__sidebar {
+    width: $fifth;
+    float: left;
+}
+
+.main__menu {
     @extend %effect-trans;
 
     width: $sidebar-w;
@@ -48,8 +53,10 @@
     @include rwd($tablet-w) {
         position: static;
         float: left;
-        width: $fifth;
+        width: 100%;
+        min-height: em(312);
         transition: none; /* [1] */
+        box-shadow: none;
     }
 }
 
@@ -59,19 +66,4 @@
     width: 100%;
     background-color: $brand-gamma;
     border-bottom: 1px solid $brand-beta;
-}
-
-/**
- * Top
- */
-.top {
-    @extend %cf;
-
-    width: 100%;
-    background-color: transparent;
-
-    // When on larger screen
-    @include rwd($tablet-w) {
-        background-color: $brand-beta;
-    }
 }
