@@ -16,6 +16,12 @@
     }
 }
 
+.sbpartners--border {
+    @extend .sbpartners;
+
+    border-right: 1px solid $brand-beta;
+}
+
 .sbpartners__link {
     display: block;
     padding: .3em;

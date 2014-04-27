@@ -854,7 +854,8 @@ h2, .beta {
 .uilist--spread,
 .socialnav,
 .sbnav,
-.sbpartners {
+.sbpartners,
+.sbpartners--border {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -905,7 +906,7 @@ h2, .beta {
  * On Vivamusica website we have five block grid.
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\000037}}
-.g, .contentbox, .article, .gallery {
+.g, .contentbox, .article, .article--noborder, .gallery {
   display: inline-block;
   margin-left: -1em;
 }
@@ -1318,7 +1319,7 @@ h2, .beta {
  */
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\000036}}
-  .article {
+  .article, .article--noborder {
     border-left: 1px solid black;
   }
 }
@@ -1476,6 +1477,11 @@ h2, .beta {
   .article__text {
     margin: 0 0 0 -1em;
   }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003145}}
+.article--noborder {
+  border: none;
 }
 
 /**
@@ -1656,12 +1662,12 @@ h2, .beta {
  * SIDEBAR PARTNERS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\000035}}
-.sbpartners {
+.sbpartners, .sbpartners--border {
   display: none;
 }
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\000035}}
-  .sbpartners {
+  .sbpartners, .sbpartners--border {
     display: block;
     float: left;
     width: 100%;
@@ -1671,11 +1677,16 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000319}}
+.sbpartners--border {
+  border-right: 1px solid black;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000325}}
 .sbpartners__link {
   display: block;
   padding: .3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_sidebar-partners\.scss}line{font-family:\0000329}}
 .sbpartners__link > img {
   margin: 0 auto;
 }
@@ -1770,14 +1781,14 @@ h2, .beta {
  * Main content layout
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_contentbox\.scss}line{font-family:\000035}}
-.contentbox, .article {
+.contentbox, .article, .article--noborder {
   width: 100%;
   float: left;
   margin: 1em 0;
 }
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_contentbox\.scss}line{font-family:\000035}}
-  .contentbox, .article {
+  .contentbox, .article, .article--noborder {
     width: 80%;
     padding: 0 1em;
   }
@@ -2018,7 +2029,7 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000351}}
-.nullm--left, .contentbox, .article, .banner {
+.nullm--left, .contentbox, .article, .article--noborder, .banner {
   margin-left: 0;
 }
 

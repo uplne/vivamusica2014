@@ -92,11 +92,11 @@ module.exports = function(app) {
         async.parallel(resources, function(err, results) {
             var item = results.halloffameQuery[0];
 
-            res.render('content/persondetail', {
+            res.render('content/hofdetail', {
                 pagetitle: "Vivamusica! festival 2014 - Hall of fame - " + item.title1 + " " + item.title2,
-                banner: "/static/images/team/all.jpg",
                 title1: item.title1,
                 title2: item.title2,
+                sidebar: true,
                 intro: item.intro,
                 text: item.text,
                 img: item.img,
