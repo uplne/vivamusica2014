@@ -26,8 +26,7 @@ define([
             timer       = 0,
 
             // DOM elements
-            $holder     = $('.js-carousel'),
-            $wrapper    = $('.carousel__wrap');
+            $holder     = $('.js-carousel');
 
         return {
 
@@ -60,7 +59,7 @@ define([
             },
 
             stackToEnd: function(item) {
-                $wrapper.append(item);
+                $holder.append(item);
 
                 self.setActive();
             },

@@ -10,11 +10,12 @@
     </ul>
  */
 .carousel {
+    width: 100%;
     position: relative;
     overflow: hidden;
 
-    li {
-        @extend %effect-trans;
+    .is-active {
+        @extend %inline-block;
     }
 
     .is-changing {
@@ -24,17 +25,13 @@
         left: 0;
         z-index: 200;
     }
-}
 
-.carousel__wrap {
-    @extend .uilist--h;
-
-    width: em(10000);
-    position: relative;
+    @include rwd($tablet-w) {
+        width: em(763);
+    }
 }
 
 .carousel__link {
-    width: em(763);
-    display: inline-block;
-    vertical-align: top;
+    width: 100%;
+    display: none;
 }

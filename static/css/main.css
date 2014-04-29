@@ -679,7 +679,7 @@ iframe[name='google_conversion_frame'] {
  * TRANSITIONS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000312}}
-.btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close, .arrow--left, .arrow--right, .thumbnaillist__link, .thumbnaillist__box, .thumbnaillist__title, .thumbnaillist__email, .sbnav__link, .socialnav__link, .gallery__item > img, .carousel li, .newsletter__button, .main, .main__menu {
+.btn--nav, .btn--close, .btn--buy, .btn--buy--contrast, .icon--nav, .icon--close, .arrow--left, .arrow--right, .thumbnaillist__link, .thumbnaillist__box, .thumbnaillist__title, .thumbnaillist__email, .sbnav__link, .socialnav__link, .gallery__item > img, .newsletter__button, .main, .main__menu {
   -webkit-transition-property: top, right, left, bottom, margin, background;
   transition-property: top, right, left, bottom, margin, background;
   -webkit-transition-duration: .25s;
@@ -865,7 +865,6 @@ h2, .beta {
 .uilist, .socialnav, .tickets__list,
 .uilist--h,
 .thumbnaillist__list,
-.carousel__wrap,
 .uilist--spread,
 .sbnav,
 .sbpartners,
@@ -876,7 +875,7 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_lists\.scss}line{font-family:\0000321}}
-.uilist--h > li, .thumbnaillist__list > li, .carousel__wrap > li {
+.uilist--h > li, .thumbnaillist__list > li {
   float: left;
 }
 
@@ -1855,10 +1854,11 @@ h2, .beta {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000312}}
 .carousel {
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000321}}
 .carousel .is-changing {
   display: none;
   position: absolute;
@@ -1866,18 +1866,17 @@ h2, .beta {
   left: 0;
   z-index: 200;
 }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000329}}
-.carousel__wrap {
-  width: 714.28571em;
-  position: relative;
+@media only screen and (min-width: 959px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000312}}
+  .carousel {
+    width: 54.5em;
+  }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000334}}
 .carousel__link {
-  width: 54.5em;
-  display: inline-block;
-  vertical-align: top;
+  width: 100%;
+  display: none;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_programlist\.scss}line{font-family:\000031}}
@@ -2092,7 +2091,7 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000318}}
-.box, .article__text, .tickets__main, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box {
+.box, .article__text, .tickets__main, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active {
   display: inline-block;
   vertical-align: top;
 }

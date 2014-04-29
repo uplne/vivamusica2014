@@ -76,7 +76,7 @@ module.exports = function(grunt) {
             },
 
             js: {
-                rc: '<%= jshint.files %>',
+                src: ['<%= dir.js %>/main.js', '<%= dir.js %>/lib/*.js', '<%= dir.js %>/modules/*.js'],
                 dest: '<%= dir.js %>/<%= pkg.name %>.js'
             },
         },
@@ -291,7 +291,6 @@ module.exports = function(grunt) {
     grunt.registerTask('prefix', ['autoprefixer:dev']);
 
     grunt.registerTask('build', [
-        'jshint',
         'concat:js',
         'uglify',
         'sass:build',
