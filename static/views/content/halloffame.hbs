@@ -8,11 +8,11 @@
         <ul class="thumbnaillist__list">
             {{#foreach halloffame}}
             <li class="thumbnaillist__item">
-                <a href="/halloffame/{{path}}" class="thumbnaillist__link">
+                <div class="thumbnaillist__box">
                     <img src="{{img}}" width="190" alt="" />
-                    <p class="thumbnaillist__date">{{title1}} <span>{{title2}}</span></p>
-                    <p class="thumbnaillist__title">{{title}}</p>
-                </a>
+                    <p class="thumbnaillist__date--small">{{title1}} <span>{{title2}}</span></p>
+                    <p class="thumbnaillist__title">{{year}}</p>
+                </div>
             </li>
             {{/foreach}}
         </ul>

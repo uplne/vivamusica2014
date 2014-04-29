@@ -4,8 +4,16 @@
         {{>sidebarpartners}}
     </div>
 
-    <div class="banner">
-        <img src="/static/images/program/banner/opera.jpg" width="100%" />
+    <div class="carousel js-carousel">
+        <ul class="carousel__list">
+            {{#foreach program}}
+            <li>
+                <a class="carousel__link" href="/program/{{path}}">
+                    <img src="/static/images/program/banner/{{img}}" width="100%" />
+                </a>
+            </li>
+            {{/foreach}}
+        </ul>
     </div>
 
     {{>programlist}}

@@ -23,11 +23,10 @@ define([
     var Carousel = function() {
 
         var self        = null,
+            timer       = 0,
 
             // DOM elements
-            $holder     = $('[data-module="carousel"]'),
-            $arrowLeft  = $('[data-move="prev"]'),
-            $arrowRight = $('[data-move="next"]');
+            $holder     = $('.js-carousel')
 
         return {
 
@@ -39,79 +38,47 @@ define([
             init: function() {
                 self = this;
 
-                if (self.§()) {
-                    self.bindEvents();
-                }
+                self.setActive();
+                //self.startRotation();
             },
 
-            /**
-             * Function is checking if we need to activate carousel by
-             * checking if it's content is wider than it's parent.
-             *
-             * @return {Boolean} Return true if we need to activate carousel
-             */
-            doWeNeedCarousel: function() {
-                var parentwidth   = self.getParentWidth(),
-                    carouselwidth = self.getRealCarouselWidth();
-
-                if (parentwidth < carouselwidth) {
-                    return true;
-                }
-
-                return false;
+            setActive: function() {
+                $holder.find('li:eq(0)').addClass('is-active');
             },
 
-            /**
-             * Get the parent (container) width
-             *
-             * @return {Number} Parent width
-             */
-            getParentWidth: function() {
-                return $holder.parent().width();
+            removeActive: function() {
+                $holder.find('.is-active').removeClass('is-active');
             },
 
-            /**
-             * Get the carousel width
-             *
-             * @return {Number} Carousel width
-             */
-            getRealCarouselWidth: function() {
-                var $li   = $holder.find('li');
-
-                // Set settings
-                self.carouselLength = $li.length;
-                self.itemWidth = $li.width();
-
-                return self.carouselLength * self.itemWidth;
+            getActive: function() {
+                return $holder.find('.is-active');
             },
 
-            bindEvents: function() {
-                $arrowLeft.on('click', self.moveLeft);
-                $arrowRight.on('click', self.moveRight);
+            startRotation: function() {
+                timer = window.setInterval(self.changeImage, 2000);
             },
 
-            moveLeft: function(e) {
-                e.preventDefault();
+            changeImage: function() {
+                var $item = self.getActive();
 
-                self.slideCarousel('left', e.target);
+                $item.addClass('is-moving');
+                setTimeout(self.detachCarousel, 500);
             },
 
-            moveRight: function(e) {
-                e.preventDefault();
-                console.log('next');
-            },
+            detachCarousel: function() {
+                var $car     = $holder.find('ul').clone();
 
-            slideCarousel: function(direction, item) {
-                if (direction === 'left') {
-                    console.log($holder.find('li:eq(' + (self.carouselLength - 1) + ')'));
-                    var lastitem = $holder.find('li:eq(' + (self.carouselLength - 1) + ')');
-                    var newitem = lastitem.clone();
+                var newmitem = $car.find('li:eq(0)').clone();
 
-                    lastitem.remove();
+                $car.find('li:eq(0)').remove();
+                $car.append(newmitem);
 
-                    $holder.prepend(newitem);
-                    $holder.css({'margin-left': -self.itemWidth});
-                }
+                newmitem.removeClass();
+
+                $car.find('li:eq(0)').addClass('is-active');
+
+                $holder.find('ul').remove();
+                $holder.append($car);
             }
         };
     };

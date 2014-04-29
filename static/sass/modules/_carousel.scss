@@ -12,10 +12,24 @@
 .carousel {
     position: relative;
     overflow: hidden;
+
+    li {
+        @extend %effect-trans;
+    }
+
+    .is-moving {
+        margin-left: em(763) * (-1);
+    }
 }
 
 .carousel__list {
-    @extend .uilist;
+    @extend .uilist--h;
 
     width: em(10000);
+}
+
+.carousel__link {
+    width: em(763);
+    display: inline-block;
+    vertical-align: top;
 }

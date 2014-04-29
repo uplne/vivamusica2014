@@ -56,7 +56,7 @@ module.exports = function(app) {
     // Hall of fame
     app.get("/halloffame", function(req, res) {
         var halloffameModel = mongoose.model('Halloffame'),
-            halloffameQuery = halloffameModel.find(),
+            halloffameQuery = halloffameModel.find({}).sort([['year', 'descending']]),
             programQuery    = getProgram(),
 
             resources = {
@@ -69,34 +69,6 @@ module.exports = function(app) {
             res.render('content/halloffame', {
                 pagetitle: "Vivamusica! festival 2014 - Hall of fame",
                 halloffame: results.halloffameQuery,
-                clientnav: helpers.setSelected('Hall of fame', clientNav),
-                program: results.programQuery
-            });
-        });
-    });
-
-    // Hall of fame
-    app.get("/halloffame/:page", function(req, res) {
-        var halloffameModel = mongoose.model('Halloffame'),
-            halloffameQuery = halloffameModel.find({'path': req.params.page}),
-            programQuery    = getProgram(),
-
-            resources = {
-                halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
-                programQuery: programQuery.exec.bind(programQuery)
-            };
-
-        async.parallel(resources, function(err, results) {
-            var item = results.halloffameQuery[0];
-
-            res.render('content/hofdetail', {
-                pagetitle: "Vivamusica! festival 2014 - Hall of fame - " + item.title1 + " " + item.title2,
-                title1: item.title1,
-                title2: item.title2,
-                sidebar: true,
-                intro: item.intro,
-                text: item.text,
-                img: item.img,
                 clientnav: helpers.setSelected('Hall of fame', clientNav),
                 program: results.programQuery
             });
@@ -117,35 +89,6 @@ module.exports = function(app) {
         async.parallel(resources, function(err, results) {
             res.render('content/kontakt', {
                 pagetitle: "Vivamusica! festival 2014 - Kontakt",
-                kontakt: results.kontaktQuery,
-                clientnav: helpers.setSelected('Kontakt', clientNav),
-                program: results.programQuery
-            });
-        });
-    });
-
-    // Kontakt detail
-    app.get("/kontakt/:page", function(req, res) {
-        var kontaktModel = mongoose.model('Kontakt'),
-            kontaktQuery = kontaktModel.find(),
-            programQuery = getProgram(),
-
-            resources = {
-                kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
-                programQuery: programQuery.exec.bind(programQuery)
-            };
-
-        async.parallel(resources, function(err, results) {
-            var item = getActualItem(results.kontaktQuery, req.params.page);
-
-            res.render('content/persondetail', {
-                pagetitle: "Vivamusica! festival 2014 - " + item.title1 + " " + item.title2,
-                banner: "/static/images/team/all.jpg",
-                title1: item.title1,
-                title2: item.title2,
-                title: item.title,
-                text: item.text,
-                img: item.img,
                 kontakt: results.kontaktQuery,
                 clientnav: helpers.setSelected('Kontakt', clientNav),
                 program: results.programQuery

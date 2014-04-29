@@ -12,8 +12,9 @@ require([
     'jquery',
     'modules/toggleMenu',
     'modules/gallery',
-    'modules/newsletter'
-], function ($, ToggleMenu, Gallery, Newsletter) {
+    'modules/newsletter',
+    'modules/carousel'
+], function ($, ToggleMenu, Gallery, Newsletter, Carousel) {
 
     var toggleMenu = new ToggleMenu();
         toggleMenu.init();
@@ -23,4 +24,7 @@ require([
 
     var newsletter = new Newsletter();
         newsletter.init();
+
+    var carousel = new Carousel();
+        carousel.init();
 });

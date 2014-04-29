@@ -61,6 +61,8 @@ $list-line-height: 1.2;
     @extend %inline-block;
 
     position: relative;
+    max-height: em(190);
+    overflow: hidden;
 
     &:hover {
         .thumbnaillist__top {
@@ -122,6 +124,13 @@ $list-line-height: 1.2;
     @include rwd($tablet-w) {
         margin-bottom: 0;
     }
+}
+
+.thumbnaillist__date--small {
+    @extend .thumbnaillist__date;
+    @include font-size(30px, false);
+
+    line-height: 1;
 }
 
 .thumbnaillist__title {
