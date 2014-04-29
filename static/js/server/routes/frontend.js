@@ -143,10 +143,10 @@ module.exports = function(app) {
             name: 'Festival',
             path: '/festival'
         },
-        {
+        /*{
             name: 'Galéria',
             path: '/galeria/2012'
-        },
+        },*/
         {
             name: 'Hall of fame',
             path: '/halloffame'
