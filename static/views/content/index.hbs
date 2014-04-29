@@ -5,15 +5,13 @@
     </div>
 
     <div class="carousel js-carousel">
-        <ul class="carousel__list">
+        <div class="carousel__wrap">
             {{#foreach program}}
-            <li>
-                <a class="carousel__link" href="/program/{{path}}">
-                    <img src="/static/images/program/banner/{{img}}" width="100%" />
-                </a>
-            </li>
+            <a class="carousel__link" href="/program/{{path}}">
+                <img src="/static/images/program/banner/{{img}}" width="100%" />
+            </a>
             {{/foreach}}
-        </ul>
+        </div>
     </div>
 
     {{>programlist}}

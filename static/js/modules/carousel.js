@@ -26,7 +26,8 @@ define([
             timer       = 0,
 
             // DOM elements
-            $holder     = $('.js-carousel')
+            $holder     = $('.js-carousel'),
+            $wrapper    = $('.carousel__wrap');
 
         return {
 
@@ -39,11 +40,11 @@ define([
                 self = this;
 
                 self.setActive();
-                //self.startRotation();
+                self.startRotation();
             },
 
             setActive: function() {
-                $holder.find('li:eq(0)').addClass('is-active');
+                $holder.find('a:eq(0)').addClass('is-active');
             },
 
             removeActive: function() {
@@ -54,31 +55,31 @@ define([
                 return $holder.find('.is-active');
             },
 
+            getNext: function() {
+                return $holder.find('a:eq(1)');
+            },
+
+            stackToEnd: function(item) {
+                $wrapper.append(item);
+
+                self.setActive();
+            },
+
             startRotation: function() {
                 timer = window.setInterval(self.changeImage, 2000);
             },
 
             changeImage: function() {
-                var $item = self.getActive();
+                var $item = self.getActive(),
+                    $next = self.getNext();
 
-                $item.addClass('is-moving');
-                setTimeout(self.detachCarousel, 500);
-            },
-
-            detachCarousel: function() {
-                var $car     = $holder.find('ul').clone();
-
-                var newmitem = $car.find('li:eq(0)').clone();
-
-                $car.find('li:eq(0)').remove();
-                $car.append(newmitem);
-
-                newmitem.removeClass();
-
-                $car.find('li:eq(0)').addClass('is-active');
-
-                $holder.find('ul').remove();
-                $holder.append($car);
+                    $next.addClass('is-changing');
+                    $next.fadeIn(800, function() {
+                        self.removeActive();
+                        $next.removeClass('is-changing');
+                        $next.css({'display': 'inline-block'});
+                        self.stackToEnd($item);
+                    });
             }
         };
     };

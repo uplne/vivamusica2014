@@ -22,6 +22,7 @@
             position: absolute;
             top: 2em;
             right: em(122) * -1;
+            z-index: $zindex-omega;
         }
     }
 }

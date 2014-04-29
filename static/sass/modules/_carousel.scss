@@ -17,15 +17,20 @@
         @extend %effect-trans;
     }
 
-    .is-moving {
-        margin-left: em(763) * (-1);
+    .is-changing {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 200;
     }
 }
 
-.carousel__list {
+.carousel__wrap {
     @extend .uilist--h;
 
     width: em(10000);
+    position: relative;
 }
 
 .carousel__link {
