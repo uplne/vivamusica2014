@@ -250,6 +250,20 @@ module.exports = function(grunt) {
             }
         },
 
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: '<%= dir.js %>',
+                    paths: {
+                        jquery: 'empty:'
+                    },
+                    name: 'main',
+                    out: '<%= dir.js %>/main.min.js',
+                    removeCombined: false
+                }
+            }
+        },
+
         notify: {
             dev: {
                 options: {
@@ -291,8 +305,7 @@ module.exports = function(grunt) {
     grunt.registerTask('prefix', ['autoprefixer:dev']);
 
     grunt.registerTask('build', [
-        'concat:js',
-        'uglify',
+        'requirejs:compile',
         'sass:build',
         'imagemin',
         'notify:build'
