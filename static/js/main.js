@@ -11,16 +11,12 @@ require.config({
 require([
     'jquery',
     'modules/toggleMenu',
-    'modules/gallery',
     'modules/newsletter',
     'modules/carousel'
-], function ($, ToggleMenu, Gallery, Newsletter, Carousel) {
+], function ($, ToggleMenu, Newsletter, Carousel) {
 
     var toggleMenu = new ToggleMenu();
         toggleMenu.init();
-
-    var gallery = new Gallery();
-        gallery.init();
 
     var newsletter = new Newsletter();
         newsletter.init();

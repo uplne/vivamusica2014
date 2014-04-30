@@ -39,6 +39,7 @@ module.exports = function(app) {
             res.render('content/programdetail', {
                 datenum: item.datenum,
                 datemonth: item.datemonth,
+                datetime: item.datetime,
                 place: item.place,
                 title: item.title,
                 intro: item.intro,
