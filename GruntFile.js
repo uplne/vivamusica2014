@@ -118,8 +118,7 @@ module.exports = function(grunt) {
             },
             build: {
                 options: {
-                    style: 'compressed',
-                    noCache: true
+                    style: 'compressed'
                 },
                 expand: true,
                 cwd: '<%= dir.sass %>/',
@@ -307,6 +306,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'requirejs:compile',
         'sass:build',
+        'autoprefixer:dev',
         'imagemin',
         'notify:build'
     ]);
