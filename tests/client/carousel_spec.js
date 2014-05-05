@@ -20,7 +20,7 @@ define([
         });
 
         afterEach(function() {
-            $fixtures.remove();
+            $fixtures.empty();
         });
 
         describe("Initialization", function() {
@@ -35,13 +35,13 @@ define([
 
             it("should set first element to active and start rotation", function() {
 
-                var spy1 = sinon.spy(carousel, "setActive"),
-                    spy2 = sinon.spy(carousel, "startRotation");
+                sinon.stub(carousel, "setActive");
+                sinon.stub(carousel, "startRotation");
 
                 carousel.init();
 
-                expect(spy1).to.have.been.calledOnce;
-                expect(spy2).to.have.been.calledOnce;
+                expect(carousel.setActive).to.have.been.calledOnce;
+                expect(carousel.startRotation).to.have.been.calledOnce;
             });
         });
 
