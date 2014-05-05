@@ -51,13 +51,40 @@ define([
             expect($('.js-carousel').find('a:eq(0)').attr('class')).to.equal('is-active');
         });
 
-        it("should remove active class when necessary", function() {
+        it("should remove active class", function() {
             carousel.setActive();
+
             expect($('.js-carousel').find('a:eq(0)').attr('class')).to.equal('is-active');
             expect($('.js-carousel').find('a.is-active').length).to.equal(1);
 
             carousel.removeActive();
             expect($('.js-carousel').find('a.is-active').length).to.equal(0);
+        });
+
+        it("should get active class", function() {
+            carousel.setActive();
+
+            var test = carousel.getActive();
+
+            expect(test).to.be.an('object');
+            expect(test.hasClass('is-active')).to.be.true;
+        });
+
+        describe("Timing", function() {
+
+            it("should change image every 5000 ms", function() {
+                this.clock = sinon.useFakeTimers();
+
+                var spy = sinon.spy(carousel, "changeImage");
+
+                carousel.init();
+
+                this.clock.tick(4998);
+                expect(spy).not.have.been.called;
+
+                this.clock.tick(5001);
+                expect(spy).to.have.been.calledOnce;
+            });
         });
     });
 });

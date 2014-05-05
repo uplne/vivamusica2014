@@ -65,22 +65,6 @@ module.exports = function(grunt) {
             }
         },
 
-        /**
-        * Concatenate
-        * @github.com/gruntjs/grunt-contrib-concat
-        */
-        concat: {
-            options: {
-                stripBanners: true,
-                banner: '<%= banner %>'
-            },
-
-            js: {
-                src: ['<%= dir.js %>/main.js', '<%= dir.js %>/lib/*.js', '<%= dir.js %>/modules/*.js'],
-                dest: '<%= dir.js %>/<%= pkg.name %>.js'
-            },
-        },
-
         // Server side unit tests
         mochacli: {
             options: {
@@ -126,23 +110,6 @@ module.exports = function(grunt) {
                 dest: '<%= dir.css %>',
                 ext: '.css'
             }
-        },
-
-        /**
-        * Minify
-        * @github.com/gruntjs/grunt-contrib-uglify
-        */
-        uglify: {
-            // Uglify options
-            options: {
-                banner: '<%= banner %>'
-            },
-
-            // Minify js files in static/js/
-            dist: {
-                src: ['<%= concat.js.dest %>'],
-                dest: '<%= dir.js %>/<%= pkg.name %>.min.js'
-            },
         },
 
         autoprefixer: {
