@@ -69,11 +69,14 @@ define([
             },
 
             changeImage: function() {
-                var $item = self.getActive(),
+                console.log('changeImage');
+                var self  = this,
+                    $item = self.getActive(),
                     $next = self.getNext();
 
                     $next.addClass('is-changing');
                     $next.fadeIn(1200, function() {
+                        console.log('test');
                         self.removeActive();
                         $next.removeClass('is-changing');
                         $next.removeAttr('style');

@@ -31,8 +31,8 @@
 
 .newsletter__input {
     width: 15em;
-    padding: 0 .4em;
-    line-height: 1.5;
+    height: 1.5em;
+    padding: .21em .4em;
     font-style: italic;
     border: none;
     vertical-align: top;
@@ -44,6 +44,7 @@
     @include font-size(12px, false);
 
     margin: 1px 1px 0 0;
+    padding: .19em .4em;
     text-transform: uppercase;
     border: none;
     color: $brand-text;

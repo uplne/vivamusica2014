@@ -70,6 +70,23 @@ define([
             expect(test.hasClass('is-active')).to.be.true;
         });
 
+        it.only("should change image", function() {
+            var mockCarousel = sinon.mock(carousel);
+
+            this.clock = sinon.useFakeTimers();
+
+            mockCarousel.expects('getActive').once();
+            mockCarousel.expects('getNext').once().returns($('js-carousel').find('a:eq(1)'));
+
+            this.clock.tick(1201);
+            mockCarousel.expects('stackToEnd').once();
+
+            carousel.changeImage();
+
+            mockCarousel.verify();
+
+        });
+
         describe("Timing", function() {
 
             it("should change image every 5000 ms", function() {
@@ -84,6 +101,8 @@ define([
 
                 this.clock.tick(5001);
                 expect(spy).to.have.been.calledOnce;
+
+                this.clock.restore();
             });
         });
     });

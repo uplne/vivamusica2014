@@ -29,7 +29,8 @@ module.exports = function(grunt) {
             css: 'static/css',
             sass: 'static/sass',
             img: 'static/images',
-            views: 'static/views'
+            views: 'static/views',
+            testsclient: 'tests/client'
         },
 
         /**
@@ -148,6 +149,11 @@ module.exports = function(grunt) {
                 }
             },
 
+            testsclient: {
+                files: ['<%= dir.testsclient %>/**/*_spec.js'],
+                tasks: ['mocha_phantomjs']
+            },
+
             /**
              * If any system files changes reload browser.
              * Requires webkit browser extension.
@@ -170,7 +176,7 @@ module.exports = function(grunt) {
         */
         nodemon: {
             dev: {
-                script: 'index.js',
+                script: 'viva-dev.js',
                 options: {
                     nodeArgs: ['--debug'],
                     env: {
@@ -261,7 +267,7 @@ module.exports = function(grunt) {
         'mochacli:unit'
     ]);
 
-    grunt.registerTask('test-client', ['mocha_phantomjs']);
+    grunt.registerTask('test-client', ['watch:testsclient']);
 
     grunt.registerTask('dev', [
         'concurrent:dev',
