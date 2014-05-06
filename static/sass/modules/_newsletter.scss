@@ -29,10 +29,16 @@
     vertical-align: middle;
 }
 
+/**
+ * 1. magic numbers are solving FF issue with line height
+ *    on input fields and button.
+ *
+ *    FF is forcing line-height: normal !important;
+ */
 .newsletter__input {
     width: 15em;
     height: 1.5em;
-    padding: .21em .4em;
+    padding: .21em .4em; /* [1] */
     font-style: italic;
     border: none;
     vertical-align: top;
@@ -44,7 +50,7 @@
     @include font-size(12px, false);
 
     margin: 1px 1px 0 0;
-    padding: .19em .4em;
+    padding: .19em .4em; /* [1] */
     text-transform: uppercase;
     border: none;
     color: $brand-text;
