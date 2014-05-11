@@ -13,6 +13,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    background-color: $brand-beta;
 
     .is-active {
         @extend %inline-block;
@@ -28,6 +29,7 @@
 
     @include rwd($tablet-w) {
         width: em(763);
+        max-height: em(312);
     }
 }
 

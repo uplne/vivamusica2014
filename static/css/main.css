@@ -1857,8 +1857,9 @@ h2, .beta {
   width: 100%;
   position: relative;
   overflow: hidden;
+  background-color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000322}}
 .carousel .is-changing {
   display: none;
   position: absolute;
@@ -1870,10 +1871,11 @@ h2, .beta {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000312}}
   .carousel {
     width: 54.5em;
+    max-height: 22.28571em;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_carousel\.scss}line{font-family:\0000336}}
 .carousel__link {
   width: 100%;
   display: none;
@@ -1947,29 +1949,37 @@ h2, .beta {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000332}}
+/**
+ * 1. magic numbers are solving FF issue with line height
+ *    on input fields and button.
+ *
+ *    FF is forcing line-height: normal !important;
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000338}}
 .newsletter__input {
   width: 15em;
   height: 1.5em;
   padding: .21em .4em;
+  /* [1] */
   font-style: italic;
   border: none;
   vertical-align: top;
   color: rgba(0, 0, 0, 0.5);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000348}}
 .newsletter__button {
   font-size: 12px;
   font-size: 0.85714rem;
   margin: 1px 1px 0 0;
   padding: .19em .4em;
+  /* [1] */
   text-transform: uppercase;
   border: none;
   color: white;
   background-color: #ed1c24;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000359}}
 .newsletter__button:hover {
   background-color: #666666;
 }

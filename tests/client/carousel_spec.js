@@ -20,7 +20,7 @@ define([
         });
 
         afterEach(function() {
-            $fixtures.empty();
+            //$fixtures.empty();
         });
 
         describe("Initialization", function() {
@@ -70,20 +70,39 @@ define([
             expect(test.hasClass('is-active')).to.be.true;
         });
 
-        it.only("should change image", function() {
-            var mockCarousel = sinon.mock(carousel);
-
-            this.clock = sinon.useFakeTimers();
+        it("should change image", function() {
+            var mockCarousel = sinon.mock(carousel),
+                $next        = $('.js-carousel').find('a:eq(1)');
 
             mockCarousel.expects('getActive').once();
-            mockCarousel.expects('getNext').once().returns($('js-carousel').find('a:eq(1)'));
-
-            this.clock.tick(1201);
-            mockCarousel.expects('stackToEnd').once();
+            mockCarousel.expects('getNext').once().returns($next);
 
             carousel.changeImage();
 
             mockCarousel.verify();
+            expect($next.hasClass('is-changing')).to.be.true;
+        });
+
+        it("should fade in new image and stack old one at the end", function() {
+            var spy1  = sinon.spy(carousel, 'stackToEnd'),
+                spy2  = sinon.spy(carousel, 'removeActive'),
+                $next = $('.js-carousel').find('a:eq(1)');
+
+            this.clock = sinon.useFakeTimers();
+
+            carousel.changeImage();
+
+            this.clock.tick(1100);
+            expect(spy1).not.have.been.called;
+            expect(spy2).not.have.been.called;
+
+            this.clock.tick(1300);
+            expect(spy1).to.have.been.calledOnce;
+            expect(spy2).to.have.been.calledOnce;
+            expect($('.js-carousel').find('.is-changing').length).to.equal(0);
+        });
+
+        it.only("should stack old one to the end and set first one to active", function() {
 
         });
 

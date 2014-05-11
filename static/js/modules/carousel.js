@@ -61,7 +61,7 @@ define([
             stackToEnd: function(item) {
                 $holder.append(item);
 
-                self.setActive();
+                this.setActive();
             },
 
             startRotation: function() {
@@ -69,14 +69,12 @@ define([
             },
 
             changeImage: function() {
-                console.log('changeImage');
                 var self  = this,
                     $item = self.getActive(),
                     $next = self.getNext();
 
                     $next.addClass('is-changing');
                     $next.fadeIn(1200, function() {
-                        console.log('test');
                         self.removeActive();
                         $next.removeClass('is-changing');
                         $next.removeAttr('style');
