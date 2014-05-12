@@ -41,7 +41,7 @@ module.exports = function(app) {
                 datemonth: item.datemonth,
                 datetime: item.datetime,
                 place: item.place,
-                title: item.title,
+                title: 'Vivamusica! festival 2014' + ' - ' + item.title,
                 intro: item.intro,
                 text: item.text,
                 img: item.img,

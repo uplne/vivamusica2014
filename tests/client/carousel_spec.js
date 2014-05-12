@@ -102,9 +102,9 @@ define([
             expect($('.js-carousel').find('.is-changing').length).to.equal(0);
         });
 
-        it.only("should stack old one to the end and set first one to active", function() {
+        it("should stack old one to the end and set first one to active", function() {
 
-        });
+        })
 
         describe("Timing", function() {
 

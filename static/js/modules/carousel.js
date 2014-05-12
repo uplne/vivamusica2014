@@ -69,7 +69,6 @@ define([
             },
 
             changeImage: function() {
-                var self  = this,
                     $item = self.getActive(),
                     $next = self.getNext();
 

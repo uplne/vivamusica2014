@@ -29,7 +29,7 @@
 
     @include rwd($tablet-w) {
         width: em(763);
-        max-height: em(312);
+        min-height: em(312);
     }
 }
 

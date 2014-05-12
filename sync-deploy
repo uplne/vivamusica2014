@@ -1,0 +1,1 @@
+rsync -vru --delete-after --links --exclude='.git' --exclude='tests' --exclude="node_modules" --exclude=".sass-cache" /Users/stefanvadocz/Desktop/Work/vivamusica2014/ steve@188.226.149.238:/../../var/www/viva.steveis.guru/public_html/
