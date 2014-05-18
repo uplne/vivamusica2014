@@ -1,0 +1,54 @@
+.press {
+    @extend .contentbox;
+
+    padding: 0;
+}
+
+.press__top {
+    @extend %box;
+
+    width: 100%;
+    border-bottom: 1px solid $brand-beta;
+}
+
+.press__heading {
+    margin: 0 0 $base-padding 0;
+}
+
+.press__download {
+    display: block;
+    margin: $base-padding 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.press__link {
+    @extend .box;
+
+    color: $brand-beta;
+}
+
+.press__intro {
+    @include font-size(20px);
+
+    margin: 0 0 0 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.press__date {
+    @include font-size(36px, false);
+
+    line-height: 1;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.press__more {
+    @include font-size(22px);
+
+    float: right;
+    margin-right: 2em;
+    font-style: italic;
+    color: $brand;
+}

@@ -17,6 +17,12 @@
     margin-left: $base-padding;
 }
 
+.g__item--full {
+    @extend .g__item;
+
+    margin-left: 0;
+}
+
 .g-half { width: 50%; }
 
 /**

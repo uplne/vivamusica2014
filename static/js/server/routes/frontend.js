@@ -114,6 +114,14 @@ module.exports = function(app) {
         });
     });
 
+    // Press
+    app.get("/press", function(req, res) {
+        res.render('content/press', {
+            pagetitle: "Vivamusica! festival 2014 - Press",
+            clientnav: helpers.setSelected('Press', clientNav),
+        });
+    });
+
     // Galeria
     app.get("/galeria/:year", function(req, res) {
         res.render('content/galeria', {
@@ -156,6 +164,10 @@ module.exports = function(app) {
             name: 'Kontakt',
             banner: "/static/images/team/all.jpg",
             path: '/kontakt'
+        },
+        {
+            name: 'Press',
+            path: '/press'
         }
     ];
 
