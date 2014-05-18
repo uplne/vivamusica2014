@@ -65,20 +65,26 @@ define([
             },
 
             startRotation: function() {
-                timer = window.setInterval(self.changeImage, 5000);
+                self = this;
+
+                timer = window.setInterval(function() {
+                    self.changeImage(self);
+                }, 5000);
             },
 
-            changeImage: function() {
-                    $item = self.getActive(),
+            changeImage: function(self) {
+                self = self || this;
+
+                var $item = self.getActive(),
                     $next = self.getNext();
 
-                    $next.addClass('is-changing');
-                    $next.fadeIn(1200, function() {
-                        self.removeActive();
-                        $next.removeClass('is-changing');
-                        $next.removeAttr('style');
-                        self.stackToEnd($item);
-                    });
+                $next.addClass('is-changing');
+                $next.fadeIn(1200, function() {
+                    self.removeActive();
+                    $next.removeClass('is-changing');
+                    $next.removeAttr('style');
+                    self.stackToEnd($item);
+                });
             }
         };
     };

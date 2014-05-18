@@ -10,6 +10,10 @@
     <body>
         <div id="mocha"></div>
         <div id="fixtures"></div>
+        <script>
+            window.webkitRequestAnimationFrame = null;
+            window.mozRequestAnimationFrame    = null;
+        </script>
         <script data-main="test-main" src="../../node_modules/requirejs/require.js"></script>
     </body>
 </html>
