@@ -661,6 +661,7 @@ iframe[name='google_conversion_frame'] {
 .cf:after, .main:after,
 .list--centered:after,
 .article__header:after,
+.article__header--press:after,
 .thumbnaillist__list:after,
 .tickets:after,
 .footer:after,
@@ -919,7 +920,7 @@ h2, .beta {
  * On Vivamusica website we have five block grid.
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\000037}}
-.g, .contentbox, .article, .article--noborder, .press, .gallery {
+.g, .contentbox, .article, .article--noborder, .article--press, .press, .gallery {
   display: inline-block;
   margin-left: -1em;
 }
@@ -1337,31 +1338,31 @@ h2, .beta {
  */
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\000036}}
-  .article, .article--noborder {
+  .article, .article--noborder, .article--press {
     border-left: 1px solid black;
   }
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000314}}
-.article__header {
+.article__header, .article__header--press {
   position: relative;
 }
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000314}}
-  .article__header {
+  .article__header, .article__header--press {
     margin-top: -1em;
   }
 }
 @media only screen and (min-width: 996px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000314}}
-  .article__header {
+  .article__header, .article__header--press {
     max-height: 22.28571em;
     overflow: hidden;
   }
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000328}}
-.article__intro, .article__intro--full {
+.article__intro, .article__intro--full, .article__intro--press {
   position: relative;
   float: none;
   width: 100%;
@@ -1369,7 +1370,7 @@ h2, .beta {
 }
 @media only screen and (min-width: 679px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000328}}
-  .article__intro, .article__intro--full {
+  .article__intro, .article__intro--full, .article__intro--press {
     float: left;
     width: 50%;
     min-height: 8em;
@@ -1390,14 +1391,14 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000353}}
-.article__date, .article__month, .article__place, .article__name, .article__surname, .article__title {
+.article__date, .article__date--press, .article__month, .article__place, .article__name, .article__surname, .article__title, .article__title--press {
   position: absolute;
   font-weight: bold;
   font-style: italic;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000359}}
-.article__date {
+.article__date, .article__date--press {
   font-size: 142px;
   font-size: 10.14286rem;
   line-height: 1.01408;
@@ -1500,6 +1501,44 @@ h2, .beta {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003145}}
 .article--noborder {
   border: none;
+}
+
+/**
+ * Press
+ */
+@media only screen and (min-width: 959px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003154}}
+  .article--press {
+    border-left: none;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003162}}
+.article__header--press {
+  margin-bottom: 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003168}}
+.article__intro--press {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003174}}
+.article__date--press {
+  font-size: 80px;
+  font-size: 5.71429rem;
+  top: -.16em;
+  left: .06em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\00003182}}
+.article__title--press {
+  font-size: 24px;
+  font-size: 1.71429rem;
+  line-height: 1;
+  width: 70%;
+  position: static;
+  margin: 3em 0 0 3em;
 }
 
 /**
@@ -1806,14 +1845,14 @@ h2, .beta {
  * Main content layout
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_contentbox\.scss}line{font-family:\000035}}
-.contentbox, .article, .article--noborder, .press {
+.contentbox, .article, .article--noborder, .article--press, .press {
   width: 100%;
   float: left;
   margin: 1em 0;
 }
 @media only screen and (min-width: 959px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_contentbox\.scss}line{font-family:\000035}}
-  .contentbox, .article, .article--noborder, .press {
+  .contentbox, .article, .article--noborder, .article--press, .press {
     width: 80%;
     padding: 0 1em;
   }
@@ -2087,20 +2126,21 @@ h2, .beta {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\000031}}
 .press {
   padding: 0;
+  margin: 0 0 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\000038}}
 .press__top {
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000315}}
 .press__heading {
   margin: 0 0 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000319}}
 .press__download {
   display: block;
   margin: 1em 0;
@@ -2108,13 +2148,13 @@ h2, .beta {
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000326}}
 .press__link {
   margin-bottom: 1em;
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000333}}
 .press__intro {
   font-size: 20px;
   font-size: 1.42857rem;
@@ -2124,7 +2164,7 @@ h2, .beta {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000341}}
 .press__date {
   font-size: 36px;
   font-size: 2.57143rem;
@@ -2133,7 +2173,7 @@ h2, .beta {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000349}}
 .press__more {
   font-size: 22px;
   font-size: 1.57143rem;
@@ -2233,7 +2273,7 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000351}}
-.nullm--left, .contentbox, .article, .article--noborder, .press, .banner {
+.nullm--left, .contentbox, .article, .article--noborder, .article--press, .press, .banner {
   margin-left: 0;
 }
 

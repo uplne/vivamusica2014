@@ -119,6 +119,18 @@ module.exports = function(app) {
         res.render('content/press', {
             pagetitle: "Vivamusica! festival 2014 - Press",
             clientnav: helpers.setSelected('Press', clientNav),
+            sidebar: true
+        });
+    });
+
+    // Press detail page
+    app.get("/press/:page", function(req, res) {
+        var page = req.params.page;
+
+        res.render('content/pressdetail', {
+            pagetitle: "Vivamusica! festival 2014 - Press - Detail",
+            clientnav: helpers.setSelected('Press', clientNav),
+            sidebar: true
         });
     });
 

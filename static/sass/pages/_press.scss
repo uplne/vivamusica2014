@@ -2,13 +2,14 @@
     @extend .contentbox;
 
     padding: 0;
+    margin: 0 0 $base-padding 0;
 }
 
 .press__top {
     @extend %box;
 
     width: 100%;
-    border-bottom: 1px solid $brand-beta;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .press__heading {

@@ -147,3 +147,43 @@
 
     border: none;
 }
+
+/**
+ * Press
+ */
+.article--press {
+    @extend .article;
+
+    @include rwd(960px) {
+        border-left: none;
+    }
+}
+
+.article__header--press {
+    @extend .article__header;
+
+    margin-bottom: 2em;
+}
+
+.article__intro--press {
+    @extend .article__intro;
+
+    width: 100%;
+}
+
+.article__date--press {
+    @extend .article__date;
+    @include font-size(80px, false);
+
+    top: -.16em;
+    left: .06em;
+}
+
+.article__title--press {
+    @extend %article__introtext;
+    @include font-size(24px);
+
+    width: 70%;
+    position: static;
+    margin: 3em 0 0 3em;
+}
