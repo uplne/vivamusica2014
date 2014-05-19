@@ -23,8 +23,9 @@
 }
 
 .press__link {
-    @extend .box;
+    @extend %inline-block;
 
+    margin-bottom: $base-padding;
     color: $brand-beta;
 }
 

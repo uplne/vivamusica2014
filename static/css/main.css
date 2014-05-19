@@ -827,7 +827,7 @@ h2, .beta {
  * BOX OBJECTS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_box\.scss}line{font-family:\0000312}}
-.box, .article__text, .tickets__main, .press__link {
+.box, .article__text, .tickets__main {
   padding: 1em;
 }
 
@@ -2110,10 +2110,11 @@ h2, .beta {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000325}}
 .press__link {
+  margin-bottom: 1em;
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000332}}
 .press__intro {
   font-size: 20px;
   font-size: 1.42857rem;
@@ -2123,7 +2124,7 @@ h2, .beta {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000340}}
 .press__date {
   font-size: 36px;
   font-size: 2.57143rem;
@@ -2132,7 +2133,7 @@ h2, .beta {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_press\.scss}line{font-family:\0000348}}
 .press__more {
   font-size: 22px;
   font-size: 1.57143rem;
@@ -2166,8 +2167,8 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000318}}
-.box, .article__text, .tickets__main, .press__link,
-.press__top, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active {
+.box, .article__text, .tickets__main,
+.press__top, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active, .press__link {
   display: inline-block;
   vertical-align: top;
 }
