@@ -144,6 +144,14 @@ module.exports = function(app) {
         });
     });
 
+    // Partneri
+    app.get("/partneri", function(req, res) {
+        res.render('content/partneri', {
+            title: 'Partneri',
+            clientnav: helpers.setSelected('Partneri', clientNav)
+        });
+    });
+
     // POST form newsletter form
     app.post('/newsletter', function(req, res){
         var item            = JSON.stringify(req.body),
@@ -180,6 +188,10 @@ module.exports = function(app) {
         {
             name: 'Press',
             path: '/press'
+        },
+        {
+            name: 'Partneri',
+            path: '/partneri'
         }
     ];
 
