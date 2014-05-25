@@ -1,0 +1,13 @@
+.partners__box {
+    @extend %inline-block;
+
+    > a {
+        min-height: em(100);
+    }
+}
+
+.partners__item {
+    margin: $base-padding auto;
+    text-align: center;
+    vertical-align: middle;
+}

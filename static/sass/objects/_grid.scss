@@ -14,13 +14,13 @@
 
     float: left;
     width: 100%;
-    margin-left: $base-padding;
+    padding-left: $base-padding;
 }
 
 .g__item--full {
     @extend .g__item;
 
-    margin-left: 0;
+    padding-left: 0;
 }
 
 .g-half { width: 50%; }

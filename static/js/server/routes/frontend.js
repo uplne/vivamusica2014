@@ -186,10 +186,10 @@ module.exports = function(app) {
             banner: "/static/images/team/all.jpg",
             path: '/kontakt'
         },
-        {
+        /*{
             name: 'Press',
             path: '/press'
-        },
+        },*/
         {
             name: 'Partneri',
             path: '/partneri'

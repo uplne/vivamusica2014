@@ -933,12 +933,12 @@ h2, .beta {
   box-sizing: border-box;
   float: left;
   width: 100%;
-  margin-left: 1em;
+  padding-left: 1em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000320}}
 .g__item--full {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000326}}
@@ -1714,7 +1714,7 @@ h2, .beta {
   padding-right: 4px;
   /* [1] */
   text-align: right;
-  line-height: 1.7em;
+  line-height: 1.6em;
   font-style: italic;
   color: white;
 }
@@ -2183,6 +2183,18 @@ h2, .beta {
   color: #ed1c24;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_partners\.scss}line{font-family:\000034}}
+.partners__box > a {
+  min-height: 7.14286em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/pages\/_partners\.scss}line{font-family:\000039}}
+.partners__item {
+  margin: 1em auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
 /**
  * Generic files with higher specificity
  */
@@ -2207,7 +2219,7 @@ h2, .beta {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000318}}
 .box, .article__text, .tickets__main,
-.press__top, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active, .press__link {
+.press__top, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active, .press__link, .partners__box {
   display: inline-block;
   vertical-align: top;
 }
