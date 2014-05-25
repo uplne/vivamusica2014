@@ -2016,12 +2016,11 @@ h2, .beta {
   font-size: 12px;
   font-size: 0.85714rem;
   margin: 1px 1px 0 0;
-  padding: .19em .4em;
-  /* [1] */
   text-transform: uppercase;
   border: none;
   color: white;
   background-color: #ed1c24;
+  line-height: 1.2;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000359}}
 .newsletter__button:hover {

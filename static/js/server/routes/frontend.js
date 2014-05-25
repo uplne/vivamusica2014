@@ -148,7 +148,8 @@ module.exports = function(app) {
     app.get("/partneri", function(req, res) {
         res.render('content/partneri', {
             title: 'Partneri',
-            clientnav: helpers.setSelected('Partneri', clientNav)
+            clientnav: helpers.setSelected('Partneri', clientNav),
+            sidebar: true
         });
     });
 
