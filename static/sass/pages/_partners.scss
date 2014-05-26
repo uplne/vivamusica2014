@@ -1,13 +1,38 @@
+$spacing-border: #f2f2f2;
+
+.partners {
+    @extend .contentbox;
+
+    margin-top: $base-padding * 3;
+
+    @include rwd($tablet-w) {
+        margin-top: 0;
+    }
+}
+
 .partners__box {
     @extend %inline-block;
 
-    > a {
-        min-height: em(100);
-    }
+    padding-bottom: 3em;
+    border-bottom: 1px solid $spacing-border;
+}
+
+.partners__gitem {
+    @extend .g__item;
+
+    min-height: em(100);
 }
 
 .partners__item {
     margin: $base-padding auto;
     text-align: center;
     vertical-align: middle;
+}
+
+.partners__item--fullwidth {
+    width: 80%;
+
+    @include rwd($mobile-landscape-w) {
+        width: auto;
+    }
 }

@@ -43,3 +43,15 @@
 .g-twofifths  { width: 40%; }
 .g-threefifts { width: 60%; }
 .g-fourfifths { width: 80%; }
+
+/**
+ * Mobile
+ *
+ * Make width 100% for less than mobile width
+ */
+.g-mobile-full {
+    @include rwd(false, $mobile-landscape-w) {
+        width: 100%;
+        padding-left: 0;
+    }
+}

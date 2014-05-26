@@ -1,3 +1,6 @@
-h2 {
+h2, .beta {
+    @include font-size(18px, false);
 
+    font-weight: normal;
+    font-style: italic;
 }
