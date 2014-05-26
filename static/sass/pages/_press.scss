@@ -25,14 +25,9 @@
 
 .press__link {
     @extend .g__item;
-    @extend %effect-trans;
 
     margin-bottom: $base-padding;
     color: $brand-beta;
-
-    &:hover {
-        background-color: #e0e0e0;
-    }
 }
 
 .press__intro {
