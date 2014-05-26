@@ -116,10 +116,19 @@ module.exports = function(app) {
 
     // Press
     app.get("/press", function(req, res) {
-        res.render('content/press', {
-            pagetitle: "Vivamusica! festival 2014 - Press",
-            clientnav: helpers.setSelected('Press', clientNav),
-            sidebar: true
+        var pressModel = mongoose.model('Pressnews'),
+            pressQuery = pressModel.find({}),
+            resources    = {
+                pressQuery: pressQuery.exec.bind(pressQuery)
+            };
+
+        async.parallel(resources, function(err, results) {
+            res.render('content/press', {
+                pagetitle: "Vivamusica! festival 2014 - Press",
+                press: results.pressQuery,
+                clientnav: helpers.setSelected('Press', clientNav),
+                sidebar: true
+            });
         });
     });
 
@@ -186,10 +195,10 @@ module.exports = function(app) {
             banner: "/static/images/team/all.jpg",
             path: '/kontakt'
         },
-        /*{
+        {
             name: 'Press',
             path: '/press'
-        },*/
+        },
         {
             name: 'Partneri',
             path: '/partneri'

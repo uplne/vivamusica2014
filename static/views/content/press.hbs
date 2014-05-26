@@ -18,11 +18,13 @@
         </div>
         <div class="box">
             <h2 class="press__heading">Tlacove spravy</h2>
-            <a class="press__link" href="/press/test">
+            {{#foreach press}}
+            <a class="press__link g-full" href="/press/{{path}}">
                 <span class="press__date">22.04.2014</span>
-                <p class="press__intro">Detský deň v rámci Viva Musica! festivalu na obľúbenom Hlavnom námestí a na Nádvorí Primaciálneho paláca.</p>
-                <span class="press__more" href="">Viac ></span>
+                <p class="press__intro">{{title}}</p>
+                <span class="press__more" href="/press/{{path}}">Viac ></span>
             </a>
+            {{/foreach}}
         </div>
     </div>
 </div>
