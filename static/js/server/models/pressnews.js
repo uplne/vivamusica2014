@@ -13,7 +13,7 @@ var PressnewsSchema = new Schema({
     text:   {type: String, default: ''},
     img:    {type: String, default: ''},
     date:   {type: String, default: ''},
-    path:   {type: String, default: ''}
+    path:   {type: Number,}
 },
 {
     collection: 'pressnews'
