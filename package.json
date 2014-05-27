@@ -22,7 +22,9 @@
     "express-hbs": ">= 0.7.6",
     "path": "~0.4.9",
     "mongoose": "~3.8.8",
-    "async": "~0.6.2"
+    "async": "~0.6.2",
+    "cookie-parser": "~1.1.0",
+    "express-session": "~1.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -153,6 +153,10 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/press/galeria", function(req, res) {
+
+    });
+
     // Galeria
     app.get("/galeria/:year", function(req, res) {
         res.render('content/galeria', {

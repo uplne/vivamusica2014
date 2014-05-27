@@ -1,16 +1,18 @@
-var express    = require('express'),
-    bodyParser = require('body-parser'),
+var express      = require('express'),
+    bodyParser   = require('body-parser'),
     methodOverride = require('method-override'),
-    favicon    = require('static-favicon'),
+    favicon      = require('static-favicon'),
     errorHandler = require('errorhandler'),
-    exphbs     = require('express-hbs'),
-    path       = require('path'),
-    config     = require('./config'),
-    routes     = require('./routes'),
-    helpers    = require('./helpers'),
-    db         = require('./config/db'),
-    dbmodels   = require('./controllers/dbmodels'),
-    appRoot    = config.paths.appRoot;
+    exphbs       = require('express-hbs'),
+    path         = require('path'),
+    config       = require('./config'),
+    routes       = require('./routes'),
+    helpers      = require('./helpers'),
+    db           = require('./config/db'),
+    dbmodels     = require('./controllers/dbmodels'),
+    appRoot      = config.paths.appRoot,
+    cookieParser = require('cookie-parser'),
+    session      = require('express-session');
 
 function init() {
     app = express();
@@ -23,6 +25,8 @@ function setupServer() {
     // Configure server
     app.use(bodyParser());
     app.use(methodOverride());
+    app.use(cookieParser());
+    app.use(session({ secret: 'vivasecretvisible' }));
     app.use(favicon(config.paths.images + '/favicon.ico'));
     app.use(express.static(path.join(appRoot, 'static')));
     app.use('/static/images', express.static(config.paths.images));
