@@ -10,9 +10,10 @@ var mongoose = require('mongoose'),
  */
 var PressnewsSchema = new Schema({
     title:  {type: String, default: ''},
-    text:    {type: String, default: ''},
-    img:     {type: String, default: ''},
-    path:    {type: String, default: ''}
+    text:   {type: String, default: ''},
+    img:    {type: String, default: ''},
+    date:   {type: String, default: ''},
+    path:   {type: String, default: ''}
 },
 {
     collection: 'pressnews'

@@ -117,7 +117,7 @@ module.exports = function(app) {
     // Press
     app.get("/press", function(req, res) {
         var pressModel = mongoose.model('Pressnews'),
-            pressQuery = pressModel.find({}),
+            pressQuery = pressModel.find({}).sort([['path', 'descending']]),
             resources    = {
                 pressQuery: pressQuery.exec.bind(pressQuery)
             };
