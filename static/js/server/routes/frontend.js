@@ -153,8 +153,12 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/press/galeria", function(req, res) {
-
+    app.get("/presslogin", function(req, res) {
+        res.render('content/login', {
+            pagetitle: "Vivamusica! festival 2014 - Press - Login",
+            clientnav: helpers.setSelected('Press', clientNav),
+            sidebar: true
+        });
     });
 
     // Galeria
