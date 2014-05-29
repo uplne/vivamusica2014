@@ -168,10 +168,8 @@ module.exports = function(app) {
                 pswd: req.param('pswd')
             };
 
-        console.log(params);
-
+        // TODO: use promises
         login.loginHandler(params, function(msg, status) {
-            console.log('status', status);
             if (!status) {
                 res.send(msg, 400);
             } else {
