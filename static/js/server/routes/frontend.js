@@ -2,7 +2,8 @@ var config   = require('../config'),
     helpers  = require('./helpers'),
     async    = require('async'),
     mongoose = require('mongoose'),
-    fs       = require('fs');
+    fs       = require('fs'),
+    login    = require('../controllers/login-controller');
 
 module.exports = function(app) {
 
@@ -158,6 +159,25 @@ module.exports = function(app) {
             pagetitle: "Vivamusica! festival 2014 - Press - Login",
             clientnav: helpers.setSelected('Press', clientNav),
             sidebar: true
+        });
+    });
+
+    app.post("/presslogin", function(req, res) {
+        var params = {
+                user: req.param('username'),
+                pswd: req.param('pswd')
+            };
+
+        console.log(params);
+
+        login.loginHandler(params, function(msg, status) {
+            console.log('status', status);
+            if (!status) {
+                res.send(msg, 400);
+            } else {
+                //res.send(params.user, 200);
+                res.redirect("/pressgaleria");
+            }
         });
     });
 

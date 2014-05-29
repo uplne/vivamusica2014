@@ -3,7 +3,7 @@
  */
 .banner {
     @extend .g__item;
-    @extend .nullm--left;
+    @extend .nullp--left;
 
     @include rwd($tablet-w) {
         width: 80%;
