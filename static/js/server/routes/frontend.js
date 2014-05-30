@@ -168,13 +168,12 @@ module.exports = function(app) {
                 pswd: req.param('pswd')
             };
 
-        // TODO: use promises
+        // TODO: use promises && AJAX form
         login.loginHandler(params, function(msg, user) {
             if (typeof user === "undefined") {
                 res.send(msg, 400);
             } else {
                 //res.send(params.user, 200);
-
                 req.session.user = user;
                 res.redirect("/pressgaleria");
             }
@@ -182,7 +181,6 @@ module.exports = function(app) {
     });
 
     app.get("/pressgaleria", function(req, res) {
-        console.log(req.session.user);
         if (typeof req.session.user === "undefined") {
             res.redirect("/presslogin");
         } else {
