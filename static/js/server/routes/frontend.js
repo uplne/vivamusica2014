@@ -179,6 +179,14 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/pressgaleria", function(req, res) {
+        res.render('content/pressgaleria', {
+            pagetitle: "Vivamusica! festival 2014 - Press - Galéria",
+            clientnav: helpers.setSelected('Press', clientNav),
+            sidebar: true
+        });
+    });
+
     // Galeria
     app.get("/galeria/:year", function(req, res) {
         res.render('content/galeria', {
