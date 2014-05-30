@@ -30,6 +30,21 @@
     color: $brand-beta;
 }
 
+.press__imglink {
+    @extend .press__link;
+
+    text-align: center;
+
+    > img {
+        display: inline;
+        border: 1px solid #e0e0e0;
+    }
+
+    &:hover > img {
+        border: 1px solid $brand;
+    }
+}
+
 .press__intro {
     @include font-size(20px);
 

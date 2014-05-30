@@ -169,22 +169,29 @@ module.exports = function(app) {
             };
 
         // TODO: use promises
-        login.loginHandler(params, function(msg, status) {
-            if (!status) {
+        login.loginHandler(params, function(msg, user) {
+            if (typeof user === "undefined") {
                 res.send(msg, 400);
             } else {
                 //res.send(params.user, 200);
+
+                req.session.user = user;
                 res.redirect("/pressgaleria");
             }
         });
     });
 
     app.get("/pressgaleria", function(req, res) {
-        res.render('content/pressgaleria', {
-            pagetitle: "Vivamusica! festival 2014 - Press - Galéria",
-            clientnav: helpers.setSelected('Press', clientNav),
-            sidebar: true
-        });
+        console.log(req.session.user);
+        if (typeof req.session.user === "undefined") {
+            res.redirect("/presslogin");
+        } else {
+            res.render('content/pressgaleria', {
+                pagetitle: "Vivamusica! festival 2014 - Press - Galéria",
+                clientnav: helpers.setSelected('Press', clientNav),
+                sidebar: true
+            });
+        }
     });
 
     // Galeria

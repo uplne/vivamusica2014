@@ -6,8 +6,7 @@ var api = {
     // TODO: connect to DB
     loginHandler: function(user, callback) {
         if (user.user === "media" && user.pswd === "heslo") {
-            console.log('login true');
-            callback('', true);
+            callback('', user);
         } else {
             callback("Wrong username or password!");
         }
