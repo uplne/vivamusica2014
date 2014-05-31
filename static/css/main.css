@@ -900,7 +900,7 @@ h2, .beta {
  * On Vivamusica website we have five block grid.
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\000037}}
-.g, .contentbox, .article, .article--noborder, .article--press, .press, .partners, .gallery {
+.g, .gallery {
   display: inline-block;
   margin-left: -1em;
 }
@@ -1359,8 +1359,8 @@ h2, .beta {
   font-size: 16px;
   font-size: 1.14286rem;
   line-height: 1.5;
+  height: 2.5em;
   padding: 0 .5em;
-  line-height: 2.5;
   vertical-align: middle;
   border: none;
   background-color: #e2e2e2;
@@ -2363,7 +2363,7 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000351}}
-.nullm--left, .contentbox, .article, .article--noborder, .article--press, .press, .partners {
+.nullm--left {
   margin-left: 0;
 }
 

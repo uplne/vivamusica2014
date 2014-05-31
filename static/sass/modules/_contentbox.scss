@@ -3,9 +3,6 @@
  */
 
 .contentbox {
-    @extend .g;
-    @extend .nullm--left;
-
     width: 100%;
     float: left;
     margin: $base-padding 0;
