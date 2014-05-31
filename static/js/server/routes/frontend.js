@@ -196,7 +196,6 @@ module.exports = function(app) {
     });
 
     app.all("/private/*", function(req, res, next) {
-        console.log('file download');
         if (typeof req.session.user === "undefined") {
             res.redirect("/presslogin");
         } else {
