@@ -1,0 +1,26 @@
+/**
+ * Form
+ */
+.form {
+    width: 100%;
+    text-align: center;
+    margin: 4em auto 0 auto;
+}
+
+.form__heading {
+    text-align: left;
+}
+
+.input {
+    @include font-size(16px);
+
+    padding: 0 .5em;
+    line-height: 2.5;
+    vertical-align: middle;
+    border: none;
+    background-color: $brand-bg;
+}
+
+.input--text {
+    @extend .input;
+}

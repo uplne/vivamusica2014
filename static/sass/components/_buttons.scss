@@ -11,10 +11,11 @@
     @include font-size(16px);
 
     margin: 1em auto .7em auto;
-    padding: .5em 2em;
+    padding: 0 2em;
     border: 1px solid $brand-text;
     color: $brand-text;
     font-style: italic;
+    line-height: 2.5;
 
     &:hover {
         background-color: $brand-beta;
