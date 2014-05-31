@@ -3,7 +3,10 @@ var config   = require('../config'),
     async    = require('async'),
     mongoose = require('mongoose'),
     fs       = require('fs'),
-    login    = require('../controllers/login-controller');
+    login    = require('../controllers/login-controller'),
+    appRoot  = config.paths.appRoot,
+    path         = require('path'),
+    express      = require('express');
 
 module.exports = function(app) {
 
@@ -191,6 +194,17 @@ module.exports = function(app) {
             });
         }
     });
+
+    app.all("/private/*", function(req, res, next) {
+        console.log('file download');
+        if (typeof req.session.user === "undefined") {
+            res.redirect("/presslogin");
+        } else {
+            next();
+        }
+    });
+    // TODO: refactor - move to the index.js
+    app.use('/private', express.static(path.join(appRoot, 'private')));
 
     // Galeria
     app.get("/galeria/:year", function(req, res) {
