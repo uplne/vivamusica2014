@@ -11,6 +11,15 @@
     text-align: left;
 }
 
+.form__row {
+    @extend %inline-block;
+}
+
+.form__label {
+    display: block;
+    text-align: left;
+}
+
 .input {
     @include font-size(16px);
 
@@ -23,4 +32,10 @@
 
 .input--text {
     @extend .input;
+}
+
+.form__submit {
+    @extend .btn--contrast;
+
+    vertical-align: bottom;
 }

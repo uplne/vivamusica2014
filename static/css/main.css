@@ -680,7 +680,7 @@ iframe[name='google_conversion_frame'] {
  * TRANSITIONS
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000312}}
-.btn, .btn--contrast, .btn--nav, .btn--close, .icon--nav, .icon--close, .arrow--left, .arrow--right, .thumbnaillist__link, .thumbnaillist__box, .thumbnaillist__title, .thumbnaillist__email, .sbnav__link, .socialnav__link, .gallery__item > img, .newsletter__button, .main, .main__menu {
+.btn, .btn--contrast, .form__submit, .btn--nav, .btn--close, .icon--nav, .icon--close, .arrow--left, .arrow--right, .thumbnaillist__link, .thumbnaillist__box, .thumbnaillist__title, .thumbnaillist__email, .sbnav__link, .socialnav__link, .gallery__item > img, .newsletter__button, .main, .main__menu {
   -webkit-transition-property: top, right, left, bottom, margin, background;
   transition-property: top, right, left, bottom, margin, background;
   -webkit-transition-duration: .25s;
@@ -773,9 +773,10 @@ h2, .beta {
  * Extending %btn abstraction.
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_buttons\.scss}line{font-family:\0000332}}
-.btn, .btn--contrast,
+.btn, .btn--contrast, .form__submit,
 .btn,
 .btn--contrast,
+.form__submit,
 .btn--nav,
 .btn--close,
 .btn--brand,
@@ -796,9 +797,10 @@ h2, .beta {
   padding: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_buttons\.scss}line{font-family:\0000344}}
-.btn:hover, .btn--contrast:hover,
+.btn:hover, .btn--contrast:hover, .form__submit:hover,
 .btn:hover,
 .btn--contrast:hover,
+.form__submit:hover,
 .btn--nav:hover,
 .btn--close:hover,
 .btn--brand:hover,
@@ -812,7 +814,7 @@ h2, .beta {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_buttons\.scss}line{font-family:\0000349}}
-.btn, .btn--contrast {
+.btn, .btn--contrast, .form__submit {
   padding: 0 1em;
   line-height: 3;
   /**
@@ -1045,7 +1047,7 @@ h2, .beta {
  * Default button type across the page
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\000038}}
-.btn, .btn--contrast {
+.btn, .btn--contrast, .form__submit {
   font-size: 16px;
   font-size: 1.14286rem;
   line-height: 1.5;
@@ -1057,7 +1059,7 @@ h2, .beta {
   line-height: 2.5;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000320}}
-.btn:hover, .btn--contrast:hover {
+.btn:hover, .btn--contrast:hover, .form__submit:hover {
   background-color: black;
 }
 
@@ -1139,13 +1141,13 @@ h2, .beta {
  * Button buy tickets with background
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\00003100}}
-.btn--contrast {
+.btn--contrast, .form__submit {
   margin: 0;
   color: white;
   background-color: #ed1c24;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\00003107}}
-.btn--contrast:hover {
+.btn--contrast:hover, .form__submit:hover {
   background-color: black;
 }
 
@@ -1364,7 +1366,13 @@ h2, .beta {
   text-align: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_form\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_form\.scss}line{font-family:\0000318}}
+.form__label {
+  display: block;
+  text-align: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_form\.scss}line{font-family:\0000323}}
 .input, .input--text {
   font-size: 16px;
   font-size: 1.14286rem;
@@ -1374,6 +1382,11 @@ h2, .beta {
   vertical-align: middle;
   border: none;
   background-color: #e2e2e2;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_form\.scss}line{font-family:\0000337}}
+.form__submit {
+  vertical-align: bottom;
 }
 
 /**
@@ -2315,7 +2328,7 @@ h2, .beta {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\0000318}}
 .box, .article__text, .tickets__main,
-.press__top, .mediaisland--small, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active, .partners__box {
+.press__top, .mediaisland--small, .form__row, .thumbnaillist__list > li, .thumbnaillist__link, .thumbnaillist__box, .carousel .is-active, .partners__box {
   display: inline-block;
   vertical-align: top;
 }
