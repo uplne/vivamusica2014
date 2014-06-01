@@ -543,6 +543,7 @@ html input[disabled] {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_normalize\.scss}line{font-family:\00003337}}
 input[type="checkbox"],
 input[type="radio"] {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -559,7 +560,6 @@ input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -613,6 +613,7 @@ table {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_base\.scss}line{font-family:\000035}}
 * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -680,35 +681,51 @@ iframe[name='google_conversion_frame'] {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000312}}
 .btn, .btn--contrast, .btn--nav, .btn--close, .icon--nav, .icon--close, .arrow--left, .arrow--right, .thumbnaillist__link, .thumbnaillist__box, .thumbnaillist__title, .thumbnaillist__email, .sbnav__link, .socialnav__link, .gallery__item > img, .newsletter__button, .main, .main__menu {
+  -webkit-transition-property: top, right, left, bottom, margin, background;
   transition-property: top, right, left, bottom, margin, background;
+  -webkit-transition-duration: .25s;
   transition-duration: .25s;
+  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000318}}
 .title, .title--alpha, .title--beta {
+  -webkit-transition-property: top, right, left, bottom, margin, background;
   transition-property: top, right, left, bottom, margin, background;
+  -webkit-transition-duration: 1.6s;
   transition-duration: 1.6s;
+  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000324}}
 .thumbnaillist__date, .thumbnaillist__date--small, .programlist__icon {
+  -webkit-transition-property: top, right, left, bottom, margin, background;
   transition-property: top, right, left, bottom, margin, background;
+  -webkit-transition-duration: .25s;
   transition-duration: .25s;
+  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
+  -webkit-transition-delay: 30ms;
   transition-delay: 30ms;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000331}}
 .box__m {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
+  -webkit-transition: 0.25s ease-out;
   transition: 0.25s ease-out;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_effects\.scss}line{font-family:\0000336}}
 .box__m:hover, .gallery__item > img:hover {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
   transform: scale(1.5);
+  -webkit-transition: 10s ease-out;
   transition: 10s ease-out;
 }
 
@@ -766,7 +783,8 @@ h2, .beta {
 .arrow--right,
 .thumbnaillist__link,
 .sbnav__link,
-.socialnav__link {
+.socialnav__link,
+.newsletter__button {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap;
@@ -788,7 +806,8 @@ h2, .beta {
 .arrow--right:hover,
 .thumbnaillist__link:hover,
 .sbnav__link:hover,
-.socialnav__link:hover {
+.socialnav__link:hover,
+.newsletter__button:hover {
   text-decoration: none;
 }
 
@@ -907,7 +926,6 @@ h2, .beta {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/objects\/_grid\.scss}line{font-family:\0000312}}
 .g__item, .g__item--full, .banner, .press__link, .press__imglink, .partners__gitem {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -1071,17 +1089,13 @@ h2, .beta {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000350}}
 .btn--nav.is-active .icon--nav:before {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_buttons\.scss}line{font-family:\0000354}}
 .btn--nav.is-active .icon--nav:after {
   -webkit-transform: rotate(-45deg) translate(0.45em, -0.45em);
-  -moz-transform: rotate(-45deg) translate(0.45em, -0.45em);
   -ms-transform: rotate(-45deg) translate(0.45em, -0.45em);
-  -o-transform: rotate(-45deg) translate(0.45em, -0.45em);
   transform: rotate(-45deg) translate(0.45em, -0.45em);
 }
 @media only screen and (min-width: 959px) {
@@ -1202,18 +1216,14 @@ h2, .beta {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000377}}
 .icon--close:before {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: .4em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_icons\.scss}line{font-family:\0000384}}
 .icon--close:after {
   -webkit-transform: rotate(-45deg) translate(0.44em, -0.44em);
-  -moz-transform: rotate(-45deg) translate(0.44em, -0.44em);
   -ms-transform: rotate(-45deg) translate(0.44em, -0.44em);
-  -o-transform: rotate(-45deg) translate(0.44em, -0.44em);
   transform: rotate(-45deg) translate(0.44em, -0.44em);
   top: 1.05em;
 }
@@ -2049,18 +2059,24 @@ h2, .beta {
   color: rgba(0, 0, 0, 0.5);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000348}}
+/**
+ * 1. 19px / 12px this is fixing the rounding bug causing 1px difference
+ *    between Chrome and FF
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000352}}
 .newsletter__button {
   font-size: 12px;
   font-size: 0.85714rem;
   margin: 1px 1px 0 0;
+  padding: 0 1em;
   text-transform: uppercase;
   border: none;
   color: white;
   background-color: #ed1c24;
-  line-height: 1.2;
+  line-height: 1.58333333;
+  /* [1] */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000365}}
 .newsletter__button:hover {
   background-color: #666666;
 }
@@ -2146,6 +2162,7 @@ h2, .beta {
     float: left;
     width: 100%;
     min-height: 22.28571em;
+    -webkit-transition: none;
     transition: none;
     /* [1] */
     box-shadow: none;
