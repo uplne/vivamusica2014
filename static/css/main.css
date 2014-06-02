@@ -1387,6 +1387,7 @@ h2, .beta {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/components\/_form\.scss}line{font-family:\0000337}}
 .form__submit {
   vertical-align: bottom;
+  border: none;
 }
 
 /**
