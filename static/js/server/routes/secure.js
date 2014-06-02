@@ -3,8 +3,8 @@ var config   = require('../config'),
     mongoose = require('mongoose'),
     login    = require('../controllers/login-controller'),
     appRoot  = config.paths.appRoot,
-    path         = require('path'),
-    express      = require('express');
+    path     = require('path'),
+    express  = require('express');
 
 module.exports = function(app) {
 
