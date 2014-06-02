@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 /**
  * Helper functions for routers
  */
@@ -49,19 +51,18 @@ var api = {
      * Set selected object so we can highlight it in template
      *
      * @param  {String} item  Name/label of the item
-     * @param  {Array}  items Array of objects
      * @return {Array}        Returning the updated array so template engine can see which one is active
      */
-    setSelected: function(item, items) {
-        var len = items.length,
+    setSelected: function(item) {
+        var len = clientNav.length,
             i;
 
         for (i = 0; i < len; i++) {
 
-            items[i].selected = items[i].name === item;
+            clientNav[i].selected = clientNav[i].name === item;
         }
 
-        return items;
+        return clientNav;
     },
 
     /**
@@ -116,7 +117,51 @@ var api = {
         }
 
         return galls.reverse();
+    },
+
+    /**
+     * Get data from DB for program
+     *
+     * @return {Array} Array of results from DB
+     */
+    getProgram: function() {
+        var programModel = mongoose.model('Program'),
+            programQuery = programModel.find({}).sort([['_id', 'ascending']]);
+
+        return programQuery;
     }
 };
+
+var clientNav = [
+    {
+        name: 'Program',
+        path: '/'
+    },
+    {
+        name: 'Festival',
+        path: '/festival'
+    },
+    /*{
+        name: 'Galéria',
+        path: '/galeria/2012'
+    },*/
+    {
+        name: 'Hall of fame',
+        path: '/halloffame'
+    },
+    {
+        name: 'Kontakt',
+        banner: "/static/images/team/all.jpg",
+        path: '/kontakt'
+    },
+    {
+        name: 'Press',
+        path: '/press'
+    },
+    {
+        name: 'Partneri',
+        path: '/partneri'
+    }
+];
 
 module.exports = api;

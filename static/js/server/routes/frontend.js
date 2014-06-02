@@ -12,7 +12,7 @@ module.exports = function(app) {
 
     // Home/Program route
     app.get("/", function(req, res) {
-        var programQuery = getProgram(),
+        var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
@@ -23,7 +23,7 @@ module.exports = function(app) {
                 title: 'Vivamusica! festival 2014',
                 imageAssets: config.paths.images,
                 cssAssets: config.paths.css,
-                clientnav: helpers.setSelected('Program', clientNav),
+                clientnav: helpers.setSelected('Program'),
                 program: results.programQuery
             });
         });
@@ -31,7 +31,7 @@ module.exports = function(app) {
 
     // Program
     app.get("/program/:page", function(req, res) {
-        var programQuery = getProgram(),
+        var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
@@ -53,7 +53,7 @@ module.exports = function(app) {
                 next: item.next,
                 tickets: item.tickets,
                 program: results.programQuery,
-                clientnav: helpers.setSelected('Program', clientNav)
+                clientnav: helpers.setSelected('Program')
             });
         });
     });
@@ -62,7 +62,7 @@ module.exports = function(app) {
     app.get("/halloffame", function(req, res) {
         var halloffameModel = mongoose.model('Halloffame'),
             halloffameQuery = halloffameModel.find({}).sort([['year', 'descending']]),
-            programQuery    = getProgram(),
+            programQuery    = helpers.getProgram(),
 
             resources = {
                 halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
@@ -74,7 +74,7 @@ module.exports = function(app) {
             res.render('content/halloffame', {
                 pagetitle: "Vivamusica! festival 2014 - Hall of fame",
                 halloffame: results.halloffameQuery,
-                clientnav: helpers.setSelected('Hall of fame', clientNav),
+                clientnav: helpers.setSelected('Hall of fame'),
                 program: results.programQuery
             });
         });
@@ -84,7 +84,7 @@ module.exports = function(app) {
     app.get("/kontakt", function(req, res) {
         var kontaktModel = mongoose.model('Kontakt'),
             kontaktQuery = kontaktModel.find(),
-            programQuery = getProgram(),
+            programQuery = helpers.getProgram(),
 
             resources = {
                 kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
@@ -95,7 +95,7 @@ module.exports = function(app) {
             res.render('content/kontakt', {
                 pagetitle: "Vivamusica! festival 2014 - Kontakt",
                 kontakt: results.kontaktQuery,
-                clientnav: helpers.setSelected('Kontakt', clientNav),
+                clientnav: helpers.setSelected('Kontakt'),
                 program: results.programQuery
             });
         });
@@ -103,7 +103,7 @@ module.exports = function(app) {
 
     // Festival
     app.get("/festival", function(req, res) {
-        var programQuery = getProgram(),
+        var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
             };
@@ -112,7 +112,7 @@ module.exports = function(app) {
         async.parallel(resources, function(err, results) {
             res.render('content/festival', {
                 title: 'Vivamusica! festival 2014 - Festival',
-                clientnav: helpers.setSelected('Festival', clientNav),
+                clientnav: helpers.setSelected('Festival'),
                 program: results.programQuery
             });
         });
@@ -130,7 +130,7 @@ module.exports = function(app) {
             res.render('content/press', {
                 pagetitle: "Vivamusica! festival 2014 - Press",
                 press: results.pressQuery,
-                clientnav: helpers.setSelected('Press', clientNav),
+                clientnav: helpers.setSelected('Press'),
                 sidebar: true
             });
         });
@@ -151,59 +151,11 @@ module.exports = function(app) {
                 title: results.pressQuery.title,
                 text: results.pressQuery.text,
                 date: results.pressQuery.date,
-                clientnav: helpers.setSelected('Press', clientNav),
+                clientnav: helpers.setSelected('Press'),
                 sidebar: true
             });
         });
     });
-
-    app.get("/presslogin", function(req, res) {
-        res.render('content/login', {
-            pagetitle: "Vivamusica! festival 2014 - Press - Login",
-            clientnav: helpers.setSelected('Press', clientNav),
-            sidebar: true
-        });
-    });
-
-    app.post("/presslogin", function(req, res) {
-        var params = {
-                user: req.param('username'),
-                pswd: req.param('pswd')
-            };
-
-        // TODO: use promises && AJAX form
-        login.loginHandler(params, function(msg, user) {
-            if (typeof user === "undefined") {
-                res.send(msg, 400);
-            } else {
-                //res.send(params.user, 200);
-                req.session.user = user;
-                res.redirect("/pressgaleria");
-            }
-        });
-    });
-
-    app.get("/pressgaleria", function(req, res) {
-        if (typeof req.session.user === "undefined") {
-            res.redirect("/presslogin");
-        } else {
-            res.render('content/pressgaleria', {
-                pagetitle: "Vivamusica! festival 2014 - Press - Galéria",
-                clientnav: helpers.setSelected('Press', clientNav),
-                sidebar: true
-            });
-        }
-    });
-
-    app.all("/private/*", function(req, res, next) {
-        if (typeof req.session.user === "undefined") {
-            res.redirect("/presslogin");
-        } else {
-            next();
-        }
-    });
-    // TODO: refactor - move to the index.js
-    app.use('/private', express.static(path.join(appRoot, 'private')));
 
     // Galeria
     app.get("/galeria/:year", function(req, res) {
@@ -211,7 +163,7 @@ module.exports = function(app) {
             title: 'Galeria',
             galleries: getGalleries(),
             imgs: helpers.getImagesFromGallery(req.params.year),
-            clientnav: helpers.setSelected('Galéria', clientNav)
+            clientnav: helpers.setSelected('Galéria')
         });
     });
 
@@ -219,7 +171,7 @@ module.exports = function(app) {
     app.get("/partneri", function(req, res) {
         res.render('content/partneri', {
             title: 'Partneri',
-            clientnav: helpers.setSelected('Partneri', clientNav),
+            clientnav: helpers.setSelected('Partneri'),
             sidebar: true
         });
     });
@@ -233,49 +185,4 @@ module.exports = function(app) {
             res.send(item);
         });
     });
-
-    // TODO - do it nicer
-    var clientNav = [
-        {
-            name: 'Program',
-            path: '/'
-        },
-        {
-            name: 'Festival',
-            path: '/festival'
-        },
-        /*{
-            name: 'Galéria',
-            path: '/galeria/2012'
-        },*/
-        {
-            name: 'Hall of fame',
-            path: '/halloffame'
-        },
-        {
-            name: 'Kontakt',
-            banner: "/static/images/team/all.jpg",
-            path: '/kontakt'
-        },
-        {
-            name: 'Press',
-            path: '/press'
-        },
-        {
-            name: 'Partneri',
-            path: '/partneri'
-        }
-    ];
-
-    /**
-     * Get data from DB for program
-     *
-     * @return {Array} Array of results from DB
-     */
-    var getProgram = function() {
-        var programModel = mongoose.model('Program'),
-            programQuery = programModel.find({}).sort([['_id', 'ascending']]);
-
-        return programQuery;
-    }
 };

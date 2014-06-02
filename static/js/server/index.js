@@ -59,7 +59,11 @@ function setupServer() {
     // Connect to mongodb
     db.connect();
 
+    // Normal routes
     routes.frontend(app);
+
+    // Routes behing auth
+    routes.secure(app);
 }
 
 module.exports = init;
