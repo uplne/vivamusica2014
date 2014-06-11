@@ -17,8 +17,10 @@ module.exports = function(app) {
         if (req.query.lang) {
             config.lang = req.query.lang;
         } else {
-            if (typeof config.lang === 'undefined') {
-                config.lang = lang;
+            if (typeof config.lang === 'undefined' && lang !== "sk") {
+                config.lang = "en";
+            } else {
+                config.lang = "sk";
             }
         }
 
