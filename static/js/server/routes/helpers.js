@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    config   = require('../config');
 
 /**
  * Helper functions for routers
@@ -58,8 +59,8 @@ var api = {
             i;
 
         for (i = 0; i < len; i++) {
-
-            clientNav[i].selected = clientNav[i].name === item;
+            clientNav[i].selected = clientNav[i].name_sk === item;
+            clientNav[i].name     = clientNav[i]["name_" + config.lang];
         }
 
         return clientNav;
@@ -134,11 +135,13 @@ var api = {
 
 var clientNav = [
     {
-        name: 'Program',
+        name_sk: 'Program',
+        name_en: 'Program',
         path: '/'
     },
     {
-        name: 'Festival',
+        name_sk: 'Festival',
+        name_en: 'Festival',
         path: '/festival'
     },
     /*{
@@ -146,20 +149,24 @@ var clientNav = [
         path: '/galeria/2012'
     },*/
     {
-        name: 'Hall of fame',
+        name_sk: 'Hall of fame',
+        name_en: 'Hall of fame',
         path: '/halloffame'
     },
     {
-        name: 'Kontakt',
+        name_sk: 'Kontakt',
+        name_en: 'Contact',
         banner: "/static/images/team/all.jpg",
         path: '/kontakt'
     },
     {
-        name: 'Press',
+        name_sk: 'Press',
+        name_en: 'Press',
         path: '/press'
     },
     {
-        name: 'Partneri',
+        name_sk: 'Partneri',
+        name_en: 'Partners',
         path: '/partneri'
     }
 ];

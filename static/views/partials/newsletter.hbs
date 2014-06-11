@@ -1,3 +1,16 @@
+{{#if lang}}
+<form class="newsletter" data-modul="newsletter">
+    <label class="newsletter__label">Newsletter</label>
+    <div class="newsletter__wrap">
+        <input class="newsletter__input" data-role="check" type="text" value="Your email address" name="email" />
+        <button class="newsletter__button" data-role="send" type="submit">Subscribe</button>
+    </div>
+</form>
+
+<div class="notification" data-module="notify">
+    <p>Welcome to Vivamusica! newsletter!</p>
+</div>
+{{else}}
 <form class="newsletter" data-modul="newsletter">
     <label class="newsletter__label">Newsletter</label>
     <div class="newsletter__wrap">
@@ -9,3 +22,4 @@
 <div class="notification" data-module="notify">
     <p>Vitajte vo Vivamusica! newsletteri!</p>
 </div>
+{{/if}}

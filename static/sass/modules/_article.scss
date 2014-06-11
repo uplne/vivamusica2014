@@ -20,7 +20,7 @@
     }
 
     @include rwd(997px) {
-        max-height: em(312);
+        min-height: 11.286em;
         overflow: hidden;
     }
 }

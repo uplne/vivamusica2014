@@ -55,12 +55,12 @@
     @include font-size(12px, false);
 
     margin: 1px 1px 0 0;
-    padding: 0 1em;
+    padding: .2em 1em;
     text-transform: uppercase;
     border: none;
     color: $brand-text;
     background-color: $brand;
-    line-height: 1.58333333; /* [1] */
+    //line-height: 1.58333333; /* [1] */
 
     &:hover {
         background-color: $icon-nav;

@@ -10,12 +10,28 @@ var config   = require('../config'),
 
 module.exports = function(app) {
 
+    // Set language version
+    app.all("*", function(req, res, next) {
+        var lang = req.headers["accept-language"].split('-')[0];
+
+        if (req.query.lang) {
+            config.lang = req.query.lang;
+        } else {
+            if (typeof config.lang === 'undefined') {
+                config.lang = lang;
+            }
+        }
+
+        next();
+    });
+
     // Home/Program route
     app.get("/", function(req, res) {
         var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
-            };
+            },
+            lang = (config.lang === 'en') ? true : false;
 
         // Parallel requests to DB
         async.parallel(resources, function(err, results) {
@@ -23,8 +39,10 @@ module.exports = function(app) {
                 title: 'Vivamusica! festival 2014',
                 imageAssets: config.paths.images,
                 cssAssets: config.paths.css,
+                lang: lang,
                 clientnav: helpers.setSelected('Program'),
-                program: results.programQuery
+                program: results.programQuery,
+                lang: lang
             });
         });
     });
@@ -34,26 +52,31 @@ module.exports = function(app) {
         var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
-            };
+            },
+            lang = (config.lang === 'en') ? true : false;
 
         async.parallel(resources, function(err, results) {
             // Add prev/next links and get actual item
-            var item = helpers.getActualItem(helpers.addProgramLinks(results.programQuery), req.params.page);
+            var item = helpers.getActualItem(helpers.addProgramLinks(results.programQuery), req.params.page),
+                langText = (config.lang === 'en') ? "_en" : "";
 
             res.render('content/programdetail', {
                 datenum: item.datenum,
-                datemonth: item.datemonth,
+                datemonth: item["datemonth" + langText],
                 datetime: item.datetime,
-                place: item.place,
+                place: item["place" + langText],
                 title: 'Vivamusica! festival 2014' + ' - ' + item.title,
-                intro: item.intro,
-                text: item.text,
+                intro: item["intro" + langText],
+                text: item["text" + langText],
                 img: item.img,
                 prev: item.prev,
+                prevText: (lang) ? "previous" : "predošlý",
                 next: item.next,
+                nextText: (lang) ? "next" : "ďalší",
                 tickets: item.tickets,
                 program: results.programQuery,
-                clientnav: helpers.setSelected('Program')
+                clientnav: helpers.setSelected('Program'),
+                lang: lang
             });
         });
     });
@@ -67,7 +90,8 @@ module.exports = function(app) {
             resources = {
                 halloffameQuery: halloffameQuery.exec.bind(halloffameQuery),
                 programQuery: programQuery.exec.bind(programQuery)
-            };
+            },
+            lang = (config.lang === 'en') ? true : false;
 
         async.parallel(resources, function(err, results) {
 
@@ -75,7 +99,8 @@ module.exports = function(app) {
                 pagetitle: "Vivamusica! festival 2014 - Hall of fame",
                 halloffame: results.halloffameQuery,
                 clientnav: helpers.setSelected('Hall of fame'),
-                program: results.programQuery
+                program: results.programQuery,
+                lang: lang
             });
         });
     });
@@ -89,14 +114,16 @@ module.exports = function(app) {
             resources = {
                 kontaktQuery: kontaktQuery.exec.bind(kontaktQuery),
                 programQuery: programQuery.exec.bind(programQuery)
-            };
+            },
+            lang = (config.lang === 'en') ? true : false;
 
         async.parallel(resources, function(err, results) {
             res.render('content/kontakt', {
                 pagetitle: "Vivamusica! festival 2014 - Kontakt",
                 kontakt: results.kontaktQuery,
                 clientnav: helpers.setSelected('Kontakt'),
-                program: results.programQuery
+                program: results.programQuery,
+                lang: lang
             });
         });
     });
@@ -106,14 +133,17 @@ module.exports = function(app) {
         var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
-            };
+            },
+            template     = (config.lang === 'en') ? 'festival_en' : 'festival',
+            lang = (config.lang === 'en') ? true : false;
 
         // Parallel requests to DB
         async.parallel(resources, function(err, results) {
-            res.render('content/festival', {
+            res.render('content/' + template, {
                 title: 'Vivamusica! festival 2014 - Festival',
                 clientnav: helpers.setSelected('Festival'),
-                program: results.programQuery
+                program: results.programQuery,
+                lang: lang
             });
         });
     });
@@ -124,14 +154,16 @@ module.exports = function(app) {
             pressQuery = pressModel.find({}).sort([['path', 'descending']]),
             resources    = {
                 pressQuery: pressQuery.exec.bind(pressQuery)
-            };
+            },
+            lang = (config.lang === 'en') ? true : false;
 
         async.parallel(resources, function(err, results) {
             res.render('content/press', {
                 pagetitle: "Vivamusica! festival 2014 - Press",
                 press: results.pressQuery,
                 clientnav: helpers.setSelected('Press'),
-                sidebar: true
+                sidebar: true,
+                lang: lang
             });
         });
     });
@@ -143,7 +175,8 @@ module.exports = function(app) {
             pressQuery = pressModel.findOne({"path": page}),
             resources  = {
                 pressQuery: pressQuery.exec.bind(pressQuery)
-            };
+            },
+            lang = (config.lang === 'en') ? true : false;
 
         async.parallel(resources, function(err, results) {
             res.render('content/pressdetail', {
@@ -152,7 +185,8 @@ module.exports = function(app) {
                 text: results.pressQuery.text,
                 date: results.pressQuery.date,
                 clientnav: helpers.setSelected('Press'),
-                sidebar: true
+                sidebar: true,
+                lang: lang
             });
         });
     });
@@ -169,10 +203,13 @@ module.exports = function(app) {
 
     // Partneri
     app.get("/partneri", function(req, res) {
+        var lang = (config.lang === 'en') ? true : false;
+
         res.render('content/partneri', {
             title: 'Partneri',
             clientnav: helpers.setSelected('Partneri'),
-            sidebar: true
+            sidebar: true,
+            lang: lang
         });
     });
 

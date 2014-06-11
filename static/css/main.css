@@ -78,6 +78,29 @@
  * Fifths
  */
 /**
+ * Mixins
+ */
+/**
+ * Vendor prefixes
+ */
+/**
+ * Font size with vertical rhytm.
+ * Thanks to Harry Roberts (inuit.css).
+ */
+/**
+ * Arrows.
+ *
+ * Mixin generates styles for CSS arrows using border.
+ * Position of arrow should be set outside of this mixin.
+ */
+/**
+ * rwd design
+ *
+ * Mixin generate code for rwd media queries.
+ *
+ * Dimensions for rwd design in _dimensions.scss
+ */
+/**
  * Fonts
  */
 /**
@@ -149,29 +172,6 @@
   content: "\e608";
 }
 
-/**
- * Mixins
- */
-/**
- * Vendor prefixes
- */
-/**
- * Font size with vertical rhytm.
- * Thanks to Harry Roberts (inuit.css).
- */
-/**
- * Arrows.
- *
- * Mixin generates styles for CSS arrows using border.
- * Position of arrow should be set outside of this mixin.
- */
-/**
- * rwd design
- *
- * Mixin generate code for rwd media queries.
- *
- * Dimensions for rwd design in _dimensions.scss
- */
 /**
  * Functions
  */
@@ -1418,7 +1418,7 @@ h2, .beta {
 @media only screen and (min-width: 996px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_article\.scss}line{font-family:\0000314}}
   .article__header, .article__header--press {
-    max-height: 22.28571em;
+    min-height: 11.286em;
     overflow: hidden;
   }
 }
@@ -2082,13 +2082,11 @@ h2, .beta {
   font-size: 12px;
   font-size: 0.85714rem;
   margin: 1px 1px 0 0;
-  padding: 0 1em;
+  padding: .2em 1em;
   text-transform: uppercase;
   border: none;
   color: white;
   background-color: #ed1c24;
-  line-height: 1.58333333;
-  /* [1] */
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_newsletter\.scss}line{font-family:\0000365}}
 .newsletter__button:hover {

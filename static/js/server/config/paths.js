@@ -4,6 +4,7 @@ var path    = require('path'),
 function getPaths() {
     return {
         'appRoot': appRoot,
+        'lang'   : '',
         'config' : path.join(appRoot, 'config.js'),
         'images' : path.join(appRoot, 'static/images'),
         'js'     : path.join(appRoot, 'static/js'),
