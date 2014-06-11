@@ -22,11 +22,11 @@
 .newsletter__wrap {
     height: 1.5em;
     display: inline-block;
-    vertical-align: baseline;
+    vertical-align: top;
+    margin-top: .35em;
     background-color: $brand-gamma;
     border-radius: .1em;
     line-height: 1;
-    vertical-align: middle;
 }
 
 /**
