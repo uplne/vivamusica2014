@@ -5,8 +5,8 @@ var config   = require('../config'),
     fs       = require('fs'),
     login    = require('../controllers/login-controller'),
     appRoot  = config.paths.appRoot,
-    path         = require('path'),
-    express      = require('express');
+    path     = require('path'),
+    express  = require('express');
 
 module.exports = function(app) {
 
@@ -17,10 +17,12 @@ module.exports = function(app) {
         if (req.query.lang) {
             config.lang = req.query.lang;
         } else {
-            if (typeof config.lang === 'undefined' && lang !== "sk") {
-                config.lang = "en";
-            } else {
-                config.lang = "sk";
+            if (typeof config.lang === 'undefined') {
+                if (lang === 'sk' || lang === 'cz') {
+                    config.lang = "sk";
+                } else {
+                    config.lang = "en";
+                }
             }
         }
 
@@ -43,8 +45,7 @@ module.exports = function(app) {
                 cssAssets: config.paths.css,
                 lang: lang,
                 clientnav: helpers.setSelected('Program'),
-                program: results.programQuery,
-                lang: lang
+                program: results.programQuery
             });
         });
     });

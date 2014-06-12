@@ -5,7 +5,7 @@
             <a href="/program/{{path}}" class="thumbnaillist__link">
                 <img src="/static/images/program/{{img}}" width="190" height="190" alt="" />
                 <i class="programlist__icon fonticon--date{{datenum}}"></i>
-                <p class="thumbnaillist__title">{{#if ../lang}}{{title_en}}{{else}}{{title}}{{/if}}</p>
+                <p class="thumbnaillist__title">{{#if ../lang}}{{title_en}} {{#if price}}{{price_en}}{{/if}}{{else}}{{title}} {{#if price}}{{price}}{{/if}}{{/if}}</p>
             </a>
         </li>
         {{/foreach}}

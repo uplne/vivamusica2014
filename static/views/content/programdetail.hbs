@@ -6,8 +6,8 @@
 
     <div class="banner carousel">
         <img src="/static/images/program/banner/{{img}}" width="100%" />
-        <a class="arrow--left" href="{{prev}}">{{prevText}}</a>
-        <a class="arrow--right" href="{{next}}">{{nextText}}</a>
+        <a class="arrow--left" href="/program/{{prev}}">{{prevText}}</a>
+        <a class="arrow--right" href="/program/{{next}}">{{nextText}}</a>
     </div>
 
     <article class="article">
@@ -18,12 +18,12 @@
                 <span class="article__place">{{place}}<br />{{{datetime}}}</span>
             </section>
             <section class="article__intro">
-                <p class="article__introtext box">{{intro}}</p>
+                <p class="article__introtext box">{{{intro}}}</p>
             </section>
         </header>
         <p class="article__text">
             {{{text}}}
         </p>
-        {{#if tickets}}<a class="btn--contrast" href="{{tickets}}">Kúpiť vstupenky</a>{{/if}}
+        {{#if tickets}}<a class="btn--contrast" href="{{tickets}}">{{#if lang}}Buy Tickets{{else}}Kúpiť vstupenky{{/if}}</a>{{/if}}
     </article>
 </div>
