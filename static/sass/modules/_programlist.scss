@@ -24,3 +24,18 @@
         left: .1em;
     }
 }
+
+.programlist__date {
+    @extend %datestyle;
+    @include font-size(50px);
+
+    padding-left: .3em;
+    text-align: left;
+    line-height: auto;
+
+    > span {
+        @include font-size(35px);
+
+        margin-left: -.2em;
+    }
+}
