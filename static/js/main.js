@@ -12,8 +12,9 @@ require([
     'jquery',
     'modules/toggleMenu',
     'modules/newsletter',
-    'modules/carousel'
-], function ($, ToggleMenu, Newsletter, Carousel) {
+    'modules/carousel',
+    'modules/campaign'
+], function ($, ToggleMenu, Newsletter, Carousel, Campaign) {
 
     var toggleMenu = new ToggleMenu();
         toggleMenu.init();
@@ -23,4 +24,7 @@ require([
 
     var carousel = new Carousel();
         carousel.init();
+
+    var campaign = new Campaign();
+        campaign.init();
 });

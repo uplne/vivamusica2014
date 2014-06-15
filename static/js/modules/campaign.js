@@ -1,3 +1,4 @@
+
 /**
  * Popup module
  */
@@ -10,14 +11,13 @@ define([
 
     var Popup = function() {
         var self  = null,
-            timer = 1000,
             api   = {};
 
         // DOM elements
         api.els = {
-            $holder  : $('[data-popup]'),
-            $btnClose: $('[data-action="close"]'),
-            $btnOpen : $('[data-action="open"]')
+            $popup   : $('.js-campaignpopup'),
+            $btnClose: $('.js-campaignbutton-close '),
+            $btnOpen : $('.js-campaignbutton')
         };
 
         api.events = {
@@ -26,26 +26,19 @@ define([
         };
 
         api.init = function() {
-
             // Save reference to this
             self = this;
-
-            api.showPopup();
 
             Events.bindEvents.call(this);
         };
 
-        api.showPopup = function() {
+        api.setPopupPosition = function() {
             var position = api.getPopupPosition();
 
-            api.els.$holder.css({
+            api.els.$popup.css({
                 'left': position.x + 'px',
                 'top' : position.y + 'px'
             });
-
-            setTimeout(function() {
-                api.els.$holder.removeClass('is-hidden');
-            }, 2000);
         };
 
         api.getPopupPosition = function() {
@@ -53,14 +46,15 @@ define([
                     x: 0,
                     y: 0
                 },
+                parent   = api.els.$popup.parent(),
                 $window  = $(window),
-                ww       = $window.width() / 2,
+                ww       = parent.width() / 2,
                 wh       = $window.height() / 2,
-                hw       = api.els.$holder.width() / 2,
-                hh       = api.els.$holder.height() / 2;
+                hw       = api.els.$popup.width() / 2,
+                hh       = api.els.$popup.height() / 2;
 
                 position.x = ww - hw;
-                position.y = wh - hh;
+                position.y = wh - hh + document.body.scrollTop;
 
             return position;
         };
@@ -68,7 +62,13 @@ define([
         api.openCloseHandler = function(e) {
             e.preventDefault();
 
-            api.els.$holder.toggleClass('is-hidden');
+            //api.setPopupPosition();
+
+            //api.els.$popup.toggleClass('is-active');
+            FB.ui({
+              method: 'share',
+              href: 'http://www.vivamusica.sk',
+            }, function(response){});
         };
 
         return api;

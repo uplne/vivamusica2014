@@ -62,13 +62,17 @@ $campaign-popup-text: #00497b;
 }
 
 .camppopup {
+    display: none;
     width: em(827);
     height: em(419);
     position: absolute;
-    top: em(300);
-    left: 10%;
+    z-index: $zindex-omega;
     background: transparent url('/static/images/assets/campaign/camp-popup-bg.png') top left no-repeat;
-    box-shadow: 3px -2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+    &.is-active {
+        display: block;
+    }
 }
 
 .camppopup__form {

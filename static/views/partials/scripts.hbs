@@ -1,7 +1,7 @@
 <!-- Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic' rel='stylesheet' type='text/css'>
 <!-- Modules -->
-<script src="/static/js/lib/requirejs/require.js" data-main="/static/js/main.min"></script>
+<script src="/static/js/lib/requirejs/require.js" data-main="/static/js/main"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 var google_conversion_id = 1013868421;
@@ -25,4 +25,21 @@ var google_remarketing_only = true;
       var pageTracker = _gat._getTracker("UA-9107145-1");
       pageTracker._trackPageview();
       } catch(err) {}
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1483628718521380',
+      xfbml      : true,
+      version    : 'v2.0'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
