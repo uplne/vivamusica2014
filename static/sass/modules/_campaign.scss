@@ -1,0 +1,170 @@
+/**
+ * Campaign specific styles
+ */
+
+$campaign-btn-bg: #ab0000;
+$campaign-btn-bg-hover: #bf0009;
+
+$campaign-popup-text: #00497b;
+
+.campaign {
+    @extend .cf;
+    @extend %effect-trans;
+
+    width: 100%;
+    margin: 1em auto;
+    background: transparent;
+}
+
+.campaign__media {
+    width: em(682);
+    float: left;
+    margin-right: em(13);
+}
+
+.campaign__content {
+    float: left;
+    position: relative;
+    margin-top: 2em;
+}
+
+.campaign__text {
+    margin-bottom: 1em;
+}
+
+.campaign__logo {
+    position: absolute;
+    top: 4.5em;
+    left: 0;
+}
+
+// Extends from ^components/_buttons
+.campaign__btn {
+    @extend .btn--contrast;
+
+    font-family: "erstebold", Tahoma, Arial;
+    text-transform: uppercase;
+    font-style: normal;
+    padding: 0 1.4em 0 0;
+
+    &:hover {
+        background-color: $campaign-btn-bg-hover;
+    }
+
+    &:before {
+        content: ">";
+        width: 3em;
+        height: 100%;
+        margin-right: 1em;
+        background-color: $campaign-btn-bg;
+        float: left;
+    }
+}
+
+.camppopup {
+    width: em(827);
+    height: em(419);
+    position: absolute;
+    top: em(300);
+    left: 10%;
+    background: transparent url('/static/images/assets/campaign/camp-popup-bg.png') top left no-repeat;
+    box-shadow: 3px -2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.camppopup__form {
+    @extend .cf;
+
+    width: 80%;
+    margin: 4em 0 0 8em;
+    text-align: right;
+}
+
+.camppopup__row {
+    @extend %inline-block;
+
+    width: 100%;
+    margin: 0;
+}
+
+.camppopup__label {
+    @include font-size(18px);
+
+    float: left;
+    font-family: 'erstelight', Tahoma, Arial;
+    line-height: 1.5em;
+    color: $campaign-popup-text;
+}
+
+.camppopup__label--small {
+    @extend .camppopup__label;
+    @include font-size(16px);
+
+    padding-left: 1em;
+}
+
+.camppopup__textinput {
+    @include font-size(18px);
+
+    width: 77%;
+    float: right;
+    padding-left: .5em;
+    margin-bottom: .5em;
+    font-family: 'erstelight', Tahoma, Arial;
+    line-height: 1.3em;
+    border: 1px solid $brand;
+}
+
+.camppopup__checkbox {
+    float: left;
+    margin: .4em 0 0 0;
+    border: 1px solid $brand;
+}
+
+.camppopup__checkbox--left {
+    @extend .camppopup__checkbox;
+
+    margin: .4em 0 0 .6em;
+}
+
+.camppopup__heading {
+    @include font-size(34px, false);
+
+    font-family: 'erstelight', Tahoma, Arial;
+    color: $campaign-popup-text;
+
+    > b {
+        font-family: 'erstemedium', Tahoma, Arial;
+    }
+}
+
+.camppopup__boxwrap {
+    width: 65%;
+    float: right;
+}
+
+.camppopup__boxwrap--small {
+    @extend .camppopup__boxwrap;
+
+    width: 50%;
+}
+
+.camppopup__btn {
+    @extend .campaign__btn;
+    @include font-size(26px);
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+}
+
+.camppopup__btn--close {
+    @extend %btn;
+
+    width: em(25);
+    height: em(25);
+    position: absolute;
+    top: em(5);
+    right: em(5);
+    background: transparent url('/static/images/assets/campaign/btn-close.png') top left no-repeat;
+}

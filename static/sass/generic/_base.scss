@@ -18,6 +18,10 @@ body {
     background: $brand-bg url('/static/images/assets/main-bg.jpg') top center repeat-y;
 }
 
+.body--branded {
+    background: $brand-bg url('/static/images/assets/main-bg-branded.jpg') top center repeat;
+}
+
 a {
     text-decoration: none;
     color: $brand-link;

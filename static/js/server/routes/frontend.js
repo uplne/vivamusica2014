@@ -45,7 +45,8 @@ module.exports = function(app) {
                 cssAssets: config.paths.css,
                 lang: lang,
                 clientnav: helpers.setSelected('Program'),
-                program: results.programQuery
+                program: results.programQuery,
+                homepage: true
             });
         });
     });
