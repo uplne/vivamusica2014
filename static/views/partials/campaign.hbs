@@ -1,6 +1,7 @@
 <div class="campaign">
     <div class="campaign__media">
         <img src="/static/images/assets/campaign/yt.jpg" />
+        <!--<iframe width="682" height="384" src="//www.youtube.com/embed/oGNVmhc0zxE?list=UUsaC0DwceodFCDq_mQGl1LA" frameborder="0" allowfullscreen></iframe>-->
     </div>
     <div class="campaign__content">
         <img class="campaign__text" src="/static/images/assets/campaign/content-text.png" width="259" height="260" />
@@ -13,38 +14,39 @@
 
 <div class="camppopup js-campaignpopup">
     <button class="camppopup__btn--close js-campaignbutton-close"></button>
-    <form class="camppopup__form" action="" method="POST">
+    <form class="camppopup__form js-campaign-form" action="" method="POST">
         <h2 class="camppopup__heading">Super. Vyplňte kontaktný formulár a <b>ste v hre.</b></h2>
         <div class="camppopup__boxwrap--small">
             <div class="camppopup__row">
                 <label class="camppopup__label--small">Chcem hrať o lístky</label>
-                <input class="camppopup__checkbox--left" type="checkbox" name="terms" />
+                <input class="camppopup__checkbox--left" type="checkbox" name="tickets" />
                 <label class="camppopup__label--small">Chcem hrať o obraz</label>
-                <input class="camppopup__checkbox--left" type="checkbox" name="terms" />
+                <input class="camppopup__checkbox--left" type="checkbox" name="canvas" />
             </div>
         </div>
         <div class="camppopup__row">
-            <label class="camppopup__label">Meno a priezvisko</label>
+            <label class="camppopup__label">Meno a priezvisko <span class="required">*</span></label>
             <input class="camppopup__textinput" type="text" name="name" />
         </div>
         <div class="camppopup__row">
-            <label class="camppopup__label">Email</label>
-            <input class="camppopup__textinput" type="text" name="email" />
+            <label class="camppopup__label">Email <span class="required">*</span></label>
+            <input class="camppopup__textinput" type="text" name="campemail" />
         </div>
         <div class="camppopup__row">
-            <label class="camppopup__label">Telefon</label>
+            <label class="camppopup__label">Telefon <span class="required">*</span></label>
             <input class="camppopup__textinput" type="text" name="phone" />
         </div>
         <div class="camppopup__boxwrap">
             <div class="camppopup__row">
                 <input class="camppopup__checkbox" type="checkbox" name="terms" />
-                <label class="camppopup__label--small">Súhlasím so <a href="" title="">súťažnými podmienkami</a></label>
+                <label class="camppopup__label--small">Súhlasím so <a href="" title="">súťažnými podmienkami <span class="required">*</span></a></label>
             </div>
             <div class="camppopup__row">
-                <input class="camppopup__checkbox" type="checkbox" name="terms" />
+                <input class="camppopup__checkbox" type="checkbox" name="marketing" />
                 <label class="camppopup__label--small">Súhlasím s použitím osobných údajov na marketingové účely</label>
             </div>
+            <p class="camppopup__row camppopup__error is-hidden js-campaign-error">Prosim vyplnte vsetky potrebne udaje.</p>
         </div>
-        <button class="camppopup__btn" type="submit">Odoslat</button>
+        <button class="camppopup__btn js-campaignbutton-send">Odoslat</button>
     </form>
 </div>

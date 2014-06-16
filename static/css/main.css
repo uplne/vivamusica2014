@@ -190,6 +190,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'erstelight_italic';
+  src: url("/static/fonts/erste-lightitalic-webfont.eot");
+  src: url("/static/fonts/erste-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/erste-lightitalic-webfont.woff") format("woff"), url("/static/fonts/erste-lightitalic-webfont.ttf") format("truetype"), url("/static/fonts/erste-lightitalic-webfont.svg#erstelight_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'erstemedium';
   src: url("/static/fonts/erste-medium-webfont.eot");
   src: url("/static/fonts/erste-medium-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/erste-medium-webfont.woff") format("woff"), url("/static/fonts/erste-medium-webfont.ttf") format("truetype"), url("/static/fonts/erste-medium-webfont.svg#erstemedium") format("svg");
@@ -2213,15 +2220,16 @@ h2, .beta {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000354}}
 .campaign__btn:before, .camppopup__btn:before {
-  content: ">";
+  content: url(/static/images/assets/campaign/arrow-small.jpg);
   width: 3em;
-  height: 100%;
+  height: 40px;
+  overflow: hidden;
   margin-right: 1em;
   background-color: #ab0000;
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000365}}
 .camppopup {
   display: none;
   width: 59.07143em;
@@ -2231,36 +2239,40 @@ h2, .beta {
   background: transparent url("/static/images/assets/campaign/camp-popup-bg.png") top left no-repeat;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000374}}
 .camppopup.is-active {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000379}}
 .camppopup__form {
   width: 80%;
   margin: 4em 0 0 8em;
   text-align: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000387}}
 .camppopup__row {
   width: 100%;
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\0000394}}
 .camppopup__label, .camppopup__label--small {
   font-size: 18px;
   font-size: 1.28571rem;
   line-height: 1.33333;
   float: left;
-  font-family: 'erstelight', Tahoma, Arial;
+  font-family: 'erstemedium', Tahoma, Arial;
   line-height: 1.5em;
   color: #00497b;
 }
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003102}}
+.camppopup__label .required, .camppopup__label--small .required {
+  color: #ed1c24;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003107}}
 .camppopup__label--small {
   font-size: 16px;
   font-size: 1.14286rem;
@@ -2268,7 +2280,7 @@ h2, .beta {
   padding-left: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003114}}
 .camppopup__textinput {
   font-size: 18px;
   font-size: 1.28571rem;
@@ -2282,42 +2294,42 @@ h2, .beta {
   border: 1px solid #ed1c24;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003126}}
 .camppopup__checkbox, .camppopup__checkbox--left {
   float: left;
   margin: .4em 0 0 0;
   border: 1px solid #ed1c24;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003132}}
 .camppopup__checkbox--left {
   margin: .4em 0 0 .6em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003138}}
 .camppopup__heading {
   font-size: 34px;
   font-size: 2.42857rem;
-  font-family: 'erstelight', Tahoma, Arial;
+  font-family: 'erstelight_italic', Tahoma, Arial;
   color: #00497b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003144}}
 .camppopup__heading > b {
-  font-family: 'erstemedium', Tahoma, Arial;
+  font-family: "erstemedium", Tahoma, Arial;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003149}}
 .camppopup__boxwrap, .camppopup__boxwrap--small {
   width: 65%;
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003154}}
 .camppopup__boxwrap--small {
   width: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003160}}
 .camppopup__btn {
   font-size: 26px;
   font-size: 1.85714rem;
@@ -2328,7 +2340,7 @@ h2, .beta {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003170}}
 .camppopup__btn--close {
   width: 1.78571em;
   height: 1.78571em;
@@ -2336,6 +2348,15 @@ h2, .beta {
   top: 0.35714em;
   right: 0.35714em;
   background: transparent url("/static/images/assets/campaign/btn-close.png") top left no-repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/modules\/_campaign\.scss}line{font-family:\00003181}}
+.camppopup__error {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  line-height: 1.5;
+  font-family: "erstebold", Tahoma, Arial;
+  color: #ed1c24;
 }
 
 /**
@@ -2535,7 +2556,7 @@ h2, .beta {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\000035}}
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/stefanvadocz\/Desktop\/Work\/vivamusica2014\/static\/sass\/generic\/_helpers\.scss}line{font-family:\000039}}

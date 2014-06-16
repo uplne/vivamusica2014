@@ -5,24 +5,29 @@
 
 define([
     'jquery',
-    'utils/events'
-], function($, Events) {
+    'utils/events',
+    'utils/utils'
+], function($, Events, Utils) {
     'use strict';
 
     var Popup = function() {
         var self  = null,
-            api   = {};
+            api   = {},
+            user  = {};
 
         // DOM elements
         api.els = {
-            $popup   : $('.js-campaignpopup'),
-            $btnClose: $('.js-campaignbutton-close '),
-            $btnOpen : $('.js-campaignbutton')
+            $popup    : $('.js-campaignpopup'),
+            $btnClose : $('.js-campaignbutton-close '),
+            $btnOpen  : $('.js-campaignbutton'),
+            $btnSubmit: $('.js-campaignbutton-send'),
+            $form     : $('.js-campaign-form'),
+            $error    : $('.js-campaign-error')
         };
 
         api.events = {
-            '$btnOpen click' : 'openCloseHandler',
-            '$btnClose click': 'openCloseHandler'
+            '$btnOpen click'  : 'openHandler',
+            '$btnClose click' : 'closeHandler'
         };
 
         api.init = function() {
@@ -30,6 +35,12 @@ define([
             self = this;
 
             Events.bindEvents.call(this);
+
+            api.els.$form.submit(function(e) {
+                e.preventDefault();
+
+                api.submitForm();
+            })
         };
 
         api.setPopupPosition = function() {
@@ -59,16 +70,79 @@ define([
             return position;
         };
 
-        api.openCloseHandler = function(e) {
+        api.openHandler = function(e) {
             e.preventDefault();
 
-            //api.setPopupPosition();
+            //api.fbLogin();
+            api.openPopup();
+        };
 
-            //api.els.$popup.toggleClass('is-active');
+        api.closeHandler = function(e) {
+            e.preventDefault();
+
+            api.els.$popup.toggleClass('is-active');
+        };
+
+        api.fbLogin = function() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    api.getUserInformation();
+                } else {
+                    // Permission not granted.
+                }
+             }, {scope: 'public_profile, email, user_friends'});
+        };
+
+        api.getUserInformation = function() {
+            FB.api('/me', function (response) {
+                if (response && !response.error) {
+                    user.name = response.name;
+                    user.email = response.email;
+
+                    console.log(user);
+
+                    api.sendFbRequest();
+                }
+            });
+
+        };
+
+        api.sendFbRequest = function() {
             FB.ui({
-              method: 'share',
-              href: 'http://www.vivamusica.sk',
-            }, function(response){});
+                method: 'apprequests',
+                message: 'Slovenská sporiteľňa - Pozvánka na festival Viva Musica video'
+            }, function(response) {
+                if (typeof response.to === 'object' && response.to.length > 0) {
+                    //api.openPopup();
+                }
+            });
+        };
+
+        api.openPopup = function() {
+            api.setPopupPosition();
+            api.els.$popup.toggleClass('is-active');
+
+            if (typeof user.name !== 'undefined' && typeof user.email !== 'undefined') {
+                $('[name="name"]').val(user.name);
+                $('[name="email"]').val(user.email);
+            }
+        };
+
+        api.submitForm = function() {
+            var email = $('[name="campemail"]').val(),
+                name  = $('[name="name"]').val(),
+                phone = $('[name="phone"]').val(),
+                tickets = $('[name="tickets"]').is(":checked") ? 1 : 0,
+                canvas = $('[name="canvas"]').is(":checked") ? 1 : 0,
+                terms = $('[name="terms"]').is(":checked") ? 1 : 0,
+                marketing = $('[name="marketing"]').is(":checked") ? 1 : 0,
+                reg   = /^[0-9]/g;
+
+            if (name === '' || !Utils.validateEmail(email) || !reg.test(phone) || !terms) {
+                api.els.$error.removeClass('is-hidden');
+            } else {
+                console.log('preslo')
+            }
         };
 
         return api;

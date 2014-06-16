@@ -52,9 +52,10 @@ $campaign-popup-text: #00497b;
     }
 
     &:before {
-        content: ">";
+        content: url(/static/images/assets/campaign/arrow-small.jpg);
         width: 3em;
-        height: 100%;
+        height: 40px;
+        overflow: hidden;
         margin-right: 1em;
         background-color: $campaign-btn-bg;
         float: left;
@@ -94,9 +95,13 @@ $campaign-popup-text: #00497b;
     @include font-size(18px);
 
     float: left;
-    font-family: 'erstelight', Tahoma, Arial;
+    font-family: 'erstemedium', Tahoma, Arial;
     line-height: 1.5em;
     color: $campaign-popup-text;
+
+    .required {
+        color: $brand;
+    }
 }
 
 .camppopup__label--small {
@@ -133,11 +138,11 @@ $campaign-popup-text: #00497b;
 .camppopup__heading {
     @include font-size(34px, false);
 
-    font-family: 'erstelight', Tahoma, Arial;
+    font-family: 'erstelight_italic', Tahoma, Arial;
     color: $campaign-popup-text;
 
     > b {
-        font-family: 'erstemedium', Tahoma, Arial;
+        font-family: "erstemedium", Tahoma, Arial;
     }
 }
 
@@ -171,4 +176,11 @@ $campaign-popup-text: #00497b;
     top: em(5);
     right: em(5);
     background: transparent url('/static/images/assets/campaign/btn-close.png') top left no-repeat;
+}
+
+.camppopup__error {
+    @include font-size(16px);
+
+    font-family: "erstebold", Tahoma, Arial;
+    color: $brand;
 }

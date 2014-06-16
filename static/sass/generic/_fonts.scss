@@ -94,6 +94,18 @@ $base-font-family: 'Times';
 }
 
 @font-face {
+    font-family: 'erstelight_italic';
+    src: url('/static/fonts/erste-lightitalic-webfont.eot');
+    src: url('/static/fonts/erste-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/erste-lightitalic-webfont.woff') format('woff'),
+         url('/static/fonts/erste-lightitalic-webfont.ttf') format('truetype'),
+         url('/static/fonts/erste-lightitalic-webfont.svg#erstelight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'erstemedium';
     src: url('/static/fonts/erste-medium-webfont.eot');
     src: url('/static/fonts/erste-medium-webfont.eot?#iefix') format('embedded-opentype'),
