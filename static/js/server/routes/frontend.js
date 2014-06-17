@@ -29,6 +29,10 @@ module.exports = function(app) {
         next();
     });
 
+    app.get("/app/", function(req, res) {
+        res.render('content/fbapp', {});
+    });
+
     // Home/Program route
     app.get("/", function(req, res) {
         var programQuery = helpers.getProgram(),
@@ -67,7 +71,7 @@ module.exports = function(app) {
             res.render('content/programdetail', {
                 datenum: item.datenum,
                 datemonth: item["datemonth" + langText],
-                datetime: item.datetime,
+                datetime: item["datetime" + langText],
                 place: item["place" + langText],
                 title: 'Vivamusica! festival 2014' + ' - ' + item.title,
                 intro: item["intro" + langText],
@@ -78,6 +82,7 @@ module.exports = function(app) {
                 next: item.next,
                 nextText: (lang) ? "next" : "ďalší",
                 tickets: item.tickets,
+                price: item["price" + langText],
                 program: results.programQuery,
                 clientnav: helpers.setSelected('Program'),
                 lang: lang

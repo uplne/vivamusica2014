@@ -73,8 +73,8 @@ define([
         api.openHandler = function(e) {
             e.preventDefault();
 
-            //api.fbLogin();
-            api.openPopup();
+            api.fbLogin();
+            //api.openPopup();
         };
 
         api.closeHandler = function(e) {

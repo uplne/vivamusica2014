@@ -6,6 +6,10 @@
     display: none !important;
 }
 
+.not-clickable {
+    cursor: default !important;
+}
+
 .visuallyhidden {
     visibility: hidden;
 }

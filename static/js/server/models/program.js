@@ -13,6 +13,7 @@ var ProgramSchema = new Schema({
     datemonth:   {type: String, default: 'jún'},
     datemonth_en: {type: String, default: 'June'},
     datetime:    {type: String, default: ''},
+    datetime_en: {type: String, default: ''},
     time:        {type: String, default: ''},
     place:       {type: String, default: ''},
     place_en:    {type: String, default: ''},

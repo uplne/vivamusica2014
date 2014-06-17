@@ -205,6 +205,20 @@ module.exports = function(grunt) {
             }
         },
 
+        /*
+         * Analyse
+         */
+        cssmetrics: {
+            common: {
+                src: ['<%= dir.js &>/*.css'],
+                options: {
+                    quiet: false,
+                    maxRules: 4096, //IE max rules
+                    maxFileSize: 1048576 //1mb in bytes
+                }
+            }
+        },
+
         open: {
             dev: {
               path: 'http://localhost:1985',
