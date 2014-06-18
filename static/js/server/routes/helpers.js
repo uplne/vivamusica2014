@@ -159,11 +159,11 @@ var clientNav = [
         banner: "/static/images/team/all.jpg",
         path: '/kontakt'
     },
-    {
+    /*{
         name_sk: 'Press',
         name_en: 'Press',
         path: '/press'
-    },
+    },*/
     {
         name_sk: 'Partneri',
         name_en: 'Partners',

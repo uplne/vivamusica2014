@@ -9,7 +9,7 @@
                 {{else}}
                 <i class="programlist__icon fonticon--date{{datenum}}"></i>
                 {{/if}}
-                <p class="thumbnaillist__title">{{#if ../lang}}{{title_en}} {{#if price}}{{price_en}}{{/if}}{{else}}{{title}} {{#if price}}{{price}}{{/if}}{{/if}}</p>
+                <p class="thumbnaillist__title">{{#if ../lang}}{{title_en}}{{else}}{{title}}{{/if}}</p>
             </a>
         </li>
         {{/foreach}}

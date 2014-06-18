@@ -95,7 +95,7 @@ $campaign-popup-text: #00497b;
     @include font-size(18px);
 
     float: left;
-    font-family: 'erstemedium', Tahoma, Arial;
+    font-family: 'erstelight', Tahoma, Arial;
     line-height: 1.5em;
     color: $campaign-popup-text;
 
@@ -129,10 +129,30 @@ $campaign-popup-text: #00497b;
     border: 1px solid $brand;
 }
 
-.camppopup__checkbox--left {
+.camppopup__checkbox--styled {
     @extend .camppopup__checkbox;
 
-    margin: .4em 0 0 .6em;
+    position: relative;
+    margin: .4em 1em 0 .6em;
+
+    &:before {
+        content: url('/static/images/assets/campaign/checkbox.png');
+        width: em(28);
+        height: em(28);
+        position: absolute;
+        top: -11px;
+        left: -4px;
+    }
+
+    &:checked:after {
+        content: url('/static/images/assets/campaign/checkbox-check.png');
+        width: em(28);
+        height: em(28);
+        position: absolute;
+        top: -6px;
+        left: 3px;
+        cursor: pointer;
+    }
 }
 
 .camppopup__heading {
@@ -154,7 +174,7 @@ $campaign-popup-text: #00497b;
 .camppopup__boxwrap--small {
     @extend .camppopup__boxwrap;
 
-    width: 50%;
+    width: 52%;
 }
 
 .camppopup__btn {
@@ -165,6 +185,16 @@ $campaign-popup-text: #00497b;
     right: 0;
     bottom: 0;
     border: none;
+}
+
+.camppopup__btn--large {
+    @extend .camppopup__btn;
+    @include font-size(26px);
+
+    &:before {
+        height: 50px;
+        line-height: 50px;
+    }
 }
 
 .camppopup__btn--close {
@@ -183,4 +213,22 @@ $campaign-popup-text: #00497b;
 
     font-family: "erstebold", Tahoma, Arial;
     color: $brand;
+}
+
+.camppopup__link {
+    color: $campaign-popup-text;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.camppopup__thanks {
+    @extend %inline-block;
+
+    width: em(491);
+    height: em(28);
+    margin: 13em;
+    background: transparent url('/static/images/assets/campaign/thanks.png') top center no-repeat;
 }

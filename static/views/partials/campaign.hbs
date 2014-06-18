@@ -8,7 +8,7 @@
         <a class="campaign__logo" href="" title="" target="_blank">
             <img src="/static/images/assets/campaign/sp-logo.png" width="133" height="34" alt="Slovenska sporitelna logo" />
         </a>
-        <button class="campaign__btn js-campaignbutton">Chcem hrat</button>
+        <button class="campaign__btn js-campaignbutton">Chcem hrať</button>
     </div>
 </div>
 
@@ -19,9 +19,9 @@
         <div class="camppopup__boxwrap--small">
             <div class="camppopup__row">
                 <label class="camppopup__label--small">Chcem hrať o lístky</label>
-                <input class="camppopup__checkbox--left" type="checkbox" name="tickets" />
+                <input class="camppopup__checkbox camppopup__checkbox--styled" type="checkbox" name="tickets" />
                 <label class="camppopup__label--small">Chcem hrať o obraz</label>
-                <input class="camppopup__checkbox--left" type="checkbox" name="canvas" />
+                <input class="camppopup__checkbox camppopup__checkbox--styled" type="checkbox" name="canvas" />
             </div>
         </div>
         <div class="camppopup__row">
@@ -39,14 +39,15 @@
         <div class="camppopup__boxwrap">
             <div class="camppopup__row">
                 <input class="camppopup__checkbox" type="checkbox" name="terms" />
-                <label class="camppopup__label--small">Súhlasím so <a href="" title="">súťažnými podmienkami <span class="required">*</span></a></label>
+                <label class="camppopup__label--small">Súhlasím so <a class="camppopup__link" href="/static/pdf/SP_viva_musica.pdf" target="_blank" title="">súťažnými podmienkami <span class="required">*</span></a></label>
             </div>
             <div class="camppopup__row">
                 <input class="camppopup__checkbox" type="checkbox" name="marketing" />
                 <label class="camppopup__label--small">Súhlasím s použitím osobných údajov na marketingové účely</label>
             </div>
-            <p class="camppopup__row camppopup__error is-hidden js-campaign-error">Prosim vyplnte vsetky potrebne udaje.</p>
+            <p class="camppopup__row camppopup__error is-hidden js-campaign-error">Prosíme, vyplňte všetky potrebné údaje označené *.</p>
         </div>
-        <button class="camppopup__btn js-campaignbutton-send">Odoslat</button>
+        <button class="camppopup__btn--large js-campaignbutton-send">Odoslať</button>
     </form>
+    <div class="camppopup__thanks js-camppopup-thanks is-hidden"></div>
 </div>
