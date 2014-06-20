@@ -24,7 +24,11 @@
     "mongoose": "~3.8.8",
     "async": "~0.6.2",
     "cookie-parser": "~1.1.0",
-    "express-session": "~1.2.0"
+    "express-session": "~1.2.0",
+    "request": "~2.36.0",
+    "querystring": "~0.2.0",
+    "http": "0.0.0",
+    "MD5": "~1.2.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

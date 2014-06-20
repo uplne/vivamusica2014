@@ -26,7 +26,7 @@ function setupServer() {
     app.use(bodyParser());
     app.use(methodOverride());
     app.use(cookieParser());
-    app.use(session({ secret: 'vivasecretvisible' }));
+    //app.use(session({ secret: 'vivasecretvisible' }));
     app.use(favicon(config.paths.images + '/favicon.ico'));
     app.use(express.static(path.join(appRoot, 'static')));
     app.use('/static/images', express.static(config.paths.images));
@@ -63,7 +63,7 @@ function setupServer() {
     routes.frontend(app);
 
     // Routes behing auth
-    routes.secure(app);
+    //routes.secure(app);
 }
 
 module.exports = init;

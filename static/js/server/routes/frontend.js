@@ -6,7 +6,11 @@ var config   = require('../config'),
     login    = require('../controllers/login-controller'),
     appRoot  = config.paths.appRoot,
     path     = require('path'),
-    express  = require('express');
+    express  = require('express'),
+    request  = require('request'),
+    querystring = require('querystring'),
+    http     = require('http'),
+    md5      = require('MD5');
 
 module.exports = function(app) {
 
@@ -35,6 +39,7 @@ module.exports = function(app) {
 
     // Home/Program route
     app.get("/", function(req, res) {
+        console.log('Get /');
         var programQuery = helpers.getProgram(),
             resources    = {
                 programQuery: programQuery.exec.bind(programQuery)
@@ -227,8 +232,46 @@ module.exports = function(app) {
         var item            = JSON.stringify(req.body),
             newsletterModel = mongoose.model('Newsletter');
 
-        new newsletterModel({email: JSON.parse(item).email}).save(function (e) {
+        new newsletterModel({email: JSON.parse(item).email}).save(function (err) {
+            if (err) {
+                throw err;
+            }
+
             res.send(item);
         });
     });
+
+    // POST form campaign form
+    app.post('/savecampaign', function(req, res){
+        var item            = JSON.stringify(req.body),
+            data            = JSON.parse(item),
+            dataToSave      = {};
+
+        dataToSave.name = data.name;
+        dataToSave.email = data.email;
+        dataToSave.tel_number = data.tel_number;
+        dataToSave.ch_tickets = data.ch_tickets;
+        dataToSave.ch_picture = data.ch_picture;
+        dataToSave.ch_allow_marketing_use = data.ch_allow_marketing_use;
+        dataToSave.hash = getMD5(data);
+
+        console.log(dataToSave.hash)
+        console.log(dataToSave);
+
+        var r = request.post({
+                uri: 'https://fb.core4.sk/slsp_sutaz/index.php',
+                headers: {'content-type': 'application/x-www-form-urlencoded'},
+                body: querystring.stringify(dataToSave)
+            }, function(error, response, body) {
+                console.log(response);
+            });
+    });
+
+    function getMD5(data) {
+        var str = "crstr4?." + data.name + data.email + data.tel_number + data.ch_tickets + data.ch_picture + data.ch_allow_marketing_use;
+
+            console.log(str)
+
+        return md5(str);
+    };
 };

@@ -16,14 +16,23 @@ $campaign-popup-text: #00497b;
     background: transparent;
 }
 
+.campaign__linkhrajte {
+    width: 88px;
+    height: 25px;
+    background: transparent url('/static/images/assets/campaign/hrajte.png') top left no-repeat;
+    position: absolute;
+    top: 423px;
+    left: -97px;
+}
+
 .campaign__media {
-    width: em(682);
+    width: em(675);
     float: left;
     margin-right: em(13);
 }
 
 .campaign__content {
-    float: left;
+    float: right;
     position: relative;
     margin-top: 2em;
 }

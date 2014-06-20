@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 // Bootstrap db connection
 var connect = function () {
-  var options = { server: { socketOptions: { keepAlive: 1 } }, user: 'viva', pass: 'vbnm1234' };
+  var options = { server: { socketOptions: { keepAlive: 1 } }, user: 'admin', pass: 'vbnm1234' };
 
   mongoose.connect('mongodb://localhost/viva_db', options);
 };
