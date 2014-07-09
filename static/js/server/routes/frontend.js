@@ -255,9 +255,6 @@ module.exports = function(app) {
         dataToSave.ch_allow_marketing_use = data.ch_allow_marketing_use;
         dataToSave.hash = getMD5(data);
 
-        console.log(dataToSave.hash)
-        console.log(dataToSave);
-
         var r = request.post({
                 uri: 'https://fb.core4.sk/slsp_sutaz/index.php',
                 headers: {'content-type': 'application/x-www-form-urlencoded'},

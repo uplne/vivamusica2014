@@ -63,7 +63,7 @@ function setupServer() {
     routes.frontend(app);
 
     // Routes behing auth
-    //routes.secure(app);
+    routes.secure(app);
 }
 
 module.exports = init;
